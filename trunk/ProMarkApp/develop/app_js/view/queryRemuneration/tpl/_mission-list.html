@@ -1,0 +1,75 @@
+<div id="missionListContent" class="nav-wrapper">
+    <div class="refresh_inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="list-warning">
+            搜索结果如下，点此查看全部
+        </div>
+
+        <div class="mission_wrapper"></div>
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+<%
+    if(data.rows.length == 0){
+%>
+    <div class="warning-panel">暂无数据</div>
+<%   
+    }
+%>
+
+<%
+    _.each(data.rows,function(v,i){
+        var link = 'detail';
+        if(v.signStatus){
+            link = 'list';
+        }
+%>
+<div class="mission_box" data-link="<%=link%>" data-uuid="<%=v.uuid%>">
+    <h3><%=v.title%></h3>
+    <p>派发时间：<%=v.beginTime.substr(0, 16)%></p>
+    <p>完成时限：<%=v.endTime.substr(0, 16)%></p>
+    <p>客户数：<%=v.targetCont%></p>
+
+    <% if(v.signStatus){ %>
+        <div class="text">已签收</div>
+    <% }else{ %>
+        <div class="btn btn-accept" data-uuid="<%=v.uuid%>">签收任务</div>
+    <% } %>
+</div>
+<%
+    });
+%>
+
+<% if(data.hasNextPage || data.hasPreviousPage){ %>
+    <div class="list-control weui-row">
+        <%
+            var prevAttr = '',nextAttr = ''; 
+            
+            if(!data.hasPreviousPage){
+                prevAttr = 'disabled';
+            } 
+            
+            if(!data.hasNextPage){
+                nextAttr = 'disabled';
+            } 
+        %> 
+        <div class="weui-col-40">
+            <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+        </div>
+        <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+        <div class="weui-col-40">
+            <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+        </div>
+    </div>
+<% } %>
+
+</script>

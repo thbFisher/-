@@ -1,0 +1,16 @@
+{
+    "obj": {
+        "anthor": "li",
+        "commentsCount": 13,
+        "courDesc": "测试课件二",
+        "courImageUrl": "http://192.168.36.221:8080/HNwxMultP/hnwximg/read/courseware/cover/2016-09-13/13fe8983-b353-4251-8457-94f7aae065e1.jpg",
+        "courName": "测试课件二",
+        "courTypeStr": "业务知识",
+        "department": "政企",
+        "shareUrl": "http://wxdeveloper1.talkyun.com.cn/HNwxMultP/weixin/author.do?id=courseware_info&appId=wx584b876e5575c96a&coursewareUuid=fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6",
+        "thumbsCount": 1,
+        "userCount": 2,
+        "uuid": "fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6",
+        "viewCount": 71
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>下载</title>
+	<script type="text/javascript">
+		function downLoad1(){
+			window.location.href = "http://114.116.64.253/EntCloudInterface//entorder/exportorder.json?start_time=2018-07-04%2000:00:00&end_time=2018-08-31%2000:00:00&ent_seller_id=s_ca4716d4cbab40e491dc5318c55c4715&order_type=2" ;
+		}
+		function downLoad2(){
+			//这个方式会留下一个iframe 不好 ，因为如果后面直接跟一个removeChild 不会触发下载
+			// var elemIF = document.createElement("iframe");   
+   //          elemIF.src = "http://114.116.64.253/EntCloudInterface//entorder/exportorder.json?start_time=2018-07-04%2000:00:00&end_time=2018-08-31%2000:00:00&ent_seller_id=s_ca4716d4cbab40e491dc5318c55c4715&order_type=2";   
+   //          elemIF.style.display = "none";   
+   //          document.body.appendChild(elemIF); 
+   			 // 创建隐藏的可下载链接
+
+		    var eleLink = document.createElement('a');
+		    eleLink.download = "http://114.116.64.253/EntCloudInterface//entorder/exportorder.json?start_time=2018-07-04%2000:00:00&end_time=2018-08-31%2000:00:00&ent_seller_id=s_ca4716d4cbab40e491dc5318c55c4715&order_type=2";
+		    eleLink.style.display = 'none';
+		    // 字符内容转变成blob地址
+		    eleLink.href = "http://114.116.64.253/EntCloudInterface//entorder/exportorder.json?start_time=2018-07-04%2000:00:00&end_time=2018-08-31%2000:00:00&ent_seller_id=s_ca4716d4cbab40e491dc5318c55c4715&order_type=2";
+		    // 触发点击
+		    document.body.appendChild(eleLink);
+		    eleLink.click();
+		    // 然后移除
+		    document.body.removeChild(eleLink);
+            }
+	</script>
+</head>
+<body>
+	<button onclick="downLoad1()">下载11111</button>
+	<hr>
+	<button onclick="downLoad2()">下载22222</button>
+</body>
+</html>

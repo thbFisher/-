@@ -1,0 +1,160 @@
+<div class="common-content with-ctrl">
+    <div class="weui-pull-to-refresh-layer">
+        <div class="pull-to-refresh-arrow"></div>
+        <div class="pull-to-refresh-preloader"></div>
+        <div class="down">下拉刷新</div>
+        <div class="up">释放刷新</div>
+        <div class="refresh">正在刷新...</div>
+        <div class="done">刷新完成</div>
+    </div>
+    
+    <div class="comment-content"></div>
+</div>
+
+<div class="materials-detail-control clearfix ">
+    <input type="text " class="form-control comment-reply-form" placeholder="说点什么 ">
+    <button class="btn btn-transparent btn-reply reply-read"><i class="iconfont icon-icon_sent"></i></button>
+</div>
+
+<script id="commentTpl" type="text/template">
+    <div class="materials-detail-content">
+        <h2 class="materials-detail-title"><%=data.courName%></h2>
+        <div class="materials-detail-info clearfix">
+            <div class="materials-detail-date pull-left"><%=data.createTime%></div>
+        </div>
+        <div class="materials-comment-control">
+            <button class="btn btn-default add-comment">
+                <i class="iconfont icon-groupcopy5"></i>
+            </button>
+            <% if(data.isThumbs){ %>
+                <button class="btn btn-primary">
+            <% }else{ %>
+                <button class="btn btn-default add-like">
+            <% } %>
+                <i class="iconfont icon-dianzan1"></i>
+            </button>
+        </div>
+    </div>
+    <div class="materials-blank"></div>
+    <div class="materials-detail-comment">
+        <% if(!data.list.rows.length){ %>
+            <div class="warning-panel">暂无评论</div>
+        <% }else{ %>
+            <%
+                var start = data.list.pageSize * (data.list.pageNum - 1) + 1;
+                _.each(data.list.rows,function(v,i){
+                    var id = start + i;
+            %>
+            <div class="materials-comment-box">
+                <!--一级评论操作栏-->
+                <div class="comment-header clearfix">
+                    <div class="pull-left comment-floor">#<%=id%></div>
+                    <div class="pull-right comment-control">
+                            <% if(v.isThumbs){ %>
+                                <div class="pull-right">
+                                <i class="iconfont icon-dianzan"></i>
+                            <% }else{ %>
+                                <div class="pull-right comment-like" data-uuid="<%=v.uuid%>">
+                                <i class="iconfont icon-dianzan1"></i>
+                            <% } %>
+                            <span><%=v.thumbsCount%></span>
+                        </div>
+                        <div class="pull-right comment-view" data-uuid="<%=v.uuid%>" data-id="#<%=id%>">
+                            <i class="iconfont icon-groupcopy5 "></i>
+                            <span><%=v.commentsCount%></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--一级评论内容-->
+                <div class="comment-main">
+                    <div class="comment-main-avatar">
+                        <% if(v.headimgurl){ %>
+                            <img src="<%=v.headimgurl%>">
+                        <% }else{ %>
+                            <img src="app_img/noavatar.png">
+                        <% } %>
+                    </div>
+                    <div class="comment-main-content">
+                        <div class="comment-main-other clearfix ">
+                            <div class="pull-left "><span class="text-info "><%=v.name%></span> (<%=v.company%>)</div>
+                            <div class="pull-right "><%=v.commentsTime%></div>
+                        </div>
+                        <div class="comment-main-text ">
+                            <%=v.commentsContent%>
+                        </div>
+                    </div>
+                </div>
+                            
+                <!--二级评论列表-->
+                <% if(v.commentsCount > 0){ %>
+                <div class="comment-sub ">
+                    <% _.each(v.secondaryJson, function(s){ %>
+                        <div class="comment-sub-box">
+                            <div class="comment-sub-avatar">
+                                <% if(s.headimgurl){ %>
+                                    <img src="<%=s.headimgurl%>">
+                                <% }else{ %>
+                                    <img src="app_img/noavatar.png ">
+                                <% } %>
+                            </div>
+                            <div class="comment-sub-content">
+                                <div class="comment-sub-other clearfix">
+                                    <div class="pull-left ">
+                                        <span class="text-info "><%=s.name%></span> (<%=s.company%>)
+                                    </div>
+                                    <div class="pull-right "><%=s.commentsTime%></div>
+                                </div>
+                                <div class="comment-sub-text">
+                                    <span style="font-weight:bold; ">回复 <%=v.name%>：</span><%=s.commentsContent%>
+                                </div>
+                        
+                                <div class="comment-sub-control clearfix">
+                                        <% if(s.isThumbs){ %>
+                                            <span class="pull-right">
+                                            <i class="iconfont icon-dianzan"></i>
+                                        <% }else{ %>
+                                            <span class="pull-right comment-reply-like" data-uuid="<%=s.uuid%>">
+                                            <i class="iconfont icon-dianzan1"></i>
+                                        <% } %>
+                                        <span><%=s.thumbsCount%></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+
+                    <% if(v.commentsCount > 5){ %>
+                        <div class="comment-sub-more" data-uuid="<%=v.uuid%>">查看更多</div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+            <%
+                });
+            %>
+            <% if(data.list.hasNextPage || data.list.hasPreviousPage){ %>
+                <div class="list-control weui-row">
+                    <%
+                        var prevAttr = '',nextAttr = ''; 
+                        
+                        if(!data.list.hasPreviousPage){
+                            prevAttr = 'disabled';
+                        } 
+                        
+                        if(!data.list.hasNextPage){
+                            nextAttr = 'disabled';
+                        } 
+                    %> 
+                    <div class="weui-col-40">
+                        <button class="btn btn-default btn-prev" data-page="<%=data.list.prePage%>" <%=prevAttr%>>上一页</button>
+                    </div>
+                    <div class="weui-col-20"><%=data.list.pageNum%>/<%=data.list.pages%></div>
+                    <div class="weui-col-40">
+                        <button class="btn btn-default btn-next" data-page="<%=data.list.nextPage%>" <%=nextAttr%>>下一页</button>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</script>

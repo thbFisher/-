@@ -1,0 +1,105 @@
+<div class="common-content bottom-pd20 bg-gray" id="contactDetail">
+    <div class="header">
+        <div class="avatar">
+            <img src="app_img/noavatar.png">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title">个人信息</div>
+        <div class="weui_cells" id="contactInfo">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>姓名</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>手机号码</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <a href="javascript:;">-</a>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>所属单位</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>工作岗位</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>邮箱</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="infoTpl" type="text/template">
+    <%
+        function formatStr(str){
+			if(!str){
+				return '-';
+			}
+
+			return str;
+		}
+    %>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>姓名</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=formatStr(name)%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>手机号码</p>
+        </div>
+        <div class="weui_cell_ft">
+            <a href="tel:<%=mobile%>"><%=formatStr(mobile)%></a>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>所属单位</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=formatStr(company)%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>工作岗位</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=formatStr(section)%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>邮箱</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=formatStr(email)%>
+        </div>
+    </div>
+</script>

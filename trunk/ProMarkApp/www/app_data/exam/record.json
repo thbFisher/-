@@ -1,0 +1,82 @@
+{
+    "code": 0,
+    "desc": "成功",
+    "obj": {
+        "lastPage": 1,
+        "navigatepageNums": [
+            1
+        ],
+        "startRow": 1,
+        "hasNextPage": false,
+        "prePage": 0,
+        "nextPage": 0,
+        "endRow": 5,
+        "pageSize": 5,
+        "rows": [
+            {
+                "userStartExamTime": "",
+                "examTitle": "测试五",
+                "examResult": 100,
+                "examEndtime": "2016-09-29 15:05",
+                "ranking": 1,
+                "examStartTime": "2016-09-27 15:05",
+                "examTime": 32,
+                "examLevel": "A",
+                "states": 0
+            },
+            {
+                "userStartExamTime": "2016-09-27 19:09",
+                "examTitle": "测试考试四",
+                "examResult": 0,
+                "examEndtime": "2016-09-30 14:57",
+                "ranking": 3,
+                "examStartTime": "2016-09-27 14:57",
+                "examTime": 32,
+                "examLevel": "D",
+                "states": 3
+            },
+            {
+                "userStartExamTime": "2016-09-27 19:09",
+                "examTitle": "测试三",
+                "examResult": 0,
+                "examEndtime": "2016-09-30 11:44",
+                "ranking": 7,
+                "examStartTime": "2016-09-27 11:44",
+                "examTime": 60,
+                "examLevel": "D",
+                "states": 0
+            },
+            {
+                "userStartExamTime": "2016-09-27 19:09",
+                "examTitle": "测试考试222",
+                "examResult": 0,
+                "examEndtime": "2016-09-27 19:09",
+                "ranking": 1,
+                "examStartTime": "2016-09-27 08:30",
+                "examTime": 22,
+                "examLevel": "D",
+                "states": 0
+            },
+            {
+                "userStartExamTime": "2016-09-27 19:09",
+                "examTitle": "测试考试1",
+                "examResult": 32,
+                "examEndtime": "2016-09-27 19:09",
+                "ranking": 2,
+                "examStartTime": "2016-09-27 08:30",
+                "examTime": 21,
+                "examLevel": "D",
+                "states": 1
+            }
+        ],
+        "pageNum": 1,
+        "navigatePages": 8,
+        "total": 5,
+        "pages": 1,
+        "firstPage": 1,
+        "size": 5,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "isFirstPage": true
+    }
+}

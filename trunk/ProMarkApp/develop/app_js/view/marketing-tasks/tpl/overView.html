@@ -1,0 +1,52 @@
+<div class="marketing-tasks bg-gray" id="maketingTaskOverView">
+    <div class="search-content">
+
+    </div>
+    <div class="list-content" style="overflow-y:auto">
+        <!-- <div class="list-item">
+            <div style="font-size: 16px;font-weight: bolder;">
+                <span>当前序号：</span>
+                <span>1</span>
+            </div>
+            <div class="colorBlue">
+                <span>客户手机号：</span>
+                <span>13578948561</span>
+            </div>
+            <div>
+                <span class="colorGrey">状态：</span>
+                <span class="colorRed">已反馈</span>
+            </div>
+        </div> -->
+    </div>
+</div>
+<script id="maketingTaskSearch" type="text/template">
+        <div class="app_search clearfix">
+            <div class="pull-right">
+                <div class="btn btn-primary btn-fixture-search">查询</div>
+            </div>
+            <div class="overhidden">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="text" class="form-control input-fixture-search" placeholder="请输入关键字搜索">
+            </div>
+        </div>
+    </script>
+
+    <script id="maketingTaskOverItem" type="text/template">
+        <% _.each(obj.rows, function(v,i){%>
+            <div class="list-item <%=v.userResult=='1'||v.userResult=='2'?'hide':''%>" data-uuid="<%=v.uuid%>" data-index="<%=(i+1)%>" data-alllength="<%=obj.totalRecord%>">
+                    <!-- <div style="font-size: 16px;font-weight: bolder;">
+                        <span>当前序号：</span>
+                        <span><%=(i+1)%></span>
+                    </div> -->
+                    <div class="colorBlue">
+                        <span>客户手机号<%=(i+1)%>：</span>
+                        <span><%=v.mobile.substring(0,3) + "****" + v.mobile.substring(7,12)%></span>
+                        <span class="goon <%='3'==v.userResult?'':'hide'%>">继续</span>
+                    </div>
+                    <!-- <div>
+                        <span class="colorGrey">状态：</span>
+                        <span class="colorRed"><%=v.status%></span>
+                    </div> -->
+                </div>
+        <% }) %>
+    </script>

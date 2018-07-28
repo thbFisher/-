@@ -1,0 +1,438 @@
+/**
+*   知识库首页
+**/
+.mobile_repository_common_content{}
+
+.mobile_repository_common_content > .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 46px;
+    width: 100%;
+    overflow: auto;
+
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-flex: 1.0;
+    -webkit-flex: auto;
+    flex: auto;
+}
+
+.mobile_repository_common_content > .content.full{
+    bottom: 0;
+}
+
+#mobileRepositoryIndex > .menu{
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 46px;
+    width: 100%;
+}
+
+#mobileRepositoryIndex > .menu > .weui-col-33{
+    width: 33.333333333333336%;
+    line-height: 45px;
+    text-align: center;
+    /*border-right: 1px solid #ddd;*/
+    color: #000;
+}
+
+#mobileRepositoryIndex > .menu > .weui-col-33 > div{
+    border-right: 1px solid #ddd;
+}
+
+#mobileRepositoryIndex > .menu > .weui-col-33:last-child  > div{
+    border: 0;
+}
+
+/*头部*/
+.mobile_repository_common_content > .content > .header{
+    -webkit-box-flex: 0.0;
+    -webkit-flex: none;
+    flex: none;
+}
+
+.mobile_repository_common_content > .content > .header .list_ctrl_bar{
+    padding: 10px 10px 5px;
+}
+
+.mobile_repository_common_content > .content > .nav{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 1;
+
+    -webkit-box-flex: 0.0;
+    -webkit-flex: none;
+    flex: none;
+}
+
+.mobile_repository_common_content > .content > .nav > .weui-col-50{
+    width: 50%;
+    text-align: center;
+    line-height: 45px;
+}
+
+.mobile_repository_common_content > .content > .nav > .weui-col-50 > div{
+    border-right: 1px solid #ddd;
+}
+
+.mobile_repository_common_content > .content > .nav > .weui-col-50:last-child > div{
+    border: 0;
+}
+
+.mobile_repository_common_content > .content > .nav > .weui-col-50.active{
+    background-color: #0086cf;
+    color: #fff;
+}
+
+/*列表*/
+.mobile_repository_common_content > .content > .wrapper{
+    /*position: absolute;
+    top: 120px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;*/
+
+    -webkit-box-flex: 1.0;
+    -webkit-flex: auto;
+    flex: auto;
+
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+.mobile_repository_common_content > .content .inner{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    overflow: auto;
+}
+
+.base_box{
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.base_box .base_title{
+    padding: 10px 10px 0;
+}
+
+.base_box .base_title > h3{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #000;
+    font-weight: normal;
+}
+
+.base_box .base_best{
+    color: #0086cf;
+    font-size: .9em;
+    margin-top: 10px;
+    padding: 0 10px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.base_box .base_img{
+    padding: 0 5px;
+    margin-top: 10px;
+}
+
+.base_box .base_img > .img{
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    display: inline-block;
+
+    border: 1px solid #eee;
+}
+
+.base_box .base_info{
+    font-size: .9em;
+    color: #999;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.base_box .base_ctrl{
+    font-size: .9em;
+    color: #999;
+    padding: 0 10px;
+}
+
+.base_box .base_ctrl > div{
+    line-height: 40px;
+}
+
+.base_box .base_ctrl .img{
+    font-size: 0;
+    position: relative;
+    top: 9px;
+}
+
+.base_box .base_ctrl .img > img{
+    width: 20px;
+    height: 20px;
+}
+
+.base_box .base_ctrl .img+div{
+    margin-left: 5px;
+}
+
+/**
+*   投诉案例
+**/
+.example_box{
+    background-color: #fff;
+    padding: 10px 10px 8px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.example_box:last-child{
+    border: 0;
+}
+
+.example_box h3{
+    font-weight: normal;
+    color: #000;
+    margin-bottom: 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.example_box p{
+    font-size: .9em;
+    color: #999;
+    line-height: 22px;
+}
+
+.example_box .iconfont{
+    position: absolute;
+    right: 10px;
+    top: -webkit-calc(50% - 10px);
+    top: calc(50% - 10px);
+    font-size: 30px;
+    color: #ccc;
+}
+
+/**
+*   提问
+**/
+#mobileRepositoryQuestion .content{
+ 
+}
+
+#mobileRepositoryQuestion .ctrl{
+
+    line-height: 45px;
+    background-color: #0086cf;
+    text-align: center;
+    color: #fff;
+}
+
+#mobileRepositoryQuestion .select_wrapper{
+    margin-top: 10px;
+}
+
+.input_question{
+    height: 80px;
+    resize: 0;
+    -webkit-user-select: text;
+}
+
+/**
+*
+**/
+.input_image_wrapper{
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.input_image_btn{
+    -webkit-box-flex: 0.0;
+    -webkit-flex: none;
+    flex: none;
+}
+
+.input_image_content{
+    -webkit-box-flex: 1.0;
+    -webkit-flex: auto;
+    flex: auto;
+    padding-left: 10px;
+}
+
+.btn_camera{
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    border: 1px dotted #ddd;
+    border-radius: 5px;
+}
+
+.btn_camera .iconfont{
+    font-size: 35px;
+    color: #aaa;
+    position: relative;
+    top: 5px;
+}
+
+.input_image_wrapper .warning{
+    font-size: .9em;
+    color: #999;
+    line-height: 60px;
+}
+
+/**
+*
+**/
+.input_image_box{
+    float: left;
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+@media(min-width: 375px){
+    .input_image_box{
+        width: -webkit-calc(100% / 3.5);
+        width: calc(100% / 3.5);
+    }
+}
+
+@media(min-width: 400px){
+    .input_image_box{
+        width: -webkit-calc(100% / 4);
+        width: calc(100% / 4);
+    }
+}
+
+.input_image_box .img{
+    display: inline-block;
+    position: relative;
+}
+
+.input_image_box .img > img{
+    display: none;
+}
+
+.input_image_box .img > .img_img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #eee;
+}
+
+.input_image_box .delete{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+}
+
+.input_image_box .delete .iconfont{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+/**
+*   
+**/
+
+.common-header .right-button .answer{
+    width: 50px;
+    font-size: 1em;
+}
+
+#mobileRepositoryDetail .form{
+    display: none;
+}
+
+#mobileRepositoryDetail .best_title{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: green;
+    font-weight: 700;
+}
+
+#mobileRepositoryDetail .best_title .iconfont{
+    color: gold;
+}
+
+#mobileRepositoryDetail .other_title{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 700;
+    color: #999;
+}
+
+.question_content.base_box{
+    border-top: 0;
+}
+
+.question_content.base_box .base_title > h3{
+    display: block;
+}
+
+#mobileRepositoryDetail .close_question_btn{
+    font-size: .9em;
+}
+
+.example_wrapper .title{
+    text-align: center;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.example_wrapper .weui_cell{
+    font-size: .9em;
+}
+
+.example_wrapper .app_detail_content .weui_cell_ft{
+    width: 60%;
+    padding-left: 10px;
+}

@@ -1,0 +1,111 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-app-preferences": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "com.cordova.plugins.sms": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "com.mbppower.camerapreview": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-open": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-audio-recorder-api": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-xgpush": {
+            "ACCESS_ID": "A111",
+            "ACCESS_KEY": "B111",
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-encrypt-assets": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-crop": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-xiaomi-push": {
+            "XIAOMI_PUSH_APPID": "2882303761517512656",
+            "XIAOMI_PUSH_APPKEY": "5321751217656",
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-PgyUpdatePlugin": {
+            "PGYER_APPID": "c8537f4c81e1109cd8b1f3bbd4c36e35",
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "AAAA",
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "call-number": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        },
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.zsoftware.promark897611"
+        }
+    },
+    "dependent_plugins": {}
+}

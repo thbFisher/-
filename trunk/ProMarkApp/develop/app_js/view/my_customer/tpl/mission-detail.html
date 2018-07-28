@@ -1,0 +1,141 @@
+<div class="common-content bg-gray">
+    <div class="common-content growth bg-gray" id="missionDetailContent">
+        <div class="weui_cells mission_detail_content app_detail_content">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>工单名称</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>客户数</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>派发时间</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>完成时限</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>派单人</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>联系电话</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>营销服务政策</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>营销服务口径</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mission_detail_ctrl btn-send">
+        导出营销服务单
+    </div>
+</div>
+
+<script type="text/template" id="missionDetailTpl">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>工单名称</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=title%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>客户数</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=targetCont%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>派发时间</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=beginTime.substr(0, 16)%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>完成时限</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=endTime.substr(0, 16)%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>派单人</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=distributeName%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>联系电话</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=distributeMobile%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>营销服务政策</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=serviceDetail%>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>营销服务口径</p>
+        </div>
+        <div class="weui_cell_ft">
+            <%=serviceCaliber%>
+        </div>
+    </div>
+</script>

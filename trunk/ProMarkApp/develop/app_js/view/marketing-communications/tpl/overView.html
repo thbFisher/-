@@ -1,0 +1,101 @@
+<div class="marketing-communications-overview  bg-gray" id="marketingCommunicationsOverview">
+    <div class="search-content">
+
+    </div>
+    <div class="list-content">
+        <!-- <div class="listItem">
+            <div class="channel-name">
+                <div class="name">渠道名称</div>
+                <div class="val">XXXXX1</div>
+            </div>
+            <div class="channel-company">
+                <div class="name">所属分公司</div>
+                <div class="val">XXXXX2</div>
+            </div>
+            <div class="channel-oder">
+                <div class="name">排名</div>
+                <div class="val">99</div>
+            </div>
+        </div>
+        <div class="listItem">
+            <div class="channel-name">
+                <div class="name">渠道名称</div>
+                <div class="val">XXXXX1</div>
+            </div>
+            <div class="channel-company">
+                <div class="name">所属分公司</div>
+                <div class="val">XXXXX2</div>
+            </div>
+            <div class="channel-oder">
+                <div class="name">排名</div>
+                <div class="val">99</div>
+            </div>
+        </div> -->
+    </div>
+</div>
+<script id="marketingCommunicationsOverviewSearch" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-fixture-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-fixture-search" placeholder="请输入电话号码搜索">
+        </div>
+    </div>
+</script>
+<script id="marketingCommunicationsOverviewTask" type="text/template">
+    <% _.each(list, function(v,i){ %>
+    <div class="listItem" data-type="0" data-index="<%=i%>">
+            <div class="channel-name">
+                <div class="name">渠道工位</div>
+                <div class="val"><%=v.channelStation%></div>
+            </div>
+            <div class="channel-oder textMiddle">
+                <div class="name"><%=v.rank%></div>
+            </div>
+        </div>
+    <% }) %>
+</script>
+<script id="marketingCommunicationsOverviewGame" type="text/template">
+    <% _.each(list, function(v,i){ %>
+    <div class="listItem" data-type="1" data-index="<%=i%>" data-uuid="<%=v.channelUUID%>" data-marketuuid="<%=v.markReportUuid%>">
+            <div class="channel-name width45">
+                <div class="name"><%=v.channelTitle%></div>
+                <div class="val">
+                    <!-- <span>所属分公司：</span> -->
+                    <span class="colorBlue"><%=v.channelArea%></span>
+                </div>
+            </div>
+            <div class="channel-company width42">
+                <div class="name"><%=v.channelNumber%></div>
+                <div class="val">
+                    <!-- <span>是否连锁渠道：</span> -->
+                    <span class="colorBlue"><%=v.chainChannel%></span>
+                </div>
+            </div>
+            <div class="channel-oder">
+                <div class="name">排名</div>
+                <div class="val"><%=v.rankGroup%></div>
+            </div>
+        </div>
+        <% }) %>
+</script>
+<script id="marketingCommunicationsOverviewPerson" type="text/template">
+    <% _.each(list, function(v,i){ %>
+    <div class="listItem" data-type="2" data-index="<%=i%>">
+            <div class="channel-name" style="width: 65%;">
+                <div class="name"><%=v.channelTitle%></div>
+                <div class="val"><%=v.channelNumber%></div>
+            </div>
+            <div class="channel-company">
+                <div class="name"><%=v.channelArea%></div>
+                <div class="val"><%=v.channelStation%></div>
+            </div>
+            <div class="channel-oder">
+                <div class="name"></div>
+                <div class="val"></div>
+            </div>
+        </div>
+        <% }) %>
+</script>

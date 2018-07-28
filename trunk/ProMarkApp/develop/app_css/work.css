@@ -1,0 +1,106 @@
+.work-table{
+    background-color: #fff;
+}
+
+.work-table > tbody > tr > td{
+    /* border: 1px solid #ddd; */
+    position: relative ;
+}
+.work-table > tbody > tr > td .redPot{
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: red;
+    right: 23px;
+    border-radius: 5px;
+    top: 4px;
+}
+.work-table > tbody > tr > td.work-title{
+    font-weight: bold;
+    padding: 10px;
+}
+.work-table > tbody > tr > td.work-title>span{
+    border-left: 5px solid rgb(14 ,187,239);
+    padding-left: 10px;
+    color: rgb(161,161,161);
+}
+.work-list{
+    text-align: center;
+    font-size: .8em;
+}
+.border-top-grey{
+    border-top: 1px solid lightgrey ;
+}
+/**
+*
+**/
+.icon-wrapper{
+    /* height: 50px;
+    padding-top: 10px; */
+    text-align: center;
+}
+
+.icon-wait img{
+    /* width: 23px; */
+    position: relative;
+    top: 5px;
+}
+.icon-marketing img{
+    /* width: 30px; */
+}
+.icon-read img{
+    /* width: 30px; */
+}
+.icon-exam img{
+    /* width: 26px; */
+}
+.icon-knowledge img{
+    /* width: 30px; */
+}
+.icon-diary img{
+    /* width: 20px; */
+}
+.icon-research img{
+    /* width: 22px; */
+}
+
+/**
+*
+**/
+#expectingView{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+#expectingView .expecting-content{
+    width: 100px;
+    height: 170px;
+    margin-top: -100px;
+}
+
+#expectingView .img{
+    font-size: 0;
+    margin-bottom: 10px;
+}
+
+#expectingView .img > img{
+    width: 100px;
+    height: 100px;
+}
+
+#expectingView .text{
+    color: #46bc0e;
+    text-align: center;
+    font-size: 1.2em;
+}

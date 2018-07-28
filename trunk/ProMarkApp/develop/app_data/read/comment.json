@@ -1,0 +1,66 @@
+{
+    "obj": {
+        "anthor": "li",
+        "commentsCount": 13,
+        "courDesc": "测试课件二",
+        "courImageUrl": "http://192.168.36.221:8080/HNwxMultP/hnwximg/read/courseware/cover/2016-09-13/13fe8983-b353-4251-8457-94f7aae065e1.jpg",
+        "courName": "测试课件二",
+        "courTypeStr": "业务知识",
+        "createTime": "2016-09-12 09:27",
+        "department": "政企",
+        "shareUrl": "http://wxdeveloper1.talkyun.com.cn/HNwxMultP/weixin/author.do?id=courseware_info&appId=wx584b876e5575c96a&coursewareUuid=fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6",
+        "thumbsCount": 1,
+        "userCount": 2,
+        "uuid": "fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6",
+        "viewCount": 71,
+        "isThumbs": true,
+        "list": {
+            "endRow": 2,
+            "firstPage": 1,
+            "hasNextPage": false,
+            "hasPreviousPage": false,
+            "isFirstPage": true,
+            "isLastPage": true,
+            "lastPage": 1,
+            "navigatePages": 8,
+            "navigatepageNums": [],
+            "nextPage": 0,
+            "pageNum": 1,
+            "pageSize": 10,
+            "pages": 1,
+            "prePage": 0,
+            "rows": [
+                {
+                    "commentsContent": "测试1",
+                    "commentsCount": 7,
+                    "commentsTime": "2016-09-12 10:41",
+                    "company": "开发组",
+                    "createTime": 1473648075000,
+                    "headimgurl": "http://wx.qlogo.cn/mmopen/meicl4icO3LYCWXBcTFp7sN3TMpwBNSRfjsXFa1hjKvoFWBpeawYpbft1DVqPCpzEFjj24Sia2x3AfaAK3w8EFqW6CO8tzHTEWz/0",
+                    "id": 2,
+                    "isThumbs": true,
+                    "name": "想念测试",
+                    "noticeUuid": "fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6",
+                    "openid": "o7-BtuLdE4LodNQhJoJaXF33ftSo",
+                    "secondaryJson": [
+                        {
+                            "commentsContent": "啊啊啊啊啊",
+                            "commentsTime": "2016-09-12 10:57",
+                            "company": "开发组",
+                            "headimgurl": "http://wx.qlogo.cn/mmopen/meicl4icO3LYCWXBcTFp7sN3TMpwBNSRfjsXFa1hjKvoFWBpeawYpbft1DVqPCpzEFjj24Sia2x3AfaAK3w8EFqW6CO8tzHTEWz/0",
+                            "isThumbs": false,
+                            "name": "想念测试",
+                            "thumbsCount": 0,
+                            "uuid": "96c0b0a1-8c50-4b4d-b973-4b17b44c4e43"
+                        }
+                    ],
+                    "thumbsCount": 1,
+                    "uuid": "7b8c1ef8-b8ba-4953-b836-e9b55002a307"
+                }
+            ],
+            "size": 2,
+            "startRow": 1,
+            "total": 2
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<div class="chatRoomHeader">
+    <div class="titleAndNumber">
+        <span class="">沟通</span>
+        <span class="">(0)</span>
+    </div>  
+    <img class="bannerbg" src="app_img/banner.png" alt="">
+    <img class="searchBtn" src="app_img/search.png" alt="">
+</div>
+<div class="common-content overhidden with-menu bg-gray" id="chatroomList">
+    <div class="refresh_inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="chatroom-group-wrapper">
+            <div class="warning-panel">暂无数据</div>
+            <!--<div class="chatroom-group-box clearfix">
+                <div class="pull-left">
+                    <img src="app_img/noavatar.png" alt="">
+                </div>
+                <div class="overhidden">
+                    <div class="title clearfix">
+                        <div class="pull-left">测试名称</div>
+                        <div class="pull-right">16:12</div>
+                    </div>
+                    <p class="info">
+                        测试测试测试
+                    </p>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+<script id="tpl" type="text/template">
+    <%
+        if(list.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(list,function(v,i){
+    %>
+        <div class="chatroom-group-box clearfix" data-uuid="<%=v.uuid%>" data-title="<%=v.roomTitle%>">
+            <div class="pull-left">
+                <% if(v.roomImg){ %>
+                    <!--<img src="<%=v.roomImg%>">-->
+                    <div class="img" style="background:url(<%=v.roomImg%>) no-repeat center center/cover"></div>
+                <% }else{ %>
+                    <!--<img src="app_img/icon.jpg">-->
+                    <div class="img" style="background:url(app_img/icon.jpg) no-repeat center center/cover"></div>
+                <% } %>
+            </div>
+            <div class="overhidden">
+                <div class="title clearfix">
+                    <div class="pull-left"><%=v.roomTitle%></div>
+                    <div class="overhidden"><%=v.createTimeStr.substr(5,5)%></div>
+                </div>
+                <p class="info">
+                    <%=v.roomDesc%>
+                </p>
+            </div>
+        </div>
+    <%
+        });
+    %>
+</script>

@@ -1,0 +1,35 @@
+<div class="common-content overhidden bg-gray">
+    <div class="refresh_inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+        <div class="list-info-content exam-bank-wrapper bg-white"></div>
+	</div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(list.length == 0){
+    %>
+        <div class="warning-panel">暂无题库信息</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(list,function(v){
+    %>
+        <div class="exam-bank-box" data-uuid="<%=v.uuid%>">
+           <div class="title"><%=v.name%></div>
+           <div class="questionsCount">共 <%=v.questionsCount%> 题</div>
+           <div class="arrow"><i class="iconfont icon-qianjin"></i></div>
+        </div>
+    <%
+        });
+    %>
+</script>

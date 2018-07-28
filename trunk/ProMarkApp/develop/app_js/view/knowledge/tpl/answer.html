@@ -1,0 +1,50 @@
+<div class="common-content">
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <textarea class="weui_textarea input-answer" placeholder="请填写回答内容"></textarea>
+                    <div class="weui_textarea_counter"><span>0</span>/400</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-camera">
+        <div class="btn-input-camera">
+            <i class="iconfont icon-paizhaoshangchuan"></i>
+        </div>
+        <div class="input-image clearfix">
+            <!--<div class="input-image-box">
+                <img src="app_img/noavatar.png">
+                <div class="delete">
+                    <i class="iconfont icon-cuowu"></i>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    
+    <div class="input-control">
+        <button class="btn btn-primary btn-block btn-lg btn-submit">提交</button>
+    </div>
+</div>
+
+<div class="upload-loading-mask">
+    <div class="upload-loading-inner">
+        <p>正在上传 <span class="upload-index">0</span>/<span class="upload-total">0</span> 张图片</p>
+        <div class="weui_progress">
+            <div class="weui_progress_bar">
+                <div class="weui_progress_inner_bar js_progress upload-progress" style="width: 0%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="imageTpl" type="text/template">
+    <div class="input-image-box">
+        <img src="<%=src%>" class="prepare-upload">
+        <div class="delete">
+            <i class="iconfont icon-cuowu"></i>
+        </div>
+    </div>
+</script>

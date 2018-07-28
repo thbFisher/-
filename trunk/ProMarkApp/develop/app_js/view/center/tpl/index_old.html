@@ -1,0 +1,158 @@
+<div class="common-content center-content">
+    <div class="weui-pull-to-refresh-layer">
+        <div class="pull-to-refresh-arrow"></div>
+        <div class="pull-to-refresh-preloader"></div>
+        <div class="down">下拉刷新</div>
+        <div class="up">释放刷新</div>
+        <div class="refresh">正在刷新...</div>
+        <div class="done">刷新完成</div>
+    </div>
+    <div class="weui_cells user-info-content">
+        <div class="title">个人信息</div>
+        <div class="weui_cell avatar">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>头像</p>
+            </div>
+            <div class="weui_cell_ft">
+                <img src="app_img/noavatar.png">
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>姓名</p>
+            </div>
+            <div class="weui_cell_ft">
+                -
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>手机号码</p>
+            </div>
+            <div class="weui_cell_ft">
+                -
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>所属</p>
+            </div>
+            <div class="weui_cell_ft">
+                -
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>邮箱</p>
+            </div>
+            <div class="weui_cell_ft show-email">
+                <span>-</span>
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+        </div>
+        
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>意见反馈</p>
+            </div>
+            <div class="weui_cell_ft show-advise">
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+        </div>
+        
+        <div class="title">应用信息</div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>版本号</p>
+            </div>
+            <div class="weui_cell_ft check-version">
+                <span>-</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <button class="btn btn-primary btn-block btn-lg btn-logout">退出登录</button>
+    </div>
+</div>
+
+<script id="infoTpl" type="text/template">
+    <div class="title">个人信息</div>
+        <div class="weui_cell avatar">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>头像</p>
+            </div>
+            <div class="weui_cell_ft">
+                <% if(user.headImgUrl){ %>
+                    <img src="<%=user.headImgUrl%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>姓名</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=user.name%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>手机号码</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=user.mobile%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>所属</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=user.company%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>邮箱</p>
+            </div>
+            <div class="weui_cell_ft show-email">
+                <span>
+                    <% if(user.email){ %>
+                        <%=user.email%>
+                    <% }else{ %>
+                        -
+                    <% } %>
+                </span>
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>意见反馈</p>
+            </div>
+            <div class="weui_cell_ft show-advise">
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+        </div>
+        <div class="title">应用信息</div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>版本号</p>
+            </div>
+            <% 
+                var versionClass = '';
+                if(platform == 'android'){
+                    versionClass = 'app-update';
+                }
+            %>
+            <div class="weui_cell_ft check-version <%=versionClass%>">
+                <span>V <%=version%></span>
+                <% if(platform == 'android'){ %>
+                    <i class="iconfont icon-jianchagengxin"></i>
+                <% } %>
+            </div>
+        </div>
+</script>

@@ -1,0 +1,81 @@
+<div class="common-content">
+    <div class="materials-header marketing-form-header bg-gray">
+        <div class="form-group">
+            <input type="text" class="form-control marketing-keyword" placeholder="输入关键字搜索">
+            <button class="icon icon-times clear-form"></button>
+            <div class="input-group-addon search-keyword">
+                <i class="iconfont icon-sousuo"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="common-content marketing-mission-list">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+        <div class="list-warning">
+            搜索结果如下，点此查看全部任务
+        </div>
+        <div class="marketing-mission-wrapper">
+            
+        </div>
+    </div>
+</div>
+
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无任务数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="mission-list-box" data-uuid="<%=v.uuid%>">
+            <h3><%=v.title%></h3>
+            <p>派发时间：<%=v.beginTime.substr(0, 16)%></p>
+            <p>完成时限：<%=v.endTime.substr(0, 16)%></p>
+            <p>客户数：<%=v.targetCont%></p>
+
+            <% if(v.signStatus){ %>
+                <div class="ribon ribon-success">已签收</div>
+            <% }else{ %>
+                <div class="ribon ribon-danger">未签收</div>
+            <% } %>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

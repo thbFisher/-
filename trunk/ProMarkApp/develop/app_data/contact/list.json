@@ -1,0 +1,71 @@
+{
+    "obj": [
+        {
+            "name": "移动公司",
+            "list": [
+                {
+                    "name": "湘潭市移动公司",
+                    "list": [
+                        {
+                            "name": "白石营业厅",
+                            "list": [
+                                {
+                                    "name": "张三"
+                                },
+                                {
+                                    "name": "李四"
+                                }
+                            ],
+                            "hasNextMenu": 0
+                        }
+                    ],
+                    "hasNextMenu": 1
+                },
+                {
+                    "name": "湘乡市移动公司",
+                    "list": [],
+                    "hasNextMenu": 0
+                },
+                {
+                    "name": "湘潭县移动公司",
+                    "list": [],
+                    "hasNextMenu": 0
+                },
+                {
+                    "name": "韶山市移动公司",
+                    "list": [],
+                    "hasNextMenu": 0
+                }
+            ],
+            "hasNextMenu": 1
+        },
+        {
+            "name": "渠道",
+            "list": [
+                {
+                    "name": "渠道中心",
+                    "list": [
+                        {
+                            "name": "张三"
+                        },
+                        {
+                            "name": "李四"
+                        }
+                    ],
+                    "hasNextMenu": 0
+                },
+                {
+                    "name": "城区",
+                    "list": [],
+                    "hasNextMenu": 0
+                },
+                {
+                    "name": "湘潭县",
+                    "list": [],
+                    "hasNextMenu": 0
+                }
+            ],
+            "hasNextMenu": 1
+        }
+    ]
+}

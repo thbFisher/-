@@ -1,0 +1,161 @@
+<div class="common-content with-menu bottom-pd20 bg-gray">
+    <div class="contact-header">
+        <div class="search clearfix">
+            <div class="pull-right">
+                <div class="btn btn-primary btn-contact-search">查询</div>
+            </div>
+            <div class="overhidden">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="text" class="form-control input-contact-search" placeholder="请输入姓名或电话号码">
+            </div>
+        </div>
+        <div class="nav">
+            联系人 >
+        </div>
+    </div>
+    <div class="contact-list-wrapper">
+        <div class="contact-list">
+            <div class="contact-box clearfix contact-type" data-type="1" data-typestr="移动公司">
+                <div class="pull-left">
+                    <i class="angle"></i>
+                    移动公司
+                </div>
+                <div class="overhidden"></div>
+            </div>
+            <div class="contact-box clearfix contact-type" data-type="2" data-typestr="渠道">
+                <div class="pull-left">
+                    <i class="angle"></i>
+                    渠道
+                </div>
+                <div class="overhidden"></div>
+            </div>
+            <!--<div class="contact-box clearfix">
+                <div class="pull-left">
+                    <i class="angle"></i>
+                    湘潭移动
+                </div>
+                <div class="pull-right">120人</div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+<script id="typeList" type="text/template">
+    <div class="contact-list">
+        <div class="contact-box clearfix contact-type" data-type="1" data-typestr="移动公司">
+            <div class="pull-left">
+                <i class="angle"></i>
+                移动公司
+            </div>
+            <div class="overhidden"></div>
+        </div>
+        <div class="contact-box clearfix contact-type" data-type="2" data-typestr="渠道">
+            <div class="pull-left">
+                <i class="angle"></i>
+                渠道
+            </div>
+            <div class="overhidden"></div>
+        </div>
+    </div>
+</script>
+
+<script id="companyList" type="text/template">
+    <% if(!list.length){ %>
+        <div class="warning-panel">暂无数据</div>
+    <% } %>
+
+    <div class="contact-list">
+    <%
+        _.each(list, function(v,i){
+    %>
+        <div class="contact-box clearfix contact-company" data-companystr="<%=v.company%>">
+            <div class="pull-left">
+                <i class="angle"></i>
+                <%=v.company%>
+            </div>
+            <div class="overhidden"><%=v.coun%>人</div>
+        </div>
+    <%
+        });
+    %>
+    </div>
+</script>
+
+<script id="sectionList" type="text/template">
+    <% if(!data.rows.length){ %>
+        <div class="warning-panel">暂无数据</div>
+    <% } %>
+
+    <div class="contact-list">
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="contact-box clearfix contact-section" data-sectionstr="<%=v.section%>">
+            <div class="pull-left">
+                <i class="angle"></i>
+                <%=v.section%>
+            </div>
+            <div class="overhidden"><%=v.coun%>人</div>
+        </div>
+    <%
+        });
+    %>
+    </div>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row" id="sectionListControl">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>
+
+<script id="contactList" type="text/template">
+    <% if($.isEmptyObject(obj)){ %>
+        <div class="warning-panel">暂无数据</div>
+    <% } %>
+    
+    <%
+        var arr = [];
+    %>
+    <% 
+        _.each(obj, function(o,k){ 
+            arr.push(k);
+    %>
+        <div class="contact-list-title" id="<%=k%>"><%=k%></div>
+        <div class="contact-list-box-wrapper">
+            <% _.each(o, function(v,i){ %>
+                <div class="contact-list-box" data-type="<%=v.type%>" data-mobile="<%=v.mobile%>">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <i class="angle"></i>
+                            <%=v.name%>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% }) %>
+
+    <!--ul class="slide-first-char">
+        <% _.each(arr, function(a){ %>
+            <li><%=a%></li>
+        <% }) %>
+    </ul-->
+</script>

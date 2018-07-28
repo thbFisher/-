@@ -1,0 +1,80 @@
+<div class="common-content bg-gray online_read_index">
+    <div class="read_wrapper">
+        <!--<div class="read_record_box">
+            <div class="read_box clearfix">
+                <div class="pull-left">
+                    <div class="read_box_img" style="background: url(app_img/none.jpg) no-repeat center center/140px 70px"></div>
+                </div>
+                <div class="overhidden">
+                    <h3>多少九分裤说领导房间是了东方</h3>
+                    <p>说领导开发机历史打飞机路上看的积分路上看的积分</p>
+                    <div class="clearfix type">
+                        <div class="pull-left">浏览量：12444</div>
+                        <div class="pull-right">
+                            类别：热门(4G、家宽)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="record_time">于 2017-02-22 20:50 首次阅读</div>
+        </div>-->
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="read_record_box">
+            <div class="read_box clearfix">
+                <div class="pull-left">
+                    <div class="read_box_img" style="background: url(<%=v.courImageUrl%>) no-repeat center center/cover"></div>
+                </div>
+                <div class="overhidden">
+                    <h3><%=v.courName%></h3>
+                    <p><%=v.courdesc%></p>
+                    <div class="clearfix type">
+                        <div class="pull-left">浏览量：<%=v.readcount%></div>
+                        <div class="pull-right">
+                            类别：<%=v.courTypeStr%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="record_time">于 <%=v.createTime.substr(0,16)%> 首次阅读</div>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

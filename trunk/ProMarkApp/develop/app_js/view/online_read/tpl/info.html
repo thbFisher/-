@@ -1,0 +1,132 @@
+<div class="common-content bg-gray" id="onlineReadInfo">
+    <div class="content">
+        <div class="app_detail_content weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>资料标题</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>资料说明</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>资料类别</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>提供人</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>提供科室</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>阅读次数</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>已阅人数</p>
+                </div>
+                <div class="weui_cell_ft">
+                    -
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-row ctrl">
+        <!-- <div class="weui-col-50 btn-view-detail">
+            查看详情
+        </div> -->
+        <div class="weui-col-50 btn-view-attachment">
+            查看附件
+        </div>
+    </div>
+</div>
+
+<script id="infoTpl" type="text/template">
+    <div class="app_detail_content weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>资料标题</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.courName%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>资料说明</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.courDesc%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>资料类别</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.courTypeStr%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>提供人</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.anthor%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>提供科室</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.department%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>阅读次数</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.viewCount%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>已阅人数</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=data.userCount%>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,23 @@
+<div class="common-content bg-gray">
+    <div class="pd10 bg-white news-detail-content-wrapper">
+        <div class="news-detail-header">
+            <h3>-----</h3>
+            <p>更新时间：0000-00-00</p>
+        </div>
+
+        <div class="news-detail-artical">
+        </div>
+    </div>
+</div>
+
+<script id="news-detail-content-tpl" type="text/template">
+    <div class="news-detail-header">
+        <h3><%=data.title%></h3>
+        <p>更新时间：<%=data.createTime%></p>
+    </div>
+
+    <div class="news-detail-artical">
+        <%=$.formatText(data.bannerContent)%>
+    </div>
+</script>
+

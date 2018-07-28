@@ -1,0 +1,169 @@
+<div class="common-content with-menu bg-gray" style="top: 0px">
+    <div class="swiper-container index-banner">
+        <div class="swiper-wrapper">
+            <div class="app-index-header-container">
+                <div class="person-info"></div>
+                <div class="un-read-news">
+                    <div class="new-item">
+                        <div class="height10 whiteOpacity3"></div>
+                        <div class="_item borderright whiteOpacity3 workLink" data-link="work/index">
+                            <span>5项</span>
+                            <br/>
+                            <span>待营销工单</span>
+                        </div>
+                        <div class="height10 whiteOpacity3"></div>
+                    </div>
+                    <div class="new-item">
+                        <div class="height10 whiteOpacity3"></div>
+                        <div class="_item borderright whiteOpacity3 workLink" data-link="marketing-task/work/index">
+                            <span>125项</span>
+                            <br/>
+                            <span>待学习任务</span>
+                        </div>
+                        <div class="height10 whiteOpacity3"></div>
+                    </div>
+                    <div class="new-item">
+                        <div class="height10 whiteOpacity3"></div>
+                        <div class="_item whiteOpacity3 workLink" data-link="online-read-index/work/index">
+                            <span>12篇</span>
+                            <br/>
+                            <span>待办其他事项</span>
+                        </div>
+                        <div class="height10 whiteOpacity3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <!--<div class="swiper-pagination"></div>-->
+    </div>
+
+    <div class="index-menu">
+        <div class="applacationItem  sail-task" data-link="marketing-task/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>营销任务</span> -->
+        </div>
+        <div class="applacationItem sail-picfont" data-link="graphic-marketing/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>图文营销</span> -->
+        </div>
+        <div class="applacationItem remunetion" data-link="query-remuneration/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>酬金查询</span> -->
+        </div>
+        <div class="applacationItem notice" data-link="marketing-communications/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>营销通报</span> -->
+        </div>
+        <div class="applacationItem myCustom" data-link="my-customer/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>我的客户</span> -->
+        </div>
+        <div class="applacationItem learn-oline" data-link="online-read-index/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>在线学习</span> -->
+        </div>
+        <div class="applacationItem test-online"  data-link="exam-index/work/index">
+            <!-- <div class="item-icon"></div>
+            <span>在线评测</span> -->
+        </div>
+        <div class="applacationItem sail-speak"  data-title="营销话术">
+            <!-- <div class="item-icon"></div>
+            <span>营销话术</span> -->
+        </div>
+        <div class="applacationItem answer-query" data-title="互动问答">
+            <!-- <div class="item-icon"></div>
+            <span>互动问答</span> -->
+        </div>
+        <div class="applacationItem service-query" data-title="服务巡检">
+            <!-- <div class="item-icon"></div>
+            <span>服务巡检</span> -->
+        </div>
+        <!-- <div class="applacationItem service-offline">
+            <div class="item-icon"></div>
+            <span>服务上门</span>
+        </div> -->
+        <div class="applacationItem more" data-link="work/index">
+            <!-- <div class="item-icon"></div>
+            <span>更多</span> -->
+        </div>
+    </div>
+    <div class="sgin-in-and-point">
+        <div class="content">
+            <span class="sgin-in showSeeNext" data-title="签到"></span>
+            <span class="middleblock"></span>
+            <span class="point showSeeNext" data-title="积分"></span>
+        </div>
+    </div>
+    <div class="dynamic-info">
+        <div class="info-item showSeeNext toLink" data-title="互动问答" data-link="">
+            <div class="base-info">
+                <span class="module-and-time">
+                    <span class="module-name">互动问答</span>
+                    <span class="time">30分钟前</span>
+                </span>
+            </div>
+            <div class="answer-info">
+                <span class="answer-info-left">马配芬回答了您提出的问题</span>
+                <span class="lookderect">立即查看</span>
+            </div>
+        </div>
+        <div class="info-item showSeeNext" data-title="服务上门">
+            <div class="base-info">
+                <span class="module-and-time">
+                    <span class="module-name">服务上门</span>
+                    <span class="time">24分钟前</span>
+                </span>
+            </div>
+            <div class="answer-info">
+                <span class="answer-info-left">小米对您的服务做出了评价</span>
+                <span class="lookderect">立即查看</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="indexPersonUserInfo" type="text/template">
+            <div class="head-img">
+                <img width="62" height="62"  src="<%=window.user.afterParseImg%>" alt="">
+            </div>
+            <div class="font-info">
+                <div class="person-name"><%=data.name%></div>
+                <div class="person-other-info">
+                    <span>部门 ： <%=data.company%></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <span>工号 ： <%=data.code||'032'%></span> -->
+                </div>
+            </div>
+            <!-- <div class="icon-unread-notice">
+                <img src="app_img/index/icon-notice.png" alt="">
+            </div> -->
+            <!-- <span class="unread-num"><%=data.unreadNewsNum||'0'%></span> -->
+</script>
+<script id="indexUnreadNews" type="text/template">
+    <div class="new-item">
+        <div class="height10 whiteOpacity3"></div>
+        <div class="_item borderright whiteOpacity3 workLink" data-link="marketing-task/work/index">
+            <span><%=data.markJobsDetailNewSize%>项</span>
+            <br/>
+            <span>待营销工单</span>
+        </div>
+        <div class="height10 whiteOpacity3"></div>
+    </div>
+    <div class="new-item">
+        <div class="height10 whiteOpacity3"></div>
+        <div class="_item borderright whiteOpacity3 workLink" data-link="online-read-index/work/index">
+            <span><%=data.readCoursewareSize%>项</span>
+            <br/>
+            <span>待学习任务</span>
+        </div>
+        <div class="height10 whiteOpacity3"></div>
+    </div>
+    <div class="new-item">
+        <div class="height10 whiteOpacity3"></div>
+        <div class="_item whiteOpacity3 workLink" data-link="work/index">
+            <span>5项</span>
+            <br/>
+            <span>待办其他事项</span>
+        </div>
+        <div class="height10 whiteOpacity3"></div>
+    </div>
+</script>

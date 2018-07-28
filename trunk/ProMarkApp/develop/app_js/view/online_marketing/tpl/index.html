@@ -1,0 +1,231 @@
+<div class="common-content bg-gray" id="onlineContent">
+    <div class="header">
+        <table class="header_table table">
+            <tr>
+                <td colspan="2">
+                    <img src="app_img/noavatar.png">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    ----
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    -----------
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <div class="info">
+                        <div class="bold">所属营业厅
+                            <div class="angle"></div>
+                        </div>
+                        <div class="list unactive">
+                            -----
+                        </div>
+                    </div>
+                </td>
+                <td width="50%">
+                    <div class="info">
+                        <div class="bold">所属部门</div>
+                        <p>-----</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="content">
+
+        <div class="content-header">
+            
+        </div>
+
+        <div class="content-nav weui-row">
+            <div class="weui-col-33 active" data-type="1">
+                <div>任务查询</div>
+            </div>
+            <div class="weui-col-33" data-type="2">
+                <div>常客查询</div>
+            </div>
+            <div class="weui-col-33" data-type="3">
+                <div>酬金查询</div>
+            </div>
+        </div>
+
+        <div class="content-content">
+            <!--<div id="mission_content">
+                <div class="weui-pull-to-refresh-layer">
+                    <div class="pull-to-refresh-arrow"></div>
+                    <div class="pull-to-refresh-preloader"></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新...</div>
+                    <div class="done">刷新完成</div>
+                </div>
+
+                <div class="list-warning">
+                    搜索结果如下，点此查看全部
+                </div>
+
+                <div class="mission_wrapper">
+                    <div class="mission_box">
+                        <h3>2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务</h3>
+                        <p>派发时间：2016-11-29 14:24</p>
+                        <p>完成时限：2016-12-16 14:24</p>
+                        <p>客户数：3</p>
+                        
+                        <div class="text">已接受</div>
+                    </div>
+
+                    <div class="list-control weui-row">
+                        <div class="weui-col-40">
+                            <button class="btn btn-default btn-prev">上一页</button>
+                        </div>
+                        <div class="weui-col-20">1/20</div>
+                        <div class="weui-col-40">
+                            <button class="btn btn-default btn-next">下一页</button>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="mission_box">
+                <h3>2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务</h3>
+                <p>派发时间：2016-11-29 14:24</p>
+                <p>完成时限：2016-12-16 14:24</p>
+                <p>客户数：3</p>
+                
+                <div class="text">已接受</div>
+            </div>
+
+            <div class="mission_box">
+                <h3>2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务2月份湘潭市移动用户普查任务</h3>
+                <p>派发时间：2016-11-29 14:24</p>
+                <p>完成时限：2016-12-16 14:24</p>
+                <p>客户数：3</p>
+                
+                <div class="btn btn-accept">接受任务</div>
+            </div>-->
+
+            <!--<ul class="fixture_box">
+                <li>
+                    电话号码：17812341234
+                    <i class="iconfont icon-qianjin pull-right"></i>
+                </li>
+                <li>
+                    电话号码：17812341234
+                    <i class="iconfont icon-qianjin pull-right"></i>
+                </li>
+            </ul>-->
+
+            <!--<ul class="fixture_box pay_box">
+                <li>
+                    2016-07
+                    <i class="iconfont icon-qianjin pull-right"></i>
+                </li>
+                <li>
+                    2016-07
+                    <i class="iconfont icon-qianjin pull-right"></i>
+                </li>
+            </ul>-->
+        </div>
+
+    </div>
+</div>
+
+<script id="userInfoTpl" type="text/template">
+    <table class="header_table table">
+        <tr>
+            <td colspan="2">
+                <% if(headImgUrl){ %>
+                    <img src="<%=headImgUrl%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=name%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=mobile%>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属营业厅
+                        <div class="angle"></div>
+                    </div>
+                    
+                    <div class="list unactive">
+                        <% if(title){ %>
+                            <%
+                                var arr = title.split(',');
+                            %>
+
+                            <% _.each(arr, function(v){ %>
+                                <p><%=v%></p>
+                            <% }) %>
+                        <% }else{ %>
+                            -
+                        <% } %>
+                    </div>
+                </div>
+            </td>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属部门</div>
+                    <p><%=company%></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</script>
+
+<script id="missionSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-mission-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-mission-search" placeholder="请输入关键字搜索">
+        </div>
+    </div>
+</script>
+
+
+<script id="fixtureSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-fixture-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-fixture-search" placeholder="请输入电话号码搜索">
+        </div>
+    </div>
+</script>
+
+<script id="paySelectInitTpl" type="text/template">
+    <select class="form-select form-control">
+        <option value="">无</option>
+    </select>
+</script>
+
+<script id="paySelectTpl" type="text/template">
+    <select class="form-select form-control">
+        <% _.each(list, function(v,i){ %>
+            <% if(i == 0){ %>
+                <option value="<%=v.uuid%>" selected><%=v.title%></option>
+            <% }else{ %>
+                <option value="<%=v.uuid%>"><%=v.title%></option>
+            <% } %>
+        <% }) %>
+    </select>
+</script>

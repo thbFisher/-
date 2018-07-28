@@ -1,0 +1,48 @@
+<div class="common-content">
+
+</div>
+
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无阅读记录</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="myread-box">
+            <h3><%=v.courName%></h3>
+            <p>于 <%=v.createTime.substr(0,16)%> 首次阅读</p>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

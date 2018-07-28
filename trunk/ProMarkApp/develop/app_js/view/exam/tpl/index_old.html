@@ -1,0 +1,48 @@
+<div class="common-content exam-index-contnent">
+    <div class="header">
+        <div class="exam-board-wrapper">
+            <div class="exam-board">
+                <div class="exam-board-text">
+                    <div class="exam-board-none">
+                        今日没有考试
+                    </div>
+                </div>
+
+                <div class="exam-board-ban">
+                    <img src="app_img/board.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-exam-start">
+            <i class="iconfont icon-kaoshibi"></i>
+            <p>没有考试</p>
+        </div>
+    </div>
+    <div class="list weui-row">
+        <div class="weui-col-50 has-ball exam-record" data-href="exam-record">
+            <i class="iconfont icon-pingshichengjikaohexiang"></i> 考试成绩
+        </div>
+        <div class="weui-col-50 exam-fault" data-href="exam-fault">
+            <i class="iconfont icon-cuotiji"></i> 错题集
+        </div>
+        <div class="weui-col-50 has-line exam-help" data-href="exam-help">
+            <i class="iconfont icon-iconyonghuxuzhi"></i> 考试须知
+        </div>
+        <div class="weui-col-50 has-line exam-bank" data-href="exam-banklist">
+            <i class="iconfont icon-tiku"></i> 原题库
+        </div>
+    </div>
+</div>
+
+<script id="examBoardTpl" type="text/template">
+    <h3><%=examTitle%></h3>
+    <div class="content">
+        <p>开始时间：<%=examStartTime%></p>
+        <p>结束时间：<%=examEndtime%></p>
+        <p>考试时长：<%=examTime%>分钟</p>
+    </div>
+    <div class="other">
+        您有 <span><%=count%></span> 场考试待考
+    </div>
+</script>

@@ -1,0 +1,90 @@
+.center-content{
+
+}
+
+.center-content .avatar img{
+    width: 60px;
+    height: 60px;
+}
+
+.center-content .weui_cell{
+    padding: 15px;
+}
+
+.center-content .weui_cell_ft{
+    width: 70%;
+}
+
+.center-content .show-email
+{
+    padding-right: 20px;
+    position: relative;
+}
+
+.center-content .show-advise
+{
+    height: 20px;
+    position: relative;
+}
+
+.center-content .show-email .iconfont,
+.center-content .show-advise .iconfont{
+    position: absolute;
+    right: -10px;
+    font-size: 1.2em;
+    top: calc(50% - .5em);
+    color: #ccc;
+}
+
+.center-content .check-version{
+
+}
+
+.center-content .check-version .iconfont{
+    position: relative;
+    top: 4px;
+    left: 5px;
+    font-size: 1.5em;
+    color: #0085d0;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+.center-content .title{
+    padding: 0 15px;
+    background-color: #eee;
+    line-height: 40px;
+    color: #0085d0;
+    box-shadow: 0 0 3px #ccc;
+    font-size: 16px;
+}
+
+.center-content .control{
+    padding: 15px 20px;
+}
+
+/*修改邮箱*/
+.email-content .email-control{
+    padding: 20px;
+}
+
+.email-content .input-validimg{
+    width: 100px;
+}
+
+.email-content .weui_label{
+    width: 80px;
+}
+
+.email-content .weui_cell{
+    height: 50px;
+}
+
+/*意见反馈*/
+.advise-content textarea{
+    -webkit-user-select: text;
+    font-size: 1em;
+}
+
+.advise-content .advise-control{
+    padding: 20px;
+}

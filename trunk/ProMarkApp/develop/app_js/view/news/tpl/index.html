@@ -1,0 +1,146 @@
+<div class="common-content overhidden bg-gray" id="newsList">
+    <div class="refresh_inner pd10">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="news-day-box-wrapper">
+
+        </div>
+    </div>
+</div>
+
+<script id="news-tpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+            var date = v[0].queryDate.substr(5,5);
+    %>
+        <div class="news-day-box">
+            <div class="date">
+                <span><%=date%></span>
+            </div>
+            <div class="news-content">
+                <%
+                    var first = v[0];
+                %>
+                <div class="news-box clearfix top" data-uuid="<%=first.uuid%>">
+                    <div class="top-image">
+                        <% if(first.newsImg){ %>
+                            <img src="<%=first.newsImg%>">
+                        <% }else{ %>
+                            <img src="app_img/none.jpg">
+                        <% } %>
+                    </div>
+                    <div class="overhidden">
+                        <%=first.newsTitle%>
+                    </div>
+                </div>
+                <%
+                    for(j = 1; j < v.length; j++){
+                        var obj = v[j];
+
+                        var img = 'app_img/none.jpg';
+                        if(obj.newsImg){
+                            img = obj.newsImg;
+                        }
+
+                        var date = obj.queryDate.substr(5,5);
+                %>
+                    <div class="news-box clearfix"  data-uuid="<%=obj.uuid%>">
+                        <div class="pull-left" style="background: url(<%=img%>) no-repeat center center/cover"></div>
+                        <div class="overhidden">
+                            <div class="clearfix info">
+                                <div class="pull-right"><%=date%></div> 
+                                <div class="overhidden"><%=obj.newsTitle%></div>  
+                            </div>
+                            <p><%=obj.newsDesc%></p>
+                        </div>
+                    </div>
+                <%
+                    };
+                %>
+            </div>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>
+
+<script id="notice-tpl" type="text/template">
+    <div class="news-day-box">
+        <div class="date">
+            <span>2月9日</span>
+        </div>
+
+        <div class="notice-content">
+            <div class="notice-box">
+                <table class="table">
+                    <tr>
+                        <th colspan="2">17年新春公告</th>
+                    </tr>
+                    <tr>
+                        <td width="70">通知内容：</td>
+                        <td><div>圣诞节发送到洛克菲勒可视对讲付款水电费说领导开发机生了肯定减肥了上岛咖啡</div></td>
+                    </tr>
+                    <tr>
+                        <td>发&nbsp;&nbsp;布&nbsp;&nbsp;人：</td>
+                        <td><div>湘潭市移动办公处</div></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="notice-box">
+                <table class="table">
+                    <tr>
+                        <th colspan="2">17年新春公告</th>
+                    </tr>
+                    <tr>
+                        <td width="70">通知内容：</td>
+                        <td><div>圣诞节发送到洛克菲勒可视对讲付款水电费说领导开发机生了肯定减肥了上岛咖啡</div></td>
+                    </tr>
+                    <tr>
+                        <td>发&nbsp;&nbsp;布&nbsp;&nbsp;人：</td>
+                        <td><div>湘潭市移动办公处</div></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</script>

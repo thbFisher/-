@@ -1,0 +1,84 @@
+<div class="common-content" id="customerDetail">
+    
+</div>
+<script id="myCustomerDetail" type="text/template">
+    <div class="telInfo">
+        <span class="_tel">号码： </span>
+        <span class="_telNum color-blue"><%=data.customerMobile.substring(0,3) + "****" + data.customerMobile.substring(7,12)%></span>
+        <span class="msgPic" data-phone="<%=data.customerMobile%>"></span>
+        <span class="phonePic" data-phone="<%=data.customerMobile%>"></span>
+        <!-- <a class="phonePic" href="tel:<%=data.customerMobile%>"/> -->
+    </div>
+    <div class="morDetail">
+        <div class="_info" style="background: rgb(16 , 187 ,243);color: #fff;">
+            <span class="zhInfo">客户星级：</span>
+            <span class="val" style="padding-left: 5px;"><%=data.customerLevel%>星</span>
+        </div>
+        <div class="more-info">
+            <div class="_info">
+                <span class="zhInfo">集团类别：</span>
+                <span class="val"><%=data.areas%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">集团名称：</span>
+                <span class="val"><%=data.title%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">客户属性：</span>
+                <span class="val"><%=data.customerAttribute%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">客户机龄：</span>
+                <span class="val color-blue"><%=data.customerPhoneAge%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">在网时长：</span>
+                <span class="val color-blue"><%=data.onlineTime%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">归属网点：</span>
+                <span class="val color-blue"><%=data.channelUUID %></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">当前状态：</span>
+                <span class="val"><%=data.customerStatus%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">主套餐：</span>
+                <span class="val"><%=data.mainPackage%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">流量套餐</span>
+                <span class="val"><%=data.flowPackage%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">月均消费：</span>
+                <span class="val"><%=data.costFeeMonth%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">月均通话时长：</span>
+                <span class="val color-blue"><%=data.phoneTimeMonth%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">月均流量：</span>
+                <span class="val color-blue"><%=data.flowMonth%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">是否风险：</span>
+                <span class="val color-blue"><%=data.isRiskCustomer%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">是否宽带：</span>
+                <span class="val"><%=data.isInternetCustomer%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">是否双卡终端：</span>
+                <span class="val"><%=data.isTwoSimTerm%></span>
+            </div>
+            <div class="_info">
+                <span class="zhInfo">是最高套餐档次：</span>
+                <span class="val"><%=data.topPackage%></span>
+            </div>
+        </div>
+    </div>
+</script>

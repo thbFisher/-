@@ -1,0 +1,219 @@
+<div class="common-content mobile_repository_common_content bg-gray" id="mobileRepositoryMyQuestion">
+    <div class="content full">
+        <div class="header common_header_for_read_knowledge bg-white" id="mobileRepositoryBaseHeader">
+            <div class="list_ctrl_bar pd10 clearfix">
+                <div class="pull-right show_ctrl_btn">
+                    <i class="iconfont icon-shaixuan"></i>筛选
+                    <i class="iconfont icon-sjiantou02 double-arrow-right"></i>
+                    <i class="iconfont icon-sjiantou03 double-arrow-down hide"></i>
+                </div>
+                <div class="overhidden">
+                    <div class="app_search clearfix">
+                        <div class="pull-right">
+                            <div class="btn btn-primary btn-search">查询</div>
+                        </div>
+                        <div class="overhidden">
+                            <i class="iconfont icon-sousuo"></i>
+                            <input type="text" class="form-control input-search" placeholder="请输入关键字搜索">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list_ctrl_btn weui-row base_list_ctrl_btn">
+                <div class="weui-col-33" data-type="time">
+                    按时间&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+                    <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+                </div>
+                <div class="weui-col-33" data-type="type">
+                    按类别&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+                    <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+                </div>
+                <div class="weui-col-33" data-type="view">
+                    回答数&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+                    <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+                </div>
+            </div>
+        </div>
+        <div class="nav weui-row bg-white">
+            <div class="weui-col-50 active" data-value="1">
+                已解决
+            </div>
+            <div class="weui-col-50" data-value="0">
+                未解决
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="inner">
+                <div class="weui-pull-to-refresh-layer">
+                    <div class="pull-to-refresh-arrow"></div>
+                    <div class="pull-to-refresh-preloader"></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新...</div>
+                    <div class="done">刷新完成</div>
+                </div>
+
+                <div class="list-warning">
+                    搜索结果如下，点此查看全部
+                </div>
+
+                <div class="repository_wrapper">
+                    <!--<div class="base_box">
+                        <div class="base_title">
+                            <h3>
+                                用户需要办理家庭宽带怎么办？用户需要办理家庭宽带怎么办？用户需要办理家庭宽带怎么办？用户需要办理家庭宽带怎么办？
+                            </h3>
+                        </div>
+                        <div class="base_img">
+                            <div class="img" style="background: url(app_img/none.jpg) center center no-repeat/cover"></div>
+                            <div class="img" style="background: url(app_img/none.jpg) center center no-repeat/cover"></div>
+                        </div>
+                        <div class="base_best">
+                            最佳答案：开始觉得法律手段街坊邻居
+                        </div>
+                        <div class="base_info">
+                            类别：热门（4G、宽带）
+                            &nbsp;<span class="font-black">|</span>&nbsp;2016-08-08 11:11
+                        </div>
+                        <div class="clearfix base_ctrl">
+                            <div class="pull-left author">
+                                <div class="pull-left img">
+                                    <img src="app_img/noavatar.png">
+                                </div>
+                                <div class="pull-left">
+                                    了看接口接口技术
+                                </div>
+                            </div>
+                            <div class="pull-right answer">
+                                1人回答
+                                &nbsp;<span class="font-black">|</span>&nbsp;
+                                <span class="font-blue">更多</span>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sort_mask sort_mask_rep">
+    <ul class="sort_panel">
+        <!--<li class="active">由高到低</li>
+            <li>由低到高</li>-->
+    </ul>
+</div>
+
+<script id="sortTimeTpl" type="text/template">
+    <li class="sort_time_btn" data-type="1" data-order="2">由近到远</li>
+    <li class="sort_time_btn" data-type="1" data-order="1">由远到近</li>
+</script>
+
+<script id="typeTpl" type="text/template">
+    <li class="sort_type_btn" data-uuid="">全部</li>
+    <% _.each(list, function(v){ %>
+        <li  class="sort_type_btn" data-uuid="<%=v.uuid%>"><%=v.title%></li>
+    <% }) %>
+</script>
+
+<script id="sortViewTpl" type="text/template">
+    <li class="sort_view_btn" data-type="2" data-order="2">由高到低</li>
+    <li class="sort_view_btn" data-type="2" data-order="1">由低到高</li>
+</script>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+
+        <div class="base_box" data-uuid="<%=v.uuid%>">
+            <div class="base_title">
+                <h3>
+                    <%=v.queDesc%>
+                </h3>
+            </div>
+
+            <% 
+                var arr = JSON.parse(v.queImgJson);
+                if(arr.length > 0){ 
+            %>
+                <div class="base_img">
+                    <% _.each(arr, function(src, i){ %>
+                        <% if(i < 3){ %>
+                            <div class="img" style="background: url(<%=src%>) no-repeat center center/cover"></div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            <% } %>
+
+            <% if(v.good){ %>
+                <div class="base_best">
+                    最佳答案：<%=v.good%>
+                </div>
+            <% } %>
+
+            <div class="base_info">
+                类别：<%=v.queTypeUuid%>
+                &nbsp;<span class="font-black">|</span>&nbsp;
+                <%=v.createTimeStr.substr(0, 16)%>
+            </div>
+            <div class="clearfix base_ctrl">
+                <div class="pull-left author">
+                    <div class="pull-left img">
+                        <% if(v.userHeadImage){ %>
+                            <img src="<%=v.userHeadImage%>">
+                        <% }else{ %>
+                            <img src="app_img/noavatar.png">
+                        <% } %>
+                        
+                    </div>
+                    <div class="pull-left">
+                        <%=v.userName%>
+                    </div>
+                </div>
+                <div class="pull-right answer">
+                    <%=v.replayCount%>人回答
+                    <% if(!v.queStatus){ %>
+                        &nbsp;<span class="font-black">|</span>&nbsp;
+                        <span class="font-blue"><i class="iconfont icon-biji"></i> 回答</span>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+   
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

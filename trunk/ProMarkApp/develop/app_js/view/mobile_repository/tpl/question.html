@@ -1,0 +1,94 @@
+<div class="common-content bg-gray" id="mobileRepositoryQuestion">
+    <div class="content">
+        <div class="weui_cells weui_cells_form app_detail_content">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <textarea class="weui_textarea input_question" placeholder="请在这里描述你的问题~"></textarea>
+                    <div class="weui_textarea_counter"><span>0</span>/400</div>
+                </div>
+            </div>
+            <div class="weui_cell clearfix input_image_wrapper">
+                <div class="input_image_btn">
+                    <div class="btn_camera">
+                        <i class="iconfont icon-paizhaoshangchuan"></i>
+                    </div>
+                </div>
+                <div class="input_image_content">
+                    <!--<div class="warning">请上传相关图片</div>-->
+                    <div class="clearfix imaging" style="">
+                        <!--<div class="input_image_box">
+                            <div class="img">
+                                <div class="img_img" style="background: url(app_img/none.jpg) no-repeat center center/cover"></div>
+                                <img src="app_img/noavatar.png">
+                            
+                                <div class="delete">
+                                    <i class="iconfont icon-cuowu"></i>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="input-camera">
+            <div class="btn-input-camera disabled">
+                <i class="iconfont icon-paizhaoshangchuan"></i>
+            </div>
+            <div class="input-image clearfix">
+                <div class="input-image-box">
+                    <img src="app_img/noavatar.png">
+                    <div class="delete">
+                        <i class="iconfont icon-cuowu"></i>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="weui_cells weui_cells_form select_wrapper">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select input_select_type" name="select1">
+                        <option selected="" value="">类别</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ctrl btn-submit">
+        提交
+    </div>
+</div>
+
+<div class="upload-loading-mask">
+    <div class="upload-loading-inner">
+        <p>正在上传 <span class="upload-index">0</span>/<span class="upload-total">0</span> 张图片</p>
+        <div class="weui_progress">
+            <div class="weui_progress_bar">
+                <div class="weui_progress_inner_bar js_progress upload-progress" style="width: 0%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="typeTpl" type="text/template">
+    <option selected="" value="">请选择题目类型</option>
+    <% _.each(list, function(v){ %>
+        <option value="<%=v.uuid%>"><%=v.title%></option>
+    <% }); %>
+</script>
+
+<script id="imageTpl" type="text/template">
+    <div class="input_image_box">
+        <div class="img">
+            <img src="<%=src%>" class="prepare-upload hide">
+            <div class="img_img" style="background: url(<%=src%>) no-repeat center center/cover"></div>
+        
+            <div class="delete">
+                <i class="iconfont icon-cuowu"></i>
+            </div>
+        </div>
+    </div>
+</script>

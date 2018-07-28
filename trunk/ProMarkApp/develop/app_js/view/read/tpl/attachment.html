@@ -1,0 +1,60 @@
+<div class="common-content">
+    
+</div>
+
+<script id="listTpl" type="text/template">
+    <% if(list.length == 0){ %>
+        <div class="warning-panel">暂无附件</div>
+    <% }else{ %>
+        <table class="table materials-attachment-table">
+            <% 
+                _.each(list, function(v){ 
+                    var fileIcon = '<i class="iconfont icon-file"></i>';
+                    switch(v.fileType){
+                        case '.xls':
+                        case '.xlsx':
+                            fileIcon = '<i class="iconfont icon-iconfontexcel"></i>';
+                            break;
+                        case '.docx':
+                        case '.doc':
+                            fileIcon = '<i class="iconfont icon-fileword"></i>';
+                            break;
+                        case '.pptx':
+                        case '.ppt':
+                            fileIcon = '<i class="iconfont icon-iconfonticonfontexcel"></i>';
+                            break;
+                        case '.mp4':
+                            fileIcon = '<i class="iconfont icon-shipin"></i>';
+                            break;
+                        case '.pdf':
+                            fileIcon = '<i class="iconfont icon-pdf"></i>';
+                            break;
+                    }
+            %>
+            <tr>
+                <td width="18%">
+                    <!--<i class="iconfont icon-file"></i>-->
+                    <!--<i class="iconfont icon-iconfontexcel"></i>-->
+                    <!--<i class="iconfont icon-fileword"></i>-->
+                    <!--<i class="iconfont icon-iconfonticonfontexcel"></i>-->
+                    <!--<i class="iconfont icon-shipin"></i>-->
+                    <!--<i class="iconfont icon-pdf"></i>-->
+                    <%=fileIcon%>
+                </td>
+                <td width="47%">
+                    <h4><%=v.fileName%></h4>
+                    <p>文件大小：<%=v.fileSizeDesc%></p>
+                </td>
+                <td width="35%" class="text-right">
+                    <% if(v.canPreview){ %>
+                        <button class="btn btn-primary btn-sm btn-preview" data-uuid="<%=v.uuid%>">预览</button>
+                    <% } %>
+                    <% if(v.canDownload){ %>
+                        <button class="btn btn-success btn-sm btn-download" data-uuid="<%=v.uuid%>">下载</button>
+                    <% } %>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    <% } %>
+</script>

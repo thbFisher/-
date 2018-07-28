@@ -1,0 +1,259 @@
+<div class="maketing-task-tetail  bg-gray" id="maketingTaskDetail">
+    <div class="task-recommended">
+
+    </div>
+    <div class="zezhao hide"></div>
+    <div class="choose-body hide"></div>
+    <div class="fail-reseason hide">
+        <div class="fail-reseason-title">烦请说明原因</div>
+        <textarea placeholder="请输入..."></textarea>
+        <div class="tips">离成功就差一点点了。</div>
+        <div class="fail-operation-btn">
+            <span class="cancle-send" style="display: table-cell;padding: 5px 0px;">再试试</span>
+            <span class="sendReseaon" style="display: table-cell;padding: 5px 0px;">确认</span>
+        </div>
+    </div>
+</div>
+<script id="maketingTaskDetailTemplate" type="text/template">
+    <div class="simple-info colorGrey">
+            <div class="paddingTop10 ">
+                <span>客户号码：</span>
+                <span><%=data.customerMobile.substring(0,3) + "****" + data.customerMobile.substring(7,12)%></span>
+            </div>
+            <div class="<%=data.businessTitleOne?'':'hide'%> businessTitle business-contianer">
+                <span class="business-desc">主推业务一：</span>
+                <span class="business-info"><%=data.businessTitleOne%></span>
+            </div>
+            <div class="<%=data.businessTitleOne?'':'hide'%> business-contianer">
+                <span class="business-desc">业务介绍：</span>
+                <span class="business-info"><%=data.businessIntroductionOne%></span>
+            </div>
+            <div class="paddingBottom10 <%=data.markFormworkOne?'':'hide'%> business-contianer">
+                <span class="business-desc">营销话术模板：</span>
+                <span class="business-info"><%=data.markFormworkOne%></span>
+            </div>
+            <div class="paddingTop10 <%=data.businessTitleTwo?'':'hide'%> businessTitle business-contianer">
+                <span class="business-desc">主推业务二：</span>
+                <span class="business-info"><%=data.businessTitleTwo%></span>
+            </div>
+            <div class="<%=data.businessTitleTwo?'':'hide'%> business-contianer">
+                <span class="business-desc">业务介绍：</span>
+                <span class="business-info"><%=data.businessIntroductionTwo%></span>
+            </div>
+            <div class="paddingBottom10 <%=data.businessTitleTwo?'':'hide'%> business-contianer">
+                <span class="business-desc">营销话术模板：</span>
+                <span class="business-info"><%=data.markFormworkTwo%></span>
+            </div>
+            <div class="paddingTop10 <%=data.businessTitleThree?'':'hide'%> businessTitle business-contianer">
+                <span class="business-desc">主推业务三：</span>
+                <span class="business-info"><%=data.businessTitleThree%></span>
+            </div>
+            <div class="<%=data.businessTitleThree?'':'hide'%> business-contianer">
+                <span class="business-desc">业务介绍：</span>
+                <span class="business-info"><%=data.businessIntroductionThree%></span>
+            </div>
+            <div class="paddingBottom10 <%=data.businessTitleThree?'':'hide'%> business-contianer">
+                <span class="business-desc">营销话术模板：</span>
+                <span class="business-info"><%=data.markFormworkThree%></span>
+            </div>
+            <div class="paddingTop10 paddingBottom10 <%=data.businessTitleFour?'':'hide'%> businessTitle business-contianer">
+                <span>主推业务四：</span>
+                <span class="business-info"><%=data.businessTitleFour%></span>
+            </div>
+            <div class="<%=data.businessTitleFour?'':'hide'%> business-contianer">
+                <span class="business-desc">业务介绍：</span>
+                <span class="business-info"><%=data.businessIntroductionFour%></span>
+            </div>
+            <div class="paddingBottom10 <%=data.businessTitleFour?'':'hide'%> business-contianer">
+                <span class="business-desc">营销话术模板：</span>
+                <span class="business-info"><%=data.markFormworkFour%></span>
+            </div>
+            <div class="paddingTop10 paddingBottom10 <%=data.businessTitleFive?'':'hide'%> business-contianer">
+                <span>主推业务五：</span>
+                <span class="business-info"><%=data.businessTitleFive%></span>
+            </div>
+            <div class="<%=data.businessTitleFive?'':'hide'%> business-contianer">
+                <span class="business-desc">业务介绍：</span>
+                <span class="business-info"><%=data.businessIntroductionFive%></span>
+            </div>
+            <div class="paddingBottom10 <%=data.businessTitleFive?'':'hide'%> business-contianer">
+                <span>营销话术模板：</span>
+                <span class="business-info"><%=data.markFormworkFive%></span>
+            </div>
+            <img src="app_img/tel-number.png" class="callphone" alt="" id="taskReturnCallPhone" data-phonenum="<%=data.customerMobile%>">
+            <img src="app_img/dysms.png" class="sendMsg" alt="" id="taskReturnSendMsg" data-phonenum="<%=data.customerMobile%>">
+        </div>
+        <div class="detail-info">
+            <div class="detail-block">
+                <div class="title bgblue">
+                    基本信息
+                    <span class="showOrHide"></span>
+                </div>
+                <div style="overflow: hidden;">
+                    <!-- <div class="info-item">
+                        <div>客户号码：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.customerMobile.substring(0,3) + "****" + data.customerMobile.substring(7,12)%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>客户星级：</div>
+                        <div style="padding-right: 14px;"><%=data.customerLevel%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>集团类别：</div>
+                        <div style="padding-right: 14px;"><%=data.areas%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>集团名称：</div>
+                        <div style="padding-right: 14px;"><%=data.title%></div>
+                    </div> -->
+                    <div class="info-item">
+                        <div>客户属性：</div>
+                        <div style="padding-right: 14px;"><%=data.customerAttribute%></div>
+                    </div>
+                    <!-- <div class="info-item">
+                        <div>客户年龄：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.customerAttribute%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>客户机龄：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.customerPhoneAge%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>在网时长：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.onlineTime%></div>
+                    </div> -->
+                    <div class="info-item">
+                        <div>归属网点：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.channelUUID%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>当前状态：</div>
+                        <div style="padding-right: 14px;"><%=data.customerStatus%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>主套餐：</div>
+                        <div style="padding-right: 14px;"><%=data.mainPackage%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>流量套餐：</div>
+                        <div style="padding-right: 14px;"><%=data.flowPackage%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>月均消费：</div>
+                        <div style="padding-right: 14px;"><%=data.costFeeMonth%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>月均通话时长：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.phoneTimeMonth%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>月均流量：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.flowMonth%></div>
+                    </div>
+                    <!-- <div class="info-item">
+                        <div>是否风险：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.isRiskCustomer%></div>
+                    </div> -->
+                    <div class="info-item">
+                        <div>是否宽带：</div>
+                        <div style="padding-right: 14px;"><%=data.isInternetCustomer%></div>
+                    </div>
+                    <!-- <div class="info-item">
+                        <div>双卡终端：</div>
+                        <div style="padding-right: 14px;"><%=data.isTwoSimTerm%></div>
+                    </div> -->
+                    <div class="info-item">
+                        <div>最高套餐档次：</div>
+                        <div style="padding-right: 14px;"><%=data.topPackage%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>超套流量：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.overFlow%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>超套语音：</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.overVoice%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>超套流量费</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.overFlowFee%></div>
+                    </div>
+                    <div class="info-item">
+                        <div>超套语音费</div>
+                        <div class="colorBlue" style="padding-right: 14px;"><%=data.overVoiceFee%></div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-block" style="pointer-events: <%='1'==data.userResult||'2'==data.userResult?'none':''%>">
+                <div class="title bgblue">任务回填</div>
+                <div class="task-operation-btn bgblue taskSuccess" data-result="1">营销成功</div>
+                <div class="task-operation-btn lightgreen taskFailedAndGiveUp" data-result="2">营销不成功（放弃）</div>
+                <div class="task-operation-btn lightred taskFaileContinue" data-result="3">营销不成功（继续）</div>
+                <!-- <div class="radioselect">
+                    <div class="selectRadio" data-index="0" data-result="1" val="checked">
+                        <span class="myradiock"></span>
+                        <span class="showText">成功</span>
+                    </div>
+
+                    <div class="selectRadio" data-index="1" data-result="2" >
+                        <span class="myradio"></span>
+                        <span class="showText">不成功</span>
+                    </div>
+                </div>
+                <div>
+                    <select name="" id="taskReturnSelect">
+                        <option value="条目一">条目一</option>
+                        <option value="条目二">条目二</option>
+                        <option value="条目三">条目三</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea name="" id="taskReturnSelectSuggest"></textarea>
+                </div>
+                <div class="submitBtnTask <%='1'==data.userResult||'2'==data.userResult?'hide':''%>">
+                    <img src="app_img/submitBtn.png" alt="">
+                </div> -->
+            </div>
+        </div>
+</script>
+<script id="chooseMsgModule" type="text/template">
+        <div class="recorder-container <%=data.businessTitleOne?'':'hide'%>">
+            <div class="one-record">
+                <span class="myradiock"  data-msgcontent="<%=data.smsContentOne%>" data-mobile="<%=data.customerMobile%>"></span>
+                <span class="decri"><%=data.businessTitleOne%></span>
+            </div>
+            <div class="smsContentOne"><%=data.smsContentOne%></div>
+        </div>
+        <div class="recorder-container <%=data.businessTitleTwo?'':'hide'%>">
+            <div class="one-record">
+                <span class="myradiock"  data-msgcontent="<%=data.smsContentTwo%>" data-mobile="<%=data.customerMobile%>"></span>
+                <span class="decri"><%=data.businessTitleTwo%></span>
+            </div>
+            <div class="smsContentOne"><%=data.smsContentTwo%></div>
+        </div>
+        <div class="recorder-container <%=data.businessTitleThree?'':'hide'%>">
+            <div class="one-record">
+                <span class="myradiock" data-msgcontent="<%=data.smsContentThree%>" data-mobile="<%=data.customerMobile%>"></span>
+                <span class="decri"><%=data.businessTitleThree%></span>
+            </div>
+            <div class="smsContentOne"><%=data.smsContentThree%></div>
+        </div>
+        <div class="recorder-container <%=data.businessTitleFour?'':'hide'%>">
+            <div class="one-record">
+                <span class="myradiock"  data-msgcontent="<%=data.smsContentFour%>" data-mobile="<%=data.customerMobile%>"></span>
+                <span class="decri"><%=data.businessTitleFour%></span>
+            </div>
+            <div class="smsContentOne"><%=data.smsContentFour%></div>
+        </div>
+        <div class="recorder-container <%=data.businessTitleFive?'':'hide'%>">
+            <div class="one-record">
+                <span class="myradiock"  data-msgcontent="<%=data.smsContentFive%>" data-mobile="<%=data.customerMobile%>"></span>
+                <span class="decri"><%=data.smsContentFive%></span>
+            </div>
+            <div class="smsContentOne"><%=data.smsContentOne%></div>
+        </div>
+        <div class="operation-btn">
+            <span class="send" style="border-right: 1px solid lightgray;border-top: 1px solid lightgray">发送</span>
+            <span class="cancle" style="border-top: 1px solid lightgray">取消</span>
+        </div>
+</script>

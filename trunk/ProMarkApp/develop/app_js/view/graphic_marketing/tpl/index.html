@@ -1,0 +1,65 @@
+<div class="graphic-marketing common-content bg-gray" id="graphicMarketing">
+    <div class="gm-search-content"></div>
+    <div class="gm-list-content">
+        <!-- <div class="list-item">
+            <div class="left-img">
+                <img src="app_img/paper.jpg" alt="">
+            </div>
+            <div class="right-content">
+                <div class="right-content-title">标题</div>
+                <div class="fontColor164">
+                    <span>分享数 ： </span>
+                    <span>123231</span>
+                </div>
+                <div class="fontColor164">
+                    <span>上传时间：</span><span>22天</span>
+                    <span class="floatright"><span>活动有效期：</span><span>30天</span></span>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<script id="gmSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-mission-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-mission-search" placeholder="请输入关键字搜索">
+        </div>
+    </div>
+</script>
+<script id="gmListTpl" type="text/template">
+    <% _.each(list, function(v,i){ 
+        var classStr = '';
+        if('1' == v.isExpire){
+            classStr = "bordergrey overtime" ;
+            <!-- classStr = "overtime" ; -->
+        }else{
+            classStr = "borderblue"
+        }
+    %>
+    <div class="list-item  <%=classStr%>" data-imgurl="<%=v.graphicImageUrl%>">
+        <div class="left-img">
+            <img src="app_img/paper.jpg" alt="">
+        </div>
+        <div class="right-content">
+            <div class="right-content-title"><%=v.graphicTitle%></div>
+            <div class="fontColor164">
+                <span>分享数 ： </span>
+                <span><%=v.shareCount%></span>
+            </div>
+            <div class="fontColor164">
+                <span>上传时间：</span><span><%=v.createTime%></span>
+                <!-- <span class="floatright"><span>活动有效期：</span><span>30天</span></span> -->
+            </div>
+            <div class="fontColor164">
+                <span>活动有效期：</span><span></span>
+                <!-- <span class="floatright"><span>活动有效期：</span><span>30天</span></span> -->
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</script>

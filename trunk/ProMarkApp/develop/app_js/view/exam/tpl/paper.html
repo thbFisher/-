@@ -1,0 +1,86 @@
+<div class="common-content paper-exam-wrapper paper-wrapper">
+    <div class="paper-header clearfix">
+        <div id="camera" class="pull-right"></div>
+        <div class="paper-info overhidden">
+            <h3 class="paper-timecount-title">倒计时：</h3>
+            <p class="paper-timecount">-</p>
+        </div>
+    </div>
+
+    <div class="paper-content">
+
+    </div>
+
+    <div class="paper-control">
+        <div>
+            <div class="prev disable">
+                <i class="iconfont icon-zuojiantou"></i>
+            </div>
+        </div>
+        <div class="exam-index">
+            0/0
+        </div>
+        <div>
+            <div class="next disable">
+                <i class="iconfont icon-youjiantou"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="question-item-tpl" type="text/template">
+    <div class="paper-tag">
+        <% 
+            var type;
+            if(q.questionType == 1){
+                type = '单选题';
+            }else if(q.questionType == 2){
+                type = '多选题';
+            }else if(q.questionType == 3){
+                type = '判断题';
+            }
+        %>
+
+        <%=type%>
+    </div>
+    <div class="paper-question">
+        <%=q.question%>
+    </div>
+    <% if(q.questionImgUrl){ %>
+    <div class="paper-image">
+        <img src="<%=q.questionImgUrl%>">
+    </div>
+    <% } %>
+    <div class="paper-items">
+        <ul>
+            <% 
+                var answer = [];
+
+                if(q.put_answer && q.put_answer.length > 0){
+                    answer = q.put_answer;
+                }
+
+                _.each(q.option,function(v,i){
+                    if(!v){
+                        return;
+                    }
+
+                    var checked = '';
+                    if(_.find(answer, function(v){ return v == i; })){
+                        checked = 'checked';
+                    }
+            %>
+                <li>
+                    <label for="paper-item<%=i%>">
+                        <% if(q.questionType == 2) { %>
+                            <div class="paper-item"><input <%=checked%> type="checkbox" class="blue-chk" id="paper-item<%=i%>" name="paper-item" value="<%=i%>"></div> 
+                        <% }else{ %>
+                            <div class="paper-item"><input <%=checked%> type="radio" class="blue-chk" id="paper-item<%=i%>" name="paper-item" value="<%=i%>"></div> 
+                        <% } %>
+                        <div class="overhidden"><%=i%>、<%=v%></div>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</script>

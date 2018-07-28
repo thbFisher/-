@@ -1,0 +1,178 @@
+<div class="common-content bg-gray" id="newsDetail">
+    <div class="inner bottom-pd20">
+        <div class="pd10 bg-white news-detail-content-wrapper">
+            <div class="news-detail-header">
+                <h3>-----</h3>
+                <p>作者：-- &nbsp;&nbsp;更新时间：0000-00-00</p>
+            </div>
+
+            <div class="news-detail-artical">
+            </div>
+        </div>
+
+
+        <div class="news-detail-comment-sum">
+            评论数（<span>0</span>）
+        </div>
+
+        <div class="news-detail-reply bg-white">
+            <div class="warning-panel">暂无评论</div>
+            <!--<div class="detail-reply-box">
+                <div class="detail-reply-topic">
+                    <div class="reply-box">
+                        <div class="pull-left">
+                            <img src="app_img/noavatar.png" alt="">
+                        </div>
+                        <div class="overhidden">
+                            <div class="ctrl clearfix">
+                                <div class="pull-left">
+                                    <span class="name">测试姓名</span>&nbsp;
+                                    <span class="date">2016-02-02</span>
+                                </div>
+                                <div class="pull-right reply-reply">回复</div>
+                            </div>
+                            <p>回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-reply-sub">
+                    <div class="reply-box">
+                        <div class="pull-left">
+                            <img src="app_img/noavatar.png" alt="">
+                        </div>
+                        <div class="overhidden">
+                            <div class="ctrl clearfix">
+                                <div class="pull-left">
+                                    <span class="name">测试姓名</span>&nbsp;
+                                    <span class="date">2016-02-02</span>
+                                </div>
+                            </div>
+                            <p>回复内容回复内容</p>
+                        </div>
+                    </div>
+                    <div class="reply-box">
+                        <div class="pull-left">
+                            <img src="app_img/noavatar.png" alt="">
+                        </div>
+                        <div class="overhidden">
+                            <div class="ctrl clearfix">
+                                <div class="pull-left">
+                                    <span class="name">测试姓名</span>&nbsp;
+                                    <span class="date">2016-02-02</span>
+                                </div>
+                            </div>
+                            <p>回复内容回复内容</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <div class="detail-control clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-block btn-reply">发送</div>
+        </div>
+        <div class="overhidden">
+            <input type="text" class="form-control input-comment" placeholder="发表一下你的点评吧~">
+        </div>
+    </div>
+</div>
+
+
+
+
+<script id="news-detail-content-tpl" type="text/template">
+    <div class="news-detail-header">
+        <h3><%=data.newsTitle%></h3>
+        <p>作者：<%=data.newsAuthor%> &nbsp;&nbsp;更新时间：<%=data.queryDate%></p>
+    </div>
+
+    <div class="news-detail-artical">
+        <%=$.formatText(data.newsContent)%>
+    </div>
+</script>
+
+<script id="news-detail-comment-tpl" type="text/template">
+    <% if(!data.rows.length){ %>
+        <div class="warning-panel">暂无评论</div>
+    <% }else{ %>
+        <%
+            _.each(data.rows,function(v,i){
+        %>
+            <div class="detail-reply-box">
+                <div class="detail-reply-topic">
+                    <div class="reply-box">
+                        <div class="pull-left">
+                            <% if(v.headImgUrl){ %>
+                                <img src="<%=v.headImgUrl%>">
+                            <% }else{ %>
+                                <img src="app_img/noavatar.png">
+                            <% } %>
+                        </div>
+                        <div class="overhidden">
+                            <div class="ctrl clearfix">
+                                <div class="pull-left">
+                                    <span class="name"><%=v.name%></span>&nbsp;
+                                    <span class="date"><%=v.createTime%></span>
+                                </div>
+                                <div class="pull-right reply-reply" data-uuid="<%=v.uuid%>" data-name="<%=v.name%>">回复</div>
+                            </div>
+                            <p><%=v.content%></p>
+                        </div>
+                    </div>
+                </div>
+
+                <% if(v.twoList && v.twoList.length > 0){ %>
+                    <div class="detail-reply-sub">
+                        <% _.each(v.twoList, function(o){ %>
+                            <div class="reply-box">
+                                <div class="pull-left">
+                                    <% if(o.headImgUrl){ %>
+                                        <img src="<%=o.headImgUrl%>">
+                                    <% }else{ %>
+                                        <img src="app_img/noavatar.png">
+                                    <% } %>
+                                </div>
+                                <div class="overhidden">
+                                    <div class="ctrl clearfix">
+                                        <div class="pull-left">
+                                            <span class="name"><%=o.name%></span>&nbsp;
+                                            <span class="date"><%=o.createTime%></span>
+                                        </div>
+                                    </div>
+                                    <p><%=o.content%></p>
+                                </div>
+                            </div>
+                       <% }); %>
+
+                    </div>
+                <% } %>
+            </div>
+        <%
+            });
+        %>
+        <% if(data.hasNextPage || data.hasPreviousPage){ %>
+            <div class="list-control weui-row">
+                <%
+                    var prevAttr = '',nextAttr = ''; 
+                    
+                    if(!data.hasPreviousPage){
+                        prevAttr = 'disabled';
+                    } 
+                    
+                    if(!data.hasNextPage){
+                        nextAttr = 'disabled';
+                    } 
+                %> 
+                <div class="weui-col-40">
+                    <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+                </div>
+                <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+                <div class="weui-col-40">
+                    <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+</script>

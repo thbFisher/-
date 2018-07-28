@@ -1,0 +1,40 @@
+<div class="common-content bg-gray mobile_repository_common_content" id="mobileRepositoryIndex">
+    <div class="content">
+        
+    </div>
+    <div class="menu weui-row">
+        <div class="weui-col-33" data-href="mobile-repository-my/question">
+            <div>我的提问</div>
+        </div>
+        <div class="weui-col-33" data-href="mobile-repository-my/answer">
+            <div>我的回答</div>
+        </div>
+        <div class="weui-col-33" data-href="mobile-repository-question">
+            <div>提一个</div>
+        </div>
+    </div>
+</div>
+
+<div class="sort_mask sort_mask_rep" id="mobileRepositorySort">
+    <ul class="sort_panel">
+        <!--<li class="active">由高到低</li>
+            <li>由低到高</li>-->
+    </ul>
+</div>
+
+<script id="sortTimeTpl" type="text/template">
+    <li class="sort_time_btn" data-type="1" data-order="2">由近到远</li>
+    <li class="sort_time_btn" data-type="1" data-order="1">由远到近</li>
+</script>
+
+<script id="typeTpl" type="text/template">
+    <li class="sort_type_btn" data-uuid="">全部</li>
+    <% _.each(list, function(v){ %>
+        <li  class="sort_type_btn" data-uuid="<%=v.uuid%>"><%=v.title%></li>
+    <% }) %>
+</script>
+
+<script id="sortViewTpl" type="text/template">
+    <li class="sort_view_btn" data-type="2" data-order="2">由高到低</li>
+    <li class="sort_view_btn" data-type="2" data-order="1">由低到高</li>
+</script>

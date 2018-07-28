@@ -1,0 +1,39 @@
+<div id="dataStatisticOrderDetail" class="common-content bg-gray">
+    <div class="content">
+        <table>
+            <tbody>
+                <tr>
+                    <th>员工名称</th>
+                    <th class="order" data-orderby="suc_cnt">其中：任务成功</th>
+                    <th class="order" data-orderby="fail_cnt">其中：任务不成功</th>
+                    <th class="order" data-orderby="conu_cnt">其中：营销继续</th>
+                    <th class="order" data-orderby="wait_cnt">其中：未操作 </th>
+                    <th class="order" data-orderby="suc_rate">成功率=营销成功/派发任务量</th>
+                    <th class="order" data-orderby="over_rate">完成率=（营销成功+营销不成功）/派发任务量</th>
+                </tr>
+                <!-- <tr class="data-line">
+                    <td>张三</td>
+                    <td>95</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>95.00%</td>
+                    <td>100.00%</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script id="dataStatisticOrderDetailTr" type="text/template">
+    <% _.each(list, function(v,i){ %>
+        <tr class="data-line">
+            <td><%=v.empName%></td>
+            <td><%=v.suc_cnt%></td>
+            <td><%=v.fail_cnt%></td>
+            <td><%=v.conu_cnt%></td>
+            <td><%=v.wait_cnt%></td>
+            <td><%=(v.suc_rate*100).toFixed(2)%>%</td>
+            <td><%=v.over_rate%>%</td>
+        </tr>
+    <% }) %>
+</script>

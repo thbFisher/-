@@ -1,0 +1,159 @@
+<div class="common-content">
+    <div class="materials-header bg-gray">
+        <div class="materials-control-btn">
+            <i class="iconfont icon-xiangxixinxi"></i>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control knowledge-question-keyword" placeholder="输入关键字搜索">
+            <button class="icon icon-times clear-form"></button>
+            <div class="input-group-addon search-keyword">
+                <i class="iconfont icon-sousuo"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="materials-controls-mask">
+        <div class="materials-controls"></div>
+    </div>
+
+    <div class="common-content width-nav knowledge-question-list">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="list-warning">
+            搜索结果如下，点此查看全部问题
+        </div>
+
+        <div class="knowledge-question-box-wrapper pd10">
+            <!--<div class="knowledge-question-box" data-uuid="">
+                <div class="info clearfix">
+                    <div class="label label-success pull-left">待回答</div>
+                    <div class="label label-danger pull-left">已关闭</div>
+                    <div class="label label-blue pull-left">问题类型</div>
+                    <div class="datetime pull-right">2016-10-02</div>
+                </div>
+                <div class="content">
+                    阿克苏加福禄寿解放路上几分洛杉矶的浪费空间是快递费吉林省会计的法律上空间的分类考试及开始减肥了深刻的家乐福及
+                </div>
+                <div class="images">
+                    <p>
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                        <img src="app_img/noavatar.png">
+                    </p>
+                </div>
+                <div class="control clearfix">
+                    <div class="pull-left">
+                        1人回答
+                    </div>
+                    <div class="pull-right">
+                        <a href="javascript:;">查看详情 >></a>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+<script id="typeTpl" type="text/template">
+    <div class="weui-row">
+        <% _.each(list, function(v){ %>
+            <div class="weui-col-33">
+                <div class="label label-info label-type" data-uuid="<%=v.uuid%>"><%=v.title%></div>
+            </div>
+        <% }) %>
+    </div>
+</script>
+
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无内容</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+    <div class="knowledge-question-box">
+        <div class="info clearfix">
+            <% if(v.queStatus){ %>
+                <div class="label label-danger pull-left">已关闭</div>
+            <% }else{ %>
+                <div class="label label-success pull-left">待回答</div>
+            <% } %>
+            <div class="label label-blue pull-left"><%=v.queTypeUuid%></div>
+            <div class="datetime pull-right"><%=v.createTimeStr.substr(0, 16)%></div>
+        </div>
+        <div class="content">
+            <%=v.queDesc%>
+        </div>
+        <% 
+            var arr = JSON.parse(v.queImgJson);
+            if(arr.length > 0){ 
+        %>
+            <div class="images">
+                <% _.each(arr, function(src, i){ %>
+                    <% if(i < 3){ %>
+                        <img src="<%=src%>">
+                    <% } %>
+                <% }); %>
+            </div>
+        <% } %>
+        
+        <div class="control clearfix" data-uuid="<%=v.uuid%>">
+            <div class="pull-left">
+                <span class="share">
+                    <i class="iconfont icon-zhuanfa"></i> <%=v.forwardCount%>
+                </span>
+                <span class="reply">
+                    <i class="iconfont icon-huida"></i> <%=v.replayCount%>
+                </span>
+            </div>
+            <div class="pull-right">
+                <a href="javascript:;">查看详情 >></a>
+            </div>
+        </div>
+    </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

@@ -1,0 +1,45 @@
+{
+    "obj": {
+        "readCoursewareType":[
+            {
+                "coursewareType":"业务知识",
+                "uuid":"d794145a-9309-4e60-bd71-7bda6c53c7ae"
+            }
+        ],
+        "readCourseware": {
+            "endRow":2,
+            "firstPage":1,
+            "hasNextPage":false,
+            "hasPreviousPage":false,
+            "isFirstPage":true,
+            "isLastPage":true,
+            "lastPage":1,
+            "navigatePages":8,
+            "navigatepageNums":[],
+            "nextPage":0,
+            "pageNum":1,
+            "pageSize":10,
+            "pages":1,
+            "prePage":0,
+            "rows":[
+                {
+                    "courDesc":"测试课件二",
+                    "courImageUrl":"http://192.168.36.221:8080/HNwxMultP/hnwximg/read/courseware/cover/2016-09-13/13fe8983-b353-4251-8457-94f7aae065e1.jpg",
+                    "courName":"测试课件二",
+                    "courTypeStr":"业务知识",
+                    "uuid":"fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6"
+                },
+                {
+                    "courDesc":"测试课件二",
+                    "courImageUrl":"http://192.168.36.221:8080/HNwxMultP/hnwximg/read/courseware/cover/2016-09-13/13fe8983-b353-4251-8457-94f7aae065e1.jpg",
+                    "courName":"测试课件二",
+                    "courTypeStr":"业务知识",
+                    "uuid":"fdbc9b8c-206f-47e3-9bce-c1867ec0d8b6"
+                }
+            ],
+            "size":2,
+            "startRow":1,
+            "total":2
+        }
+    }
+}

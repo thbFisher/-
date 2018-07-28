@@ -1,0 +1,368 @@
+/**
+    数据统计样式
+    */
+#dataStatistic{}
+
+#dataStatistic .indexPage{
+    padding: 10px;
+}
+#dataStatistic .indexPage .menuCls{
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 6px;
+    background-image: url(../app_img/right-blue.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+
+#dataStatisticActivity .queryTools .content{
+    height: 45px ;
+    line-height: 25px ;
+    position: relative;
+    width: 100% ;
+    border-bottom: 1px solid #10bbf3 ;
+    background-color: #e1e1e1;
+}
+#dataStatisticActivity .queryTools .content:after{
+    content: " " ;
+    display: block ;
+    clear: both ;
+}
+#dataStatisticActivity .queryTools .content .oneItem{
+    float: left; 
+    width: 33.3% ;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+#dataStatisticActivity .queryTools .content .oneItem.active{
+    background-color: #10bbf3 !important ;
+    color: #fff ;
+}
+#dataStatisticActivity .queryTools .content .queryResult.triup{
+    background-image: url(../app_img/triangle-up.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 16px;
+}
+#dataStatisticActivity .queryTools .content .queryResult.tridown{
+    background-image: url(../app_img/triangle-down.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 16px;
+}
+
+#dataStatisticActivity .queryTools .content .oneItem .queryResult{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#dataStatisticActivity .rightWhite{
+    border-right: 1px solid #fff ;
+}
+#dataStatisticActivity .queryTools .content .oneItem .moreQuery{
+    position: absolute;
+    background-color: #10bbf3;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    border-top: 1px solid #fff;
+}
+#dataStatisticActivity .queryTools .content .oneItem .moreQuery>div{
+    padding: 10px 0px ;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#dataStatisticActivity .none{
+    display: none ;
+}
+#dataStatisticActivity .resultBody{
+    width: 100% ;
+    padding: 15px 10px;
+}
+#dataStatisticActivity .resultBody .content{
+    background-color: #fff;
+}
+#dataStatisticActivity .resultBody .content .queryTime{
+    background-color: #10bbf3;
+    padding: 10px 15px;
+    color: #fff;
+}
+#dataStatisticActivity input.timeSelect{
+    display: inline-block;
+    width: 45%;
+    min-width: 100px;
+}
+#dataStatisticActivity input.timeSelect::-webkit-calendar-picker-indicator{
+    display: none ;
+}
+#dataStatisticActivity input.timeSelect::-webkit-inner-spin-button{
+    display: none ;
+}
+#dataStatisticActivity .resultBody .content .queryResult{
+    padding: 5px 0px;
+    margin: 0px 15px;
+    border-bottom: 1px solid rgb(225 ,225 ,225);
+}
+#dataStatisticActivity .resultBody .content .queryResult:last-child{
+    border-bottom: none;
+}
+#dataStatisticActivity .resultBody .content .queryResult .result-label{
+    display: inline-block;
+    width: 50%;
+    color: rgb(150 ,150 ,150);
+    white-space: nowrap;
+}
+#dataStatisticActivity .resultBody .content .queryResult .result-value.colorBlue{
+    color: #10bbf3;
+}
+/**营销任务工单*/
+
+#dataStatisticTaskOrder .queryTools .content{
+    height: 45px ;
+    line-height: 25px ;
+    position: relative;
+    width: 100% ;
+    border-bottom: 1px solid #10bbf3 ;
+    background-color: #e1e1e1;
+}
+#dataStatisticTaskOrder .queryTools .content:after{
+    content: " " ;
+    display: block ;
+    clear: both ;
+}
+#dataStatisticTaskOrder .queryTools .content .oneItem{
+    float: left; 
+    width: 33.3% ;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+#dataStatisticTaskOrder .queryTools .content .oneItem.active{
+    background-color: #10bbf3 !important ;
+    color: #fff ;
+}
+#dataStatisticTaskOrder .queryTools .content .queryResult.triup{
+    background-image: url(../app_img/triangle-up.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 16px;
+}
+#dataStatisticTaskOrder .queryTools .content .queryResult.tridown{
+    background-image: url(../app_img/triangle-down.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 16px;
+}
+
+#dataStatisticTaskOrder .queryTools .content .oneItem .queryResult{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#dataStatisticTaskOrder .rightWhite{
+    border-right: 1px solid #fff ;
+}
+#dataStatisticTaskOrder .queryTools .content .oneItem .moreQuery{
+    position: absolute;
+    background-color: #10bbf3;
+    width: 100%;
+}
+#dataStatisticTaskOrder .queryTools .content .oneItem .moreQuery>div{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px 0px ;
+}
+#dataStatisticTaskOrder .none{
+    display: none ;
+}
+#dataStatisticTaskOrder .resultBody{
+    height: 700px ;
+    width: 100% ;
+    padding: 15px 10px;
+    padding-right: 0px;
+}
+#dataStatisticTaskOrder .resultBody .content{
+    background-color: #fff;
+    width: 100% ;
+    overflow: scroll ;
+}
+#dataStatisticTaskOrder .resultBody .content table{
+    border-collapse:  collapse ;
+
+}
+#dataStatisticTaskOrder .resultBody .content table th.asc{
+    background-image: url(../app_img/up.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+#dataStatisticTaskOrder .resultBody .content table th.desc{
+    background-image: url(../app_img/down.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+#dataStatisticTaskOrder .resultBody .content table td,
+#dataStatisticTaskOrder .resultBody .content table th{
+    border-collapse:  collapse ;
+    white-space: nowrap;
+    padding: 10px ;
+    text-align: center ;
+    vertical-align: middle ;
+}
+
+#dataStatisticTaskOrder .resultBody .content table,
+#dataStatisticTaskOrder .resultBody .content td ,
+#dataStatisticTaskOrder .resultBody .content th ,
+#dataStatisticTaskOrder .resultBody .content tr{
+    border : 1px solid lightgray ;
+}
+
+#dataStatisticTaskOrder .resultBody .content .queryTime{
+    background-color: #10bbf3;
+    padding: 10px 15px;
+    color: #fff;
+}
+#dataStatisticTaskOrder .resultBody .content .queryResult{
+    padding: 5px 0px;
+    margin: 0px 15px;
+    border-bottom: 1px solid rgb(225 ,225 ,225);
+}
+#dataStatisticTaskOrder .resultBody .content .queryResult:last-child{
+    border-bottom: none;
+}
+#dataStatisticTaskOrder .resultBody .content .queryResult .result-label{
+    display: inline-block;
+    width: 40%;
+    color: rgb(150 ,150 ,150);
+}
+#dataStatisticTaskOrder .resultBody .content .queryResult .result-value.colorBlue{
+    color: #10bbf3;
+}
+
+#dataStatisticTaskOrder .timePicker{
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    text-align: center;
+}
+#dataStatisticTaskOrder .timePicker:after{
+    content: " " ;
+    display: block ;
+    clear: both ;
+}
+#dataStatisticTaskOrder .timePicker>div{
+    float: left ;
+    width: 50% ;
+}
+
+#dataStatisticOrderDetail .content{
+    background-color: #fff;
+    width: 100% ;
+    overflow: scroll ;
+    padding: 10px;
+}
+#dataStatisticOrderDetail .content table{
+    border-collapse:  collapse ;
+
+}
+#dataStatisticOrderDetail .content table th.asc{
+    background-image: url(../app_img/up.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+#dataStatisticOrderDetail .content table th.desc{
+    background-image: url(../app_img/down.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+#dataStatisticOrderDetail .content table td,
+#dataStatisticOrderDetail .content table th{
+    border-collapse:  collapse ;
+    white-space: nowrap;
+    padding: 10px ;
+    text-align: center ;
+    vertical-align: middle ;
+}
+
+#dataStatisticOrderDetail .content table,
+#dataStatisticOrderDetail .content td ,
+#dataStatisticOrderDetail .content th ,
+#dataStatisticOrderDetail .content tr{
+    border : 1px solid lightgray ;
+}
+/**业务学习情况*/
+#dataStatisticUnLearn .search{
+    padding: 15px 10px;
+    background-color: #fff;
+}
+#dataStatisticUnLearn .list .listContent{
+    padding: 10px;
+}
+#dataStatisticUnLearn .list .listItem{
+    margin-bottom: 10px;
+    background-color: #fff ;
+}
+#dataStatisticUnLearn .list .listItem.link{
+    background-image: url(../app_img/icon-link.png);
+    background-repeat: no-repeat ;
+    background-position: 95% center;
+    background-size: 5%;
+}
+#dataStatisticUnLearn .list .listItem:after{
+    content: " " ;
+    display: block ;
+    clear: both ;
+}
+#dataStatisticUnLearn .list .listItem>div{
+    float: left ;
+}
+#dataStatisticUnLearn .list .listItem .itemImg{
+    width: 20%;
+    padding: 12px 5px 0px 10px;
+}
+#dataStatisticUnLearn .list .listItem .itemInfo{
+    padding-top: 10px ;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+}
+#dataStatisticUnLearn .list .listItem .itemImg img{
+    border-radius: 10px ;
+}
+#dataStatisticUnLearn .list .listItem .itemInfo>div{
+    font-size: 0.9em ;
+}
+#dataStatisticUnLearn .list .listItem .itemInfo .title{
+    font-size: 1em ;
+    color: #000 ;
+    margin-bottom: 10px ;
+}
+#unlearnDetail .allUnlearn{
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+#unlearnDetail .allUnlearn .oneUser{
+    padding: 5px 0px;
+    border-bottom: 1px solid lightgray;
+}
+#unlearnDetail .allUnlearn .oneUser:last-child{
+    border-bottom: none;
+}
+#unlearnDetail .allUnlearn .oneUser .user-name{
+    display: inline-block;
+    width: 45%;
+}

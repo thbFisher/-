@@ -1,0 +1,240 @@
+<div class="common-content bg-gray" id="marketingTasks" style="top: 0px;">
+    <div class="header" style="height: 185px;">
+        <div class="headerContent" style="top: 185px;font-size: 1.2em;text-align: center;height: 45px;line-height: 45px;">
+            <div class="left-button btn-back">
+                <i class="iconfont icon-guanbi"></i>
+            </div>
+            营销任务</div>
+        <div class="tableContent">
+            <table class="header_table table">
+                <tr>
+                    <td colspan="2">
+                        <img src="app_img/noavatar.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        ----
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        -----------
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <div class="info">
+                            <div class="bold">所属营业厅
+                                <div class="angle"></div>
+                            </div>
+                            <div class="list channel-list unactive">
+                                -----
+                            </div>
+                        </div>
+                    </td>
+                    <td width="50%">
+                        <div class="info">
+                            <div class="bold">所属部门</div>
+                            <p>-----</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="content" style="top: 185px;">
+        <div class="content-header">
+        </div>
+
+        <div class="content-nav weui-row">
+        </div>
+
+        <div class="content-content" style="overflow-y: auto;">
+            <!-- <div class="list-item">
+                <div class="task-info-overview">
+                    <div class="task-name">
+                        <span>任务名称：</span>
+                        <span>XXXX</span>
+                    </div>
+                    <div class="other-info">
+                        <span>发布时间：</span>
+                        <span>XXXX</span>
+                    </div>
+                    <div class="other-info">
+                        <span>发布期限：</span>
+                        <span>XXXX</span>
+                    </div>
+                    <div class="other-info">
+                        <span>任务量：</span>
+                        <span>2人</span>
+                    </div>
+                    <img src="app_img/un-accepted.png" alt="">
+                </div>
+                <div class="fullRate">
+                    <div class="completeRate" style="width:60%;"></div>
+                </div>
+                <div class="acceptedBtn">
+                    <img src="app_img/accptedBtn.png" alt="">
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+</div>
+
+<script id="userInfoTpl" type="text/template">
+    <table class="header_table table">
+        <tr>
+            <td colspan="2">
+                <% if(headImgUrl){ %>
+                    <img src="<%=headImgUrl%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=name%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=mobile%>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属营业厅
+                        <div class="angle"></div>
+                    </div>
+                    
+                    <div class="list channel-list unactive">
+                        <% if(title){ %>
+                            <%
+                                var arr = title.split(',');
+                            %>
+
+                            <% _.each(arr, function(v){ %>
+                                <p><%=v%></p>
+                            <% }) %>
+                        <% }else{ %>
+                            -
+                        <% } %>
+                    </div>
+                </div>
+            </td>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属部门</div>
+                    <p><%=company%></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</script>
+
+<script id="missionSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-mission-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-mission-search" placeholder="请输入关键字搜索" on-focus="alert(1111)">
+        </div>
+    </div>
+</script>
+
+
+<script id="fixtureSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-fixture-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-fixture-search" placeholder="请输入电话号码搜索">
+        </div>
+    </div>
+</script>
+
+<script id="paySelectInitTpl" type="text/template">
+    <select class="form-select form-control">
+        <option value="">无</option>
+    </select>
+</script>
+
+<script id="paySelectTpl" type="text/template">
+    <select class="form-select form-control">
+        <% _.each(list, function(v,i){ %>
+            <% if(i == 0){ %>
+                <option value="<%=v.uuid%>" selected><%=v.title%></option>
+            <% }else{ %>
+                <option value="<%=v.uuid%>"><%=v.title%></option>
+            <% } %>
+        <% }) %>
+    </select>
+</script>
+
+<script id="customUserItem" type="text/template">
+    <div class='customerItems'>
+        <% _.each(list, function(v,i){ %>
+        <div class='customerItem'>
+            <div class="infoContainer"  data-link='my-ustomer-detail/my-customer/work'>
+                <span  class='zhinfo'>电话号码： </span>
+                <span class='telno'><%=v.tel%></span>
+            </div>
+        <div>
+        <% }) %>
+    </div>
+</script>
+
+<script id="customUserDetail" type="text/template">
+    <div class='customerDetail'>
+       用户详情。。。
+    </div>
+</script>
+
+<script id="marketingTasksItem" type="text/template">
+    <% _.each(list, function(v,i){ 
+        var imgPath ;
+        var btnCls ;
+        if("1" == v.signStatus){
+            imgPath ="app_img/accepted.png" ;
+            btnCls = "hide"
+        }else{
+            imgPath ="app_img/un-accepted.png"
+        }
+    %>
+    <div class="list-item <%=v.targetCont=='0'?'hide':''%>" data-uuid="<%=v.uuid%>">
+            <div class="task-info-overview" data-uuid="<%=v.uuid%>">
+                <div class="task-name">
+                    <span>任务名称：</span>
+                    <span><%=v.title%></span>
+                </div>
+                <div class="other-info">
+                    <span>发布时间：</span>
+                    <span><%=v.beginTime%></span>
+                </div>
+                <div class="other-info">
+                    <span>发布期限：</span>
+                    <span><%=v.endTime%></span>
+                </div>
+                <div class="other-info">
+                    <span>任务量：</span>
+                    <span><%=v.targetCont%>人</span>
+                </div>
+                <img src="<%=imgPath%>" alt="">
+            </div>
+            <!-- <div class="fullRate">
+                <div class="completeRate" style="width:100%;"></div>
+            </div> -->
+            <div class="acceptedBtn <%=btnCls%>" data-uuid="<%=v.uuid%>" data-index="i">
+                <img src="app_img/accptedBtn.png" alt="">
+            </div>
+        </div>
+    <% }) %>
+</script>

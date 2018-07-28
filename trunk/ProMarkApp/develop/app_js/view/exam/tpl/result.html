@@ -1,0 +1,31 @@
+<%
+    var text = '';
+    if(examLevel == 'A'){
+        text = '你真棒！';
+    }else if(examLevel == 'B'){
+        text = '再接再厉！';
+    }else if(examLevel == 'C'){
+        text = '继续加油！';
+    }else{
+        text = '还需要再努力!';
+    }
+%>
+
+<div class="common-content paper-result-content">
+    <div class="exam-result-wrapper">
+        <div class="exam-result-header">
+            <%=text%>
+        </div>
+
+        <div class="exam-result-content">
+            <p>等级：</p>
+
+            <div class="result-level">
+                <%=examLevel%>
+            </div>
+
+            <p style="margin-top: 40px;">考试成绩： <span class="font-orange"><%=gradeSum%>分</span></p>
+            <p>考试用时： <span class="font-orange"><%=timer%></span></p>
+        </div>
+    </div>
+</div>

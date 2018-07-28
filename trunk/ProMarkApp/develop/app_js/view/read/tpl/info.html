@@ -1,0 +1,76 @@
+<div class="common-content">
+    <div class="info-wrapper">
+        <table class="table materials-info-table">
+            <tr>
+                <td>资料标题</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>资料说明</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>资料类别</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>提供人</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>提供科室</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>阅读次数</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>已阅人数</td>
+                <td>-</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="weui-row materials-info-btns">
+        <div class="weui-col-50">
+            <button class="btn btn-primary btn-block btn-view-detail" disabled>查看详情</button>
+        </div>
+        <div class="weui-col-50">
+            </a><button class="btn btn-success btn-block btn-view-attachment" disabled>查看附件</button>
+        </div>
+    </div>
+</div>
+
+<script id="infoTpl" type="text/template">
+    <table class="table materials-info-table">
+        <tr>
+            <td>资料标题</td>
+            <td><%=data.courName%></td>
+        </tr>
+        <tr>
+            <td>资料说明</td>
+            <td><%=data.courDesc%></td>
+        </tr>
+        <tr>
+            <td>资料类别</td>
+            <td><%=data.courTypeStr%></td>
+        </tr>
+        <tr>
+            <td>提供人</td>
+            <td><%=data.anthor%></td>
+        </tr>
+        <tr>
+            <td>提供科室</td>
+            <td><%=data.department%></td>
+        </tr>
+        <tr>
+            <td>阅读次数</td>
+            <td><%=data.viewCount%></td>
+        </tr>
+        <tr>
+            <td>已阅人数</td>
+            <td><%=data.userCount%></td>
+        </tr>
+    </table>
+</script>

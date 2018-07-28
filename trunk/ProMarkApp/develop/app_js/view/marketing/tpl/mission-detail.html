@@ -1,0 +1,38 @@
+<div class="common-content pd10">
+    <% if(taskSing || signStatus == 1){ %>
+        <div class="mobile-detail-control">
+            <div class="btn btn-success btn-block btn-lg btn-send">导出营销服务单</div>
+        </div>
+    <% } %>
+
+    <table class="table mobile-detail-table">
+        <tr>
+            <td>工单名称</td>
+            <td><%=title%></td>
+        </tr>
+        <tr>
+            <td>派发时间</td>
+            <td><%=beginTime.substr(0, 16)%></td>
+        </tr>
+        <tr>
+            <td>完成时限</td>
+            <td><%=endTime.substr(0, 16)%></td>
+        </tr>
+        <tr>
+            <td>派单人</td>
+            <td><%=distributeName%></td>
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td><%=distributeMobile%></td>
+        </tr>
+        <tr>
+            <td>营销服务政策</td>
+            <td><%=serviceDetail%></td>
+        </tr>
+        <tr>
+            <td>营销服务口径</td>
+            <td><%=serviceCaliber%></td>
+        </tr>
+    </table>
+</div>

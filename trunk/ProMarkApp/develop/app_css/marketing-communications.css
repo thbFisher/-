@@ -1,0 +1,258 @@
+#marketing-communications{
+    margin-top: 45px ; 
+    width: 100% ;
+    height: calc(100% - 45px);
+}
+#marketing-communications .tabs{
+    display: table ;
+    width: 100%;
+    border-bottom: 3px solid #10bbf3;
+    border-collapse: collapse;
+}
+.backcolorblue{
+    background-color: #10bbf3 !important;
+    color: #FFF ;
+}
+.backcolorgrey{
+    background-color: #e1e1e1;
+}
+#marketing-communications .tabs>div{
+    display: table-cell;
+    width: 33%;
+    padding: 16px 15px;
+    vertical-align: middle;
+    text-align: center;
+}
+.borderWhite{
+    border-right: 2px solid #FFF ;
+}
+#marketing-communications .tabs-content{
+    padding: 10px 0px;
+}
+#marketing-communications .tabs-content .task-item{
+    display: table;
+    width: 100%;
+    padding: 0px 20px;
+    height: 70px;
+}
+#marketing-communications .tabs-content .task-item>div{
+    display: table-cell ;
+    vertical-align: middle;
+}
+#marketing-communications .tabs-content .task-item .task-item-time{
+    width: 25%;
+    padding-top: 5px;
+}
+#marketing-communications .tabs-content .task-item .task-item-middle{
+    width: 15px ;
+    position: relative;
+}
+#marketing-communications .tabs-content .task-item .task-item-middle .red-line{
+    position: absolute;
+    width: 2px;
+    background-color: #f9466d;
+    height: 100%;
+    top: 0px;
+    left: 5px;
+}
+.first-item{
+    height: 50% !important;
+    top: 50% !important;;
+}
+.last-item{
+    height: 50% !important;
+}
+#marketing-communications .tabs-content .task-item .task-item-middle .red-spot{
+    padding: 6px;
+    background-color: #f9466d;
+    border-radius: 10px;
+    position: absolute;
+    top: 29px;
+    left: 0px;
+}
+#marketing-communications .tabs-content .task-item  .task-item-name{
+    text-align: center ;
+    background: url("../app_img/task-border-lagger.png") no-repeat ;
+    background-size: 100%;
+    background-position: center;
+}
+
+#marketingCommunicationsOverview{
+    position: absolute;
+    z-index: 99;
+    top: 45px;
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow-y: auto;
+}
+#marketingCommunicationsOverview .search-content{
+    padding: 15px 10px;
+}
+#marketingCommunicationsOverview .search-content .overhidden input{
+    background-color: #fff;
+}
+#marketingCommunicationsOverview .list-content{
+    padding: 5px 10px ;
+}
+#marketingCommunicationsOverview .list-content .listItem{
+    display: table ;
+    width: 100% ;
+    background-color: #FFF ;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#marketingCommunicationsOverview .list-content .listItem>div{
+    display: table-cell ;
+    width: 33% ;
+}
+#marketingCommunicationsOverview .list-content .channel-oder{
+    text-align: center;
+}
+.textMiddle{
+    vertical-align: middle ;
+}
+.width45{
+    width: 45% !important;
+}
+.width42{
+    width: 42% !important;
+}
+.colorBlue{
+    color: #10bbf3 ;
+}
+#marketingCommunicationsOverview .list-content .listItem>div .name{
+    font-size: 18px;
+    font-weight: bolder;
+}
+#marketingCommunicationsOverview .list-content .listItem>div .val{
+    font-size: 16px;
+    color: rgb(161 ,161 ,161);
+}
+#marketingCommunicationsDetail{
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    overflow-x: auto;
+}
+#marketingCommunicationsDetail .personcontent {
+    margin: 5px 15px;
+}
+#marketingCommunicationsDetail .personcontent ._item{
+    display: table;
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 5px;
+    background-color: #FFF;
+}
+#marketingCommunicationsDetail .personcontent ._item ._item-left{
+    display: table-cell;
+    width: 75%;
+}
+#marketingCommunicationsDetail .personcontent ._item ._item-right{
+    display: table-cell;
+}
+#marketingCommunicationsDetail .personcontent ._item .name{
+    font-weight: bolder;
+}
+#marketingCommunicationsDetail .personcontent ._item .val{
+    color: rgb(161 ,161 ,161);
+}
+.bgblue{
+    background-color: #10bbf3 !important;
+    color: #FFF ;
+}
+.marginTop0{
+    margin-top: 0px !important;
+}
+.taskcontent{
+    padding: 8px 15px;
+}
+.taskNameInfo{
+    display: table;
+    width: 100%;
+    padding: 10px;
+}
+.taskOtherInfo{
+    display: table;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+}
+.table-cell{
+    display: table-cell ;
+}
+.rate-content{
+    padding: 20px 10px;
+}
+.rate-content>div{
+    padding: 10px 0px;
+    position: relative ;
+}
+.rate-content .fullRate{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(161 ,161 ,161);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.rate-content .fullRate .completeRate{
+    position: absolute ;
+    left: 0px ;
+    height: 100% ;
+    border-radius: 5px ;
+    background-color: #10bbf3 ;
+    /* width: 45% ; */
+}
+
+.game-content .game-name{
+    padding: 10px 15px;
+    margin: 10px 15px 0px 15px;
+}
+.game-content .game-info-overview{
+    display: table ;
+    background-color: #FFF;
+    padding: 10px 15px;
+    margin: 0px 15px 10px 15px;
+    width: calc(100% - 30px) ;
+}
+.game-content .detailInfo{
+    padding: 5px 15px;
+}
+.game-content .detailInfo .fisrt-block{
+
+}
+.game-content .detailInfo .fisrt-block>.title{
+    border-left: 5px solid #10bbf3;
+    padding-left: 5px;
+}
+
+.game-content .detailInfo  .second-block {
+    margin-bottom: 10px;
+}
+.game-content .detailInfo .second-block>.title{
+    padding: 5px 10px;
+    background-color: #FFF;
+    margin: 4px 0px
+}
+
+.moreinfo {
+    padding: 0px 0px 0px 30px;
+    background-color: #FFF;
+    margin-bottom: 3px;
+    color: rgb(161 ,161 ,161);
+    display: table;
+    width: 100%;
+}
+.moreinfo ._label{
+    display: table-cell;
+    width: 80%;
+}
+.moreinfo ._val{
+    display: table-cell;
+}
+.gameellipsePng{
+    margin: 10px 15px;
+}

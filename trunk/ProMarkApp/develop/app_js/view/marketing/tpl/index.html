@@ -1,0 +1,70 @@
+<div class="common-content">
+    <div class="marketing-user-info pd10">
+        <table class="table">
+            <tr class="user">
+                <td>
+                    <% if(headImgUrl){ %>
+                        <img src="<%=headImgUrl%>">
+                    <% }else{ %>
+                        <img src="app_img/noavatar.png">
+                    <% } %>
+                </td>
+                <td class="user-name">
+                    <%=name%>
+                </td>
+            </tr>
+            <tr>
+                <td>所属营业厅：</td>
+                <td>
+                    <% if(title){ %>
+                        <%=title%>
+                    <% }else{ %>
+                        -
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td>所属部门：</td>
+                <td><%=company%></td>
+            </tr>
+            <tr>
+                <td>联系电话：</td>
+                <td><%=user.mobile%></td>
+            </tr>
+        </table>
+    </div>
+    <% 
+        var a = '', b = '', c = '';
+        if(regularVisitors){
+            a = 'active' 
+        }
+        
+        if(taskSing){
+            b = 'active' 
+        }
+        
+        if(queryFee){
+            c = 'active' 
+        }
+    %>
+    <div class="marketing-menu">
+        <div>
+            <div class="marketing-menu-btn marketing-mission <%=b%>" data-href="marketing-mission">
+                <i class="iconfont icon-renwu1"></i>
+            </div>
+            <p>任务查询</p>
+        </div>
+        <div>  
+            <div class="marketing-menu-btn marketing-fixture <%=a%>" data-href="marketing-fixture">
+                <i class="iconfont icon-changkexinxi"></i>
+            </div>
+            <p>常客查询</p>
+        </div>
+        <div>
+            <div class="marketing-menu-btn marketing-pay <%=c%>" data-href="marketing-pay">
+                <i class="iconfont icon-jijin"></i>
+            </div>
+            <p>酬金查询</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="common-content">
+    <div class="materials-header marketing-form-header bg-gray">
+        <div class="form-group">
+            <input type="tel" class="form-control marketing-keyword" placeholder="输入电话号码搜索">
+            <button class="icon icon-times clear-form"></button>
+            <div class="input-group-addon search-keyword">
+                <i class="iconfont icon-sousuo"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="common-content marketing-fixture-list">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="list-warning">
+            搜索结果如下，点此查看全部常客
+        </div>
+        <div class="marketing-fixture-wrapper">
+            
+        </div>
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无常客数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="mobile-list-box" data-uuid="<%=v.uuid%>">
+            <span><%=v.mobile%></span>
+            <i class="iconfont icon-qianjin"></i>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

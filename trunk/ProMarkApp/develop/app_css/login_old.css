@@ -1,0 +1,50 @@
+/*登录*/
+.login-logo img{
+    width: 133px;
+}
+
+.login-header{
+    text-align: center;
+    /*background-color: #0085d0;*/
+    padding: 10px 0;
+}
+
+.login-header .iconfont{
+    font-size: 4em;
+    color: #0085d0;
+}
+
+.login-header .wrapper{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.login-header .wrapper img{
+    border-radius: 50%;
+}
+
+.login-content{
+}
+
+.login-content .weui_cell{
+    height: 50px;
+}
+
+.login-content .get-validcode{
+    width: 88px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+}
+
+.login-control{
+    padding: 20px;
+}
+

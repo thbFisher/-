@@ -1,0 +1,204 @@
+{
+    "obj": [
+            {
+                "question": "三季度邵阳本地对飞享套餐进行了优化，以下哪些档次包含200分钟主叫通话时长？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "b25a2655-db15-4422-afc1-9a94ce71b747",
+                "deleted": 0,
+                "answer": "B,C,D",
+                "createTime": 1470296733000,
+                "questionImgUrl": "",
+                "id": 10,
+                "page": 0,
+                "questionType": 2,
+                "option": {
+                    "A": "18",
+                    "B": "28",
+                    "C": "38",
+                    "D": "48"
+                }
+            },
+            {
+                "question": "三季度邵阳本地对飞享套餐进行了优化，以下哪些档次叠加了100分钟省内主叫通话时长？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "91299de7-b51c-4fd9-b79a-76e560d90597",
+                "deleted": 0,
+                "answer": "A,C,D",
+                "createTime": 1470296703000,
+                "questionImgUrl": "",
+                "id": 9,
+                "page": 0,
+                "questionType": 2,
+                "option": {
+                    "A": "28",
+                    "B": "38",
+                    "C": "48",
+                    "D": "58"
+                }
+            },
+            {
+                "question": "20M裸宽2年的价格是多少元？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "ad8ac731-c102-4bba-ab40-d78c78658184",
+                "deleted": 0,
+                "answer": "D",
+                "createTime": 1470297152000,
+                "questionImgUrl": "",
+                "id": 24,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "900",
+                    "B": "1000",
+                    "C": "1100",
+                    "D": "1300"
+                }
+            },
+            {
+                "question": "三季度魔百盒两年包的价格为多少元？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "4ab4605a-88dc-4214-8ba7-7c6ef339e78b",
+                "deleted": 0,
+                "answer": "B",
+                "createTime": 1470297061000,
+                "questionImgUrl": "",
+                "id": 21,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "188",
+                    "B": "240",
+                    "C": "256",
+                    "D": "480"
+                }
+            },
+            {
+                "question": "4G未换卡客户更换4G卡后，客户成功换卡后公司后台赠送什么?",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "b03f152d-e6c2-4c9f-a182-bf3926ca278b",
+                "deleted": 0,
+                "answer": "B",
+                "createTime": 1470297192000,
+                "questionImgUrl": "",
+                "id": 25,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "10元自由话费",
+                    "B": "20元自由话费",
+                    "C": "200M流量",
+                    "D": "500M流量"
+                }
+            },
+            {
+                "question": "三季度单位办理政企彩印业务，其使用政企彩印的成员一次性赠送什么？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "c06dd188-2a16-44d2-add4-6a6163bea3cd",
+                "deleted": 0,
+                "answer": "C",
+                "createTime": 1470296977000,
+                "questionImgUrl": "",
+                "id": 18,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "300M省内流量",
+                    "B": "300M国内流量",
+                    "C": "500M省内流量",
+                    "D": "500M国内流量"
+                }
+            },
+            {
+                "question": "对于非1500家直管客户，物联网费用由集团客户统付时，折扣底线为几折？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "7c077d82-def0-46dd-a6b3-f59b6902d31e",
+                "deleted": 0,
+                "answer": "C",
+                "createTime": 1470297219000,
+                "questionImgUrl": "",
+                "id": 26,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "9",
+                    "B": "8",
+                    "C": "7",
+                    "D": "6"
+                }
+            },
+            {
+                "question": "2/3G客户客户参与179-199特惠机，办理28及以上4G套餐，承诺24个月在网，客户可获赠？\r\n",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "3a06d3f5-068b-4ecc-91ec-b6e7e59af0a5",
+                "deleted": 0,
+                "answer": "A",
+                "createTime": 1470296825000,
+                "questionImgUrl": "",
+                "id": 13,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "100元自由，100元分月",
+                    "B": "200元自由",
+                    "C": "200元分月",
+                    "D": "100元自由，200元分月"
+                }
+            },
+            {
+                "question": "三季度邵阳本地对飞享套餐进行了优化，以下哪些档次包含100分钟国内主叫通话时长？",
+                "pcUserId": "41",
+                "bussUUID": "2405c93e-f5e2-46b6-9de8-386b3a3a85f0",
+                "rows": 0,
+                "uuid": "33d979db-4b28-476c-bc10-17f973e3915d",
+                "deleted": 0,
+                "answer": "C,D",
+                "createTime": 1470296760000,
+                "questionImgUrl": "",
+                "id": 11,
+                "page": 0,
+                "questionType": 2,
+                "option": {
+                    "A": "18",
+                    "B": "28",
+                    "C": "38",
+                    "D": "48"
+                }
+            },
+            {
+                "question": "新入网号码后几位带四可享受本地通话时长赠送？",
+                "pcUserId": "27",
+                "bussUUID": "09689ad9-d288-4657-91ab-fc783ed72aa0",
+                "rows": 0,
+                "uuid": "676ebc6a-2ead-4572-922c-ff06124289f7",
+                "deleted": 0,
+                "answer": "A",
+                "createTime": 1474514385000,
+                "questionImgUrl": "http://192.168.36.221:8080/HNwxMultP/eval/questions/2016-09-22/55ac2fc1-3d2b-48a5-86b5-ea8e63dd42f9.jpg",
+                "id": 2,
+                "page": 0,
+                "questionType": 1,
+                "option": {
+                    "A": "1",
+                    "B": "2",
+                    "C": "3",
+                    "D": "4"
+                }
+            }
+        ]
+}

@@ -1,0 +1,37 @@
+<div id="payListContent" class="nav-wrapper">
+    <div class="refresh_inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="list-warning">
+            搜索结果如下，点此查看全部
+        </div>
+
+        <div class="pay_wrapper"></div>
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(list.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%
+        }else{
+    %>
+        <ul class="pay_box simple_box">
+            <% _.each(list, function(v){ %>
+                <li data-uuid="<%=v.uuid%>">
+                    <%=v.dataMonth%>
+                    <i class="iconfont icon-qianjin pull-right"></i>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</script>

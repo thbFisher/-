@@ -1,0 +1,106 @@
+.login-wrapper{
+    background: url(../app_img/login-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.login-title{
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2em;
+}
+
+.login-img{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.login-img img{
+    border-radius: 50%;
+    width: 76px;
+    height: 76px;
+}
+
+.login-form-wrapper{
+    padding: 10px 0;
+}
+
+.login-form{
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+.login-form .pull-left{
+    width: 15%;
+    text-align: center;
+    color: #fff;
+    opacity: .8;
+}
+
+.login-form .icon-nanren{
+    font-size: 1.5em;
+    position: relative;
+    top: 9px;
+}
+
+.login-form .icon-suo{
+    font-size: 1.5em;
+    position: relative;
+    top: 9px;
+}
+
+.login-form .form-control{
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #a5e6fa;
+    outline: 0;
+    box-shadow: none;
+    color: #a5e6fa;
+    -webkit-user-select: text;
+}
+
+.login-form .form-control::-webkit-input-placeholder{
+    color: #a5e6fa;
+    opacity: 1;
+
+}
+
+.login-form .form-control:focus{
+    outline: 0;
+}
+
+.login-form .overhidden{
+    position: relative;
+}
+
+.login-form .login-valid{
+    padding-right: 110px;
+}
+
+.btn-getvalid{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #a5e6fa;
+    color: #a5e6fa;
+    padding: 5px 0;
+    font-size: .8em;
+    border-radius: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.login-control{
+    width: 80%;
+    margin: 10px auto 0;
+}
+
+.btn-login,
+.btn-login:hover,
+.btn-login:focus{
+    background-color: #10bbf3;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #0c75b3;
+}

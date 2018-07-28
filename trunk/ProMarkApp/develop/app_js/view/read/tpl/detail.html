@@ -1,0 +1,26 @@
+<div class="common-content with-ctrl materials-detail-content">
+    
+</div>
+
+<div class="materials-detail-control disabled weui-row">
+    <div class="weui-col-50 show-comment">
+        <i class="iconfont icon-groupcopy5"></i>&nbsp;&nbsp;
+        <span>评论</span> <span class="comment-count"></span>
+    </div>
+    <div class="weui-col-50 add-like">
+        <i class="iconfont icon-dianzan1"></i>&nbsp;&nbsp;
+        <span>赞</span> (<span class="like-count">-</span>)
+    </div>
+</div>
+
+<script id="detailTpl" type="text/template">
+    <h2 class="materials-detail-title"><%=data.courName%></h2>
+    <div class="materials-detail-info">
+        <div class="clearfix">
+            <div class="materials-detail-date pull-left"><%=data.createTime%></div>
+        </div>
+    </div>
+    <div class="materials-detail-text">
+        <%=data.courDetails%>
+    </div>
+</script>

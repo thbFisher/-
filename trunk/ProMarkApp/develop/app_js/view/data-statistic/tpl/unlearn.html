@@ -1,0 +1,43 @@
+<div id="dataStatisticUnLearn" class="data-statistic-activity common-content bg-gray">
+    <div class="search">
+        <div class="app_search clearfix">
+            <div class="pull-right">
+                <div class="btn btn-primary btn-search">查询</div>
+            </div>
+            <div class="overhidden">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="text" class="form-control input-search" placeholder="请输入关键字搜索">
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="listContent">
+            
+        </div>
+        <!-- <div class="list-control weui-row">
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20">1/2</div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div> -->
+    </div>
+</div>
+<script id="dataStatisticUnLearnListItem" type="text/template">
+    <% _.each(list, function(v,i){ %>
+        <div class="listItem borderblue <%=v.overRate<1?'link':''%>" data-uuid="<%=v.uuid%>">
+                <div class="itemImg">
+                    <img src="<%=v.courTypeImageUrl%>" width="32px" alt="">
+                </div>
+                <div class="itemInfo">
+                    <div class="title">资料主题：<%=v.courName%></div>
+                    <div class="learnsutitaion">应学习情况：<%=v.totalCount%>人</div>
+                    <div class="learned">已学习人数：<%=v.userCount%>人</div>
+                    <div class="unlean">未学习人数：<%=v.unReadCount%>人</div>
+                    <div class="learnRate">学习率：<%=((v.overRate?v.overRate:0)*100).toFixed(2)%>%</div>
+                </div>
+            </div>
+    <% }) %>
+</script>

@@ -1,0 +1,122 @@
+<div class="header common_header_for_read_knowledge bg-white" id="mobileRepositoryExampleHeader">
+    <div class="list_ctrl_bar pd10 clearfix">
+        <div class="pull-right show_ctrl_btn">
+            <i class="iconfont icon-shaixuan"></i>筛选
+            <i class="iconfont icon-sjiantou02 double-arrow-right"></i>
+            <i class="iconfont icon-sjiantou03 double-arrow-down hide"></i>
+        </div>
+        <div class="overhidden">
+            <div class="app_search clearfix">
+                <div class="pull-right">
+                    <div class="btn btn-primary btn-search">查询</div>
+                </div>
+                <div class="overhidden">
+                    <i class="iconfont icon-sousuo"></i>
+                    <input type="text" class="form-control input-search" placeholder="请输入关键字搜索">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list_ctrl_btn weui-row base_list_ctrl_btn">
+        <div class="weui-col-33" data-type="time">
+            按时间&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+            <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+        </div>
+        <div class="weui-col-33" data-type="type">
+            按类别&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+            <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+        </div>
+        <div class="weui-col-33" data-type="view">
+            评论数&nbsp;&nbsp;<i class="iconfont icon-yqfshangjiantou arrow-up"></i>
+            <i class="iconfont icon-xiajiantou arrow-down hide"></i>
+        </div>
+    </div>
+</div>
+
+<div class="nav weui-row bg-white">
+    <!-- <div class="weui-col-50">
+        基础知识
+    </div>
+    <div class="weui-col-50 active">
+        投诉案例
+    </div> -->
+</div>
+
+<div class="wrapper" id="mobileRepositoryExampleWrapper">
+    <div class="inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+
+        <div class="list-warning">
+            搜索结果如下，点此查看全部
+        </div>
+
+        <div class="repository_wrapper">
+            <div class="example_box" data-uuid="<%=v.uuid%>">
+                <h3>最新案例最新案例</h3>
+                <p>案例类别：热门</p>
+                <p>时间：2017-02-13</p>
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+            <div class="example_box" data-uuid="<%=v.uuid%>">
+                <h3>最新案例最新案例</h3>
+                <p>案例类别：热门</p>
+                <p>时间：2017-02-13</p>
+                <i class="iconfont icon-qianjin"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+        <div class="example_box" data-uuid="<%=v.uuid%>">
+            <h3><%=v.title%></h3>
+            <p>案例类别：<%=v.typeName%></p>
+            <p>时间：<%=v.complaintsTime.substr(0, 16)%></p>
+            <i class="iconfont icon-qianjin"></i>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

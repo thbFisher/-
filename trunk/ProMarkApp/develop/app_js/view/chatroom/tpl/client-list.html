@@ -1,0 +1,18 @@
+<div class="common-content client-list-content clearfix">
+    
+</div>
+
+<script id="clientListTpl" type="tempalte/text">
+<% _.each(list, function(v){ %>
+    <div class="client-box-wrapper">
+        <div class="client-box" data-uuid="<%=v.uuid%>">
+            <% if(v.headImgUrl){ %>
+                <img src="<%=v.headImgUrl%>">
+            <% }else{ %>
+                <img src="app_img/noavatar.png">
+            <% } %>
+            <div class="client-box-text"><%=v.name%></div>
+        </div>
+    </div>
+<% }); %>
+</script>

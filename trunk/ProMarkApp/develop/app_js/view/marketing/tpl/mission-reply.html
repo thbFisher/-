@@ -1,0 +1,102 @@
+<div class="common-content pd10"></div>
+
+<script id="detailTpl" type="text/template">
+    <table class="table mobile-detail-table">
+        <tr>
+            <td>任务状态</td>
+            <td>
+                <% if(userResult){ %>
+                    已反馈
+                <% }else{ %>
+                    未反馈
+                <% } %>
+            </td>
+        </tr>
+        <% if(jobMobile){ %>
+            <tr>
+                <td>任务回填人</td>
+                <td>
+                    <%=jobUserName%> <%=jobMobile%>
+                </td>
+            </tr>
+        <% } %>
+        <tr>
+            <td>客户号码</td>
+            <td><%=mobile%></td>
+        </tr>
+        <tr>
+            <td>客户属性</td>
+            <td><%=userAttr%></td>
+        </tr>
+        <tr>
+            <td>在网时长</td>
+            <td><%=onLineTime%></td>
+        </tr>
+        <tr>
+            <td>归属网点</td>
+            <td><%=areas%></td>
+        </tr>
+        <tr>
+            <td>当前状态</td>
+            <td><%=userStatus%></td>
+        </tr>
+        <tr>
+            <td>主套餐</td>
+            <td><%=mainPlan%></td>
+        </tr>
+        <tr>
+            <td>流量套餐</td>
+            <td><%=flowPlan%></td>
+        </tr>
+        <tr>
+            <td>月均ARPU值</td>
+            <td><%=currentArpu%></td>
+        </tr>
+        <tr>
+            <td>月均MOU</td>
+            <td><%=currentMou%></td>
+        </tr>
+        <tr>
+            <td>月均流量</td>
+            <td><%=flowAvg%></td>
+        </tr>
+    </table>
+
+    <% 
+        if((backfillTask && !userResult) || (backfillTask && userResult && jobMobile == user.mobile)){
+            var check1 = 'checked';
+            var check2 = '';
+            var text = '';
+
+            if(jobMobile){
+                if(userResult == 2){
+                    check1 = '';
+                    check2 = 'checked';
+                }
+
+                if(userFeedback){
+                    text = userFeedback;
+                }
+            }
+    %>
+        <div class="mission-reply-control">
+            <div class="weui_cells_title">任务回填</div>
+            <div class="weui_cells weui_cells_form">
+                <div class="weui_cell">
+                    <label>
+                        <input type="radio" class="blue-chk" name="input-simple" value="1" <%=check1%>> 同意
+                    </label>
+                    <label> 
+                        <input type="radio" class="blue-chk" name="input-simple" value="2" <%=check2%>> 不同意
+                    </label>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <textarea class="weui_textarea input-text" placeholder="填写更多内容" rows="5"><%=text%></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg btn-submit">提交</button>
+        </div>
+    <% } %>
+</script>

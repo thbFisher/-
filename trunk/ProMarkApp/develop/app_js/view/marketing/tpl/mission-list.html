@@ -1,0 +1,137 @@
+<div class="common-content mission-list-wrapper">
+
+</div>
+
+<script id="detailTpl" type="text/template">
+    <% if(!taskSing && signStatus == 0){ %>
+        <div class="warning-panel">
+            该任务未签收，您没有权限查看
+        </div>
+    <% } %>
+
+    <% if(taskSing && signStatus == 0){ %>
+        <!--未签收-->
+        <div class="title clearfix pd10">
+            <div class="pull-left">
+                该工单还没有签收
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-success btn-sign-mission">签收</button>
+            </div>
+        </div>
+
+        <div class="common-content mission-list-content pd10">
+            <table class="table mobile-detail-table">
+                <tr>
+                    <td>工单名称</td>
+                    <td><%=title%></td>
+                </tr>
+                <tr>
+                    <td>派发时间</td>
+                    <td><%=beginTime.substr(0, 16)%></td>
+                </tr>
+                <tr>
+                    <td>完成时限</td>
+                    <td><%=endTime.substr(0, 16)%></td>
+                </tr>
+                <tr>
+                    <td>派单人</td>
+                    <td><%=distributeName%></td>
+                </tr>
+                <tr>
+                    <td>联系电话</td>
+                    <td><%=distributeMobile%></td>
+                </tr>
+                <tr>
+                    <td>营销服务政策</td>
+                    <td><%=serviceDetail%></td>
+                </tr>
+                <tr>
+                    <td>营销服务口径</td>
+                    <td><%=serviceCaliber%></td>
+                </tr>
+            </table>
+        </div>
+    <% } %>
+
+    <% if(signStatus == 1){ %>
+        <!--已签收-->
+        <div class="materials-header marketing-form-header bg-gray">
+            <div class="form-group">
+                <input type="tel" class="form-control marketing-keyword" placeholder="输入电话号码搜索">
+                <button class="icon icon-times clear-form"></button>
+                <div class="input-group-addon search-keyword">
+                    <i class="iconfont icon-sousuo"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="common-content mission-list-content">
+            <div class="weui-pull-to-refresh-layer">
+                <div class="pull-to-refresh-arrow"></div>
+                <div class="pull-to-refresh-preloader"></div>
+                <div class="down">下拉刷新</div>
+                <div class="up">释放刷新</div>
+                <div class="refresh">正在刷新...</div>
+                <div class="done">刷新完成</div>
+            </div>
+            <div class="list-warning">
+                搜索结果如下，点此查看全部营销服务目标
+            </div>
+            <div class="inner">
+                
+            </div>
+        </div>
+    <% } %>
+</script>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无营销服务目标数据</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+            var id = (data.pageNum - 1) * data.pageSize + i + 1;
+    %>
+        <div class="mobile-list-box" data-uuid="<%=v.uuid%>">
+            <span><%=v.mobile%></span>
+            <p>
+                <span class="font-blue">当前序号 <%=id%></span>
+            </p>
+            <i class="iconfont icon-qianjin"></i>
+            <% if(v.userResult > 0){ %>
+                <div class="over-ribon">已反馈</div>
+            <% } %>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

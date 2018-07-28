@@ -1,0 +1,274 @@
+<div class="common-wrapper">
+    <div class="common-content knowledge-detail-content">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+        <div class="knowledge-info-content"></div>
+    </div>
+</div>
+
+
+<div class="materials-detail-control comment-form">
+    <input type="text" class="form-control comment-reply-form input-comment" placeholder="说点什么">
+    <button class="btn btn-transparent btn-send"><i class="iconfont icon-icon_sent"></i></button>
+</div>
+
+<div class="answer-panel-wrapper">
+    <div class="answer-panel">
+        <div class="view-answer">我要回答</div>
+        <div class="share-question">转发分享</div>
+    </div>
+</div>
+
+
+<script id="detailTpl" type="text/template">
+    <div class="knowledge-question-content">
+        <div class="info clearfix">
+            <% if(know.queStatus){ %>
+                <div class="label label-danger pull-left">已关闭</div>
+            <% }else{ %>
+                <div class="label label-success pull-left">待回答</div>
+            <% } %>
+            <div class="label label-blue pull-left"><%=know.queTypeUuid%></div>
+            <div class="datetime pull-right"><%=know.createTimeStr.substr(0, 16)%></div>
+        </div>
+        <div class="text">
+            <%=know.queDesc%>
+        </div>
+        <div class="image">
+        <%
+            var imgArr = JSON.parse(know.queImgJson);
+        %>
+            <% _.each(imgArr, function(v, i){ %>
+                <img src="<%=v%>" alt="">
+                <% if(i == 2 || i == 5 || i == 8){ %>
+                <br>
+                <% } %>
+            <% }); %>
+        </div>
+        <div class="control clearfix">
+            <div class="pull-left">
+                <span class="share">
+                    <i class="iconfont icon-zhuanfa"></i> <span><%=know.forwardCount %></span>
+                </span>
+                <span class="reply">
+                    <i class="iconfont icon-huida"></i> <%=know.replayCount %>
+                </span>
+            </div>
+            <div class="pull-right">
+                <span class="user">提问人：<%=know.userName %></span>
+            </div>
+        </div>
+        <% if(user.mobile == know.userMobile && !know.queStatus){ %>
+            <div class="close-question">
+                <div class="btn btn-default btn-sm btn-close-question" data-uuid="<%=know.uuid%>">关闭问题</div>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="blank" id="blank"></div>
+
+    <% if(an.rows.length == 0){ %> 
+        <div class="warning-panel">还没有人回答</div>
+    <% } %> 
+
+    <%
+        var list = an.rows;
+
+        var best = '';
+        if(hasBest){
+            best = list[0];
+        }
+    %>
+
+    <% if(hasBest){ %>
+        <div class="knowledge-best-answer">
+            <div class="knowledge-best-title">
+                <i class="iconfont icon-sheweichenggong"></i> 最佳答案
+            </div>
+            <div class="knowledge-answer-box">
+                <div class="avatar">
+                <% if(best.anUserHeadImage){ %>
+                    <img src="<%=best.anUserHeadImage%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+                </div>
+                <div class="wrapper">
+                    <div class="clearfix">
+                        <div class="username pull-left"><%=best.anUserName%></div>
+                        <div class="datetime pull-right"><%=best.createTimeStr.substr(0, 16)%></div>
+                    </div>
+
+                    <div class="content">
+                        <%=best.content%>
+                    </div>
+
+                    <div class="image">
+                        <%
+                            var contentImgArr = JSON.parse(best.contentImgJson);
+                        %>
+                        <% _.each(contentImgArr, function(v, i){ %>
+                            <img src="<%=v%>" alt="">
+                            <% if(i == 2 || i == 5 || i == 8){ %>
+                            <br>
+                            <% } %>
+                        <% }); %>
+                    </div>
+
+                    <div class="info">
+                        <span class="share">
+                            <i class="iconfont icon-zhuanfa"></i> <span><%=best.forwardCount%></span>
+                        </span>
+                        <span class="reply">
+                            <i class="iconfont icon-groupcopy5"></i> <%=best.commentCount%>
+                        </span>
+
+                        <div class="control answer-control">
+                            <i class="iconfont icon-xiehuifu1"></i>
+                            <div class="btn-groups clearfix">
+                                <div class="btn-share pull-left" data-anuuid="<%=best.uuid%>" data-queuuid="<%=best.queUuid%>">分享</div>
+                                <% if(!know.queStatus){ %>
+                                    <div class="btn-comment pull-left" data-uuid="<%=best.uuid%>" data-best="1">回复</div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% if(best.commentList.length > 0){ %>
+                        <div class="comment">
+                            <% _.each(best.commentList, function(v){ %>
+                                <div class="comment-box"><span><%=v.commentName%>：</span><%=v.commentContent%></div>
+                            <% }); %>
+                            <% if(best.commentCount > 5){ %>
+                                <div class="comment-more" data-uuid="<%=best.uuid%>">更多评论</div>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="blank" id="blank1"></div>
+    <% } %>
+
+    <div class="knowledge-answer-content">
+    <% if(list.length > 0){ %>
+        <div class="knowledge-other-title">
+            其他回答
+        </div>
+    <% } %>
+    <% 
+        if(list.length > 0 && (list[0].isGood != 1 || list.length > 1)){
+    %>
+
+            <% 
+                _.each(list, function(v, i){
+                    if(v.isGood != 1){
+            %>
+                <div class="knowledge-answer-box">
+                    <div class="avatar">
+                        <% if(v.anUserHeadImage){ %>
+                            <img src="<%=v.anUserHeadImage%>">
+                        <% }else{ %>
+                            <img src="app_img/noavatar.png">
+                        <% } %>
+                    </div>
+                    <div class="wrapper">
+                        <div class="clearfix">
+                            <div class="username pull-left"><%=v.anUserName%></div>
+                            <div class="datetime pull-right"><%=v.createTimeStr.substr(0, 16)%></div>
+                        </div>
+
+                        <div class="content">
+                            <%=v.content%>
+                        </div>
+
+                        <div class="image">
+                            <%
+                                var contentImgArr = JSON.parse(v.contentImgJson);
+                            %>
+                            <% _.each(contentImgArr, function(src, i){ %>
+                                <img src="<%=src%>" alt="">
+                                <% if(i == 2 || i == 5 || i == 8){ %>
+                                <br>
+                                <% } %>
+                            <% }); %>
+                        </div>
+
+                        <div class="info">
+                            <span class="share">
+                                <i class="iconfont icon-zhuanfa"></i> <span><%=v.forwardCount%></span>
+                            </span>
+                            <span class="reply">
+                                <i class="iconfont icon-groupcopy5"></i> <%=v.commentCount%>
+                            </span>
+                            
+                            <div class="control answer-control">
+                                <i class="iconfont icon-xiehuifu1"></i>
+                                <div class="btn-groups clearfix">
+                                    <div class="btn-share pull-left" data-anuuid="<%=v.uuid%>" data-queuuid="<%=v.queUuid%>">分享</div>
+                                    
+                                    <% if(!know.queStatus){ %>
+                                        <div class="btn-comment pull-left" data-uuid="<%=v.uuid%>" data-best="0">回复</div>
+                                    <% } %>
+                                    
+                                    <% if(v.anUserMobile != user.mobile && !hasBest && know.userMobile == user.mobile){ %>
+                                        <div class="btn-setting" data-uuid="<%=v.uuid%>">设为最佳</div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% if(v.commentList.length > 0){ %>
+                            <div class="comment">
+                                <% _.each(v.commentList, function(c){ %>
+                                    <div class="comment-box"><span><%=c.commentName%>：</span><%=c.commentContent%></div>
+                                <% }); %>
+                                <% if(v.commentCount > 5){ %>
+                                    <div class="comment-more" data-uuid="<%=v.uuid%>">更多评论</div>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            <% 
+                    }
+                }); 
+            %>
+
+        <% if(an.hasNextPage || an.hasPreviousPage){ %>
+            <div class="list-control weui-row">
+                <%
+                    var prevAttr = '',nextAttr = ''; 
+                    
+                    if(!an.hasPreviousPage){
+                        prevAttr = 'disabled';
+                    } 
+                    
+                    if(!an.hasNextPage){
+                        nextAttr = 'disabled';
+                    } 
+                %> 
+                <div class="weui-col-40">
+                    <button class="btn btn-default btn-prev" data-page="<%=an.prePage%>" <%=prevAttr%>>上一页</button>
+                </div>
+                <div class="weui-col-20"><%=an.pageNum%>/<%=an.pages%></div>
+                <div class="weui-col-40">
+                    <button class="btn btn-default btn-next" data-page="<%=an.nextPage%>" <%=nextAttr%>>下一页</button>
+                </div>
+            </div>
+        <% } %>
+    <% }else{ %>
+        <% if(list.length > 0){ %>
+            <div class="warning-panel">
+                暂无其他答案
+            </div>
+        <% } %>
+    <% } %>
+    </div>
+</script>

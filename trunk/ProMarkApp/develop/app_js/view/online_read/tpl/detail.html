@@ -1,0 +1,215 @@
+<div class="common-content bg-gray online_read_detail overhidden" id="onlineReadDetail">
+    <div class="content">
+        <div class="pd10 bg-white article_wrapper">
+            <div class="article_info">
+                <h3>-----</h3>
+                <p>作者：-- &nbsp;&nbsp;更新时间：0000-00-00</p>
+            </div>
+
+            <div class="article_content clearfix"></div>
+        </div>
+        
+        <div class="article_ctrl pd10 bg-white clearfix">
+            <div class="pull-left">
+                <div class="article_ctrl_btn like_btn not_like">
+                    <div class="icon_wrapper">
+                        <i class="iconfont icon-aixin empty_love"></i>
+                        <i class="iconfont icon-xiazai1 fill_love hide"></i>
+                    </div>
+                    <p>0</p>
+                </div>
+
+                <div class="article_ctrl_btn reply_btn">
+                    <div class="icon_wrapper">
+                        <i class="iconfont icon-pinglun"></i>
+                    </div>
+                    
+                    <p>0</p>
+                </div>
+            </div>
+            <!--<div class="pull-right">
+                <div class="link_ctrl_btn">
+                    <i class="iconfont icon-xiazai"></i>
+                    <p>附件下载</p>
+                </div>
+            </div>-->
+        </div>
+
+        <div class="comment_sum">
+            评论
+        </div>
+        <div class="comment_wrapper bg-white">
+            <!--<div class="warning-panel">暂无评论</div>-->
+            <!--<div class="comment_floor">
+                <div class="comment_box clearfix">
+                    <div class="pull-left">
+                        <img src="app_img/noavatar.png" alt="">
+                    </div>
+                    <div class="overhidden">
+                        <div class="comment_info">
+                            <div class="clearfix">
+                                <div class="name pull-left">测试姓名</div>
+                                <div class="comment_ctrl pull-right">
+                                    <div class="like_ctrl">
+                                        <i class="iconfont icon-aixin empty_love"></i> 1
+                                    </div>
+                                    <div class="reply_ctrl">
+                                        <i class="iconfont icon-groupcopy5"></i> 2
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="date">2016-02-02</p>
+                        </div>
+                        <p>回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容</p>
+                    </div>
+                </div>
+                <div class="comment_sub_box">
+                    <div class="comment_box clearfix">
+                        <div class="pull-left">
+                            <img src="app_img/noavatar.png" alt="">
+                        </div>
+                        <div class="overhidden">
+                            <div class="clearfix">
+                                <div class="name pull-left">测试姓名</div>
+                                <div class="date pull-right">2016-02-02</div>
+                            </div>
+                            <p>回复内容回复内容</p>
+                        </div>
+                    </div>
+                    <div class="comment_box clearfix">
+                        <div class="pull-left">
+                            <img src="app_img/noavatar.png" alt="">
+                        </div>
+                        <div class="overhidden">
+                            <div class="clearfix">
+                                <div class="name pull-left">测试姓名</div>
+                                <div class="date pull-right">2016-02-02</div>
+                            </div>
+                            <p>回复内容回复内容</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <div class="form clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-block btn-reply">发送</div>
+        </div>
+        <div class="overhidden">
+            <input type="text" class="form-control input-comment" placeholder="发表一下你的点评吧~">
+        </div>
+    </div>
+</div>
+
+<script id="detailTpl" type="text/template">
+    <%
+        var a = '佚名';
+        if(data.anthor){
+            a = data.anthor;
+        }
+    %>
+    <div class="article_info">
+        <h3><%=data.courName%></h3>
+        <p>作者：<%=a%> &nbsp;&nbsp;更新时间：<%=data.createTime%></p>
+    </div>
+
+    <div class="article_content clearfix"><%=data.courDetails%></div>
+</script>
+
+
+
+<script id="commentTpl" type="text/template">
+<% if(!data.list.rows.length){ %>
+    <div class="warning-panel">暂无评论</div>
+<% }else{ %>
+    <%
+        _.each(data.list.rows,function(v,i){
+    %>
+        <div class="comment_floor">
+            <div class="comment_box clearfix">
+                <div class="pull-left">
+                    <% if(v.headimgurl){ %>
+                        <img src="<%=v.headimgurl%>">
+                    <% }else{ %>
+                        <img src="app_img/noavatar.png">
+                    <% } %>
+                </div>
+                <div class="overhidden">
+                    <div class="comment_info">
+                        <div class="clearfix">
+                            <div class="name pull-left"><%=v.name%></div>
+                            <div class="comment_ctrl pull-right">
+                                <div class="like_ctrl" data-uuid="<%=v.uuid%>">
+                                    <%
+                                        var h1 = '';
+                                        var h2 = 'hide';
+                                        if(v.isThumbs){
+                                            h1 = 'hide';
+                                            h2 = '';
+                                        }
+                                    %>
+                                    <i class="iconfont icon-aixin empty_love <%=h1%>"></i>
+                                    <i class="iconfont icon-xiazai1 fill_love <%=h2%>"></i> <span><%=v.thumbsCount%></span>
+                                </div>
+                                <div class="reply_ctrl" data-uuid="<%=v.uuid%>" data-name="<%=v.name%>">
+                                    <i class="iconfont icon-groupcopy5"></i> <%=v.commentsCount%>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="date"><%=v.commentsTime%></p>
+                    </div>
+                    <p><%=v.commentsContent%></p>
+                </div>
+            </div>
+            <% if(v.secondaryJson && v.secondaryJson.length > 0){ %>
+                <div class="comment_sub_box">
+                    <% _.each(v.secondaryJson, function(s){ %>
+                        <div class="comment_box clearfix">
+                            <div class="pull-left">
+                                <% if(s.headimgurl){ %>
+                                    <img src="<%=s.headimgurl%>">
+                                <% }else{ %>
+                                    <img src="app_img/noavatar.png ">
+                                <% } %>
+                            </div>
+                            <div class="overhidden">
+                                <div class="clearfix">
+                                    <div class="name pull-left"><%=s.name%></div>
+                                    <div class="date pull-right"><%=s.commentsTime%></div>
+                                </div>
+                                <p><%=s.commentsContent%></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } %>
+        </div>
+    <%
+        });
+    %>
+    <% if(data.list.hasNextPage || data.list.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.list.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.list.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.list.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.list.pageNum%>/<%=data.list.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.list.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+<% } %>
+</script>

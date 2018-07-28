@@ -1,0 +1,150 @@
+.index-header{
+    /*height: 80px;*/
+    background-color: #0085d0;
+    position: relative;
+    padding: 20px 0 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.index-header p{
+    line-height: 30px;
+}
+
+.index-company-panel{
+    position: absolute; 
+    font-size: 0.7em; 
+    width: 100%; 
+    bottom: 0px;    
+    text-align: center;
+    padding: 11px;
+    color: #565656
+}
+
+.index-company-panel span{
+    width: 100%; 
+}
+
+.index-header .index-avatar{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    
+    /*position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -40px;*/
+
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #fff;
+}
+
+.index-header .index-avatar img{
+    border-radius: 50%;
+    height: 74px;
+}
+
+/*菜单*/
+
+.index-menu{
+}
+
+.index-menu > div.weui-col-33{
+    border-left: 1px solid #dddeee;
+    border-bottom: 1px solid #dddeee;
+    width: calc(100% / 3);
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.index-menu > div.no-left{
+    border-left: none;
+}
+
+.index-menu > div.top{
+    /*border-top: 1px solid #dddeee;*/
+}
+
+.index-menu > div:active{
+    background-color: #f3f3f3;
+}
+
+.index-box{
+    padding: 10px 0;
+    /*background-color: #f6f6f6;*/
+    /*box-shadow: 0 1px 3px 1px #ddd;*/
+}
+
+.index-box .index-icon{
+    height: 45px;
+}
+
+.index-box p{
+    font-size: .9em;
+}
+
+/*在线阅读*/
+.index-box-read .iconfont{
+    font-size: 2.3em;
+    color: #f88648;
+    position: relative;
+    top: 3px;
+}
+
+.index-box-read p{
+    color: #f88648;
+}
+
+/*评测考试*/
+.index-box-exam .iconfont{
+    font-size: 2.5em;
+    color: #1fa64a;
+}
+
+.index-box-exam p{
+    color: #1fa64a;
+}
+
+/*掌上知识库*/
+.index-box-knowledge .iconfont{
+    font-size: 2.7em;
+    position: relative;
+    top: 2px;
+    color: #0789ba;
+}
+
+.index-box-knowledge p{
+    color: #0789ba;
+}
+
+/*在线营销*/
+.index-box-mission .iconfont{
+    font-size: 2.5em;
+    color: #f8b239;
+}
+
+.index-box-mission p{
+    color: #f8b239;
+}
+
+/*在线沟通*/
+.index-box-chatroom .iconfont{
+    font-size: 2.3em;
+    color: lightseagreen;
+}
+
+.index-box-chatroom p{
+    color: lightseagreen;
+}
+
+/*个人中心*/
+.index-box-center .iconfont{
+    font-size: 2.5em;
+    color: #5d9cec;
+}
+
+.index-box-center p{
+    color: #5d9cec;
+}

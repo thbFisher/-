@@ -1,0 +1,16 @@
+<div class="weui_tabbar">
+    <% 
+        _.each(data, function(v,i){ 
+            var classStr = '';
+            if(index == i){
+                classStr = 'weui_bar_item_on';
+            }
+    %>
+        <a href="javascript:void(0)" data-href="<%=v.url%>" class="weui_tabbar_item <%=classStr%>">
+            <div class="weui_tabbar_icon">
+                <%=v.icon%>
+            </div>
+            <p class="weui_tabbar_label"><%=v.title%></p>
+        </a>
+    <% }) %>
+</div>

@@ -1,0 +1,642 @@
+.knowledge-menu-box{
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px 10px 10px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.knowledge-menu-box .icon{
+    width: 65px;
+    flex-shrink: 0;
+}
+
+.knowledge-menu-box .icon .iconfont{
+    font-size: 3.5em;
+}
+
+.menu-knowledge-box .iconfont{
+    color: #ff824c;    
+    position: relative;
+    top: -5px;
+}
+
+.menu-question-box .iconfont{
+    color: #00c971;
+}
+
+.menu-answer-box .iconfont{
+    color: #9c96eb;
+}
+
+.knowledge-menu-box .title{
+    flex-grow: 1;
+}
+
+.knowledge-menu-box .title h3{
+    font-size: 1.2em;
+    color: #000;
+    padding: 0 0 5px 0;
+}
+
+.knowledge-menu-box .title p{
+    color: #999;
+    font-size: .9em;
+    line-height: 1;
+}
+
+.knowledge-menu-box .control{
+    width: 40px;
+    text-align: right;
+    position: relative;
+}
+
+.knowledge-menu-box .control .iconfont{
+    font-size: 2em;
+    color: #ddd;
+    position: absolute;
+    top: calc(50% - 14px);
+    right: 0;
+}
+
+.knowledge-index-control{
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.knowledge-index-control:before{
+    content: '';
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 80px;
+    height: 0;
+    border: 1px solid #dedede;
+}
+
+.knowledge-index-control:after{
+    content: '';
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 85px;
+    height: 0;
+    border: 1px solid #dedede;
+}
+
+/*.knowledge-index-control:before{
+    content: '';
+    position: absolute;
+    left:0;
+    right: calc(50% + 8.2em);
+    top: 75px;
+    height: 0;
+    border: 1px solid #dedede;
+}
+
+.knowledge-index-control:after{
+    content: '';
+    position: absolute;
+    left: calc(50% + 8.2em);
+    right: 0;
+    top: 85px;
+    height: 0;
+    border: 1px solid #dedede;
+}*/
+
+.btn-ask-wrapper{
+    width: 126px;
+    height: 126px;
+    background-color: #ddd;
+    padding: 8px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    margin-left: -63px;
+    z-index: 2;
+}
+
+.btn-ask-quetion{
+    width: 110px;
+    height: 110px;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #333580;
+    position: relative;
+}
+
+.btn-ask-quetion .iconfont{
+    font-size: 2.5em;
+    -webkit-text-stroke-width: 0;
+}
+
+.btn-ask-quetion p{
+    padding: 10px 0 0;
+}
+
+.btn-ask-quetion .line-left{
+    position: absolute;
+    left: calc(-3.7em - 9px);
+    bottom: 50px;
+    width: 3.7em;
+    height: 1.5em;
+    background: -webkit-linear-gradient(315deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%), -webkit-linear-gradient(45deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%);
+    background: linear-gradient(135deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%), linear-gradient(45deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%);
+    background-size: 1.5em 3em;
+    background-repeat: repeat-x, repeat-x;
+}
+
+.btn-ask-quetion .line-right{
+    position: absolute;
+    right: calc(-3.7em - 9px);
+    bottom: 50px;
+    width: 3.7em;
+    height: 1.5em;
+    background: -webkit-linear-gradient(315deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%), -webkit-linear-gradient(45deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%);
+    background: linear-gradient(135deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%), linear-gradient(45deg, transparent, transparent 45%, #ddd, transparent 55%, transparent 100%);
+    background-size: 1.5em 3em;
+    background-repeat: repeat-x, repeat-x;
+}
+
+
+/**
+*   提问回答表单
+**/
+.input-question,
+.input-answer{
+    height: 120px;
+    resize: none;
+}
+
+.input-control{
+    padding: 0 20px 20px 20px;
+}
+
+/*拍照*/
+.input-camera{
+    display: -webkit-flex;
+    display: flex;
+    padding: 10px 0;
+}
+
+.btn-input-camera{
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 60px;
+    text-align: center;
+    color: #0086cf
+}
+
+.btn-input-camera .iconfont{
+    font-size: 2.6em;
+}
+
+.input-image{
+    flex-grow: 1;
+    min-height: 70px;
+    padding-right: 10px;
+}
+
+.input-image-box{
+    float: left;
+    width: calc(100% / 3);
+    text-align: center;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.input-image-box img{
+    width: 60px;
+    height: 60px;
+}
+
+.input-image-box .delete{
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+}
+
+.input-image-box .delete .iconfont{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/**
+*   问题列表
+**/
+.knowledge-question-box{
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 1px 2px #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.knowledge-question-box .info{
+    height: 40px;
+    padding-top: 15px;
+}
+
+.knowledge-question-box .info .label-success{
+    margin-right: 5px;
+    border: 1px solid #5cb85c;
+}
+
+.knowledge-question-box .info .label-danger{
+    margin-right: 5px;
+    border: 1px solid #d9534f;
+}
+
+.knowledge-question-box .content{
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 22px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding: 5px 0;
+    word-break: break-all;
+}
+
+.knowledge-question-box .images{
+    padding: 5px 0 10px 0;
+    font-size: 0;
+}
+
+.knowledge-question-box .images img{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.knowledge-question-box .control{
+    font-size: .9em;
+    line-height: 40px;
+    height: 40px;
+    border-top: 1px solid #ddd;
+    padding: 0 5px;
+    margin-top: 5px;
+}
+
+.knowledge-question-box .control a{
+    text-decoration: none;
+    color: #0086cf;
+}
+
+.knowledge-question-box .control .share{
+    margin-right: 5px;
+}
+
+.knowledge-question-box .control .iconfont{
+    color: #999;
+    -webkit-text-stroke-width: 0;
+}
+
+.knowledge-question-box .control .share .iconfont{
+    font-size: 1.5em;
+}
+
+.knowledge-question-box .control .reply .iconfont{
+    font-size: 1.2em;
+}
+
+/**
+*   详情
+**/
+.knowledge-detail-content{
+    /*background-color: #f3f3f3;*/
+}
+
+.blank{
+    height: 10px;
+    background-color: #eee;
+}
+
+.knowledge-question-content{
+    padding: 15px;
+    position: relative;
+    background-color: #fff;
+}
+
+.knowledge-question-content .close-question{
+    text-align: right;
+    padding: 10px 0 0 0;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.knowledge-question-content .info{
+    
+}
+
+.knowledge-question-content .info .pull-left{
+    margin-right: 5px;
+}
+
+.knowledge-question-content .text{
+    padding: 10px 0;
+}
+
+.knowledge-question-content .image{
+    font-size: 0;
+}
+
+.knowledge-question-content .image img{
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.knowledge-question-content .control{
+    vertical-align: bottom;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.knowledge-question-content .control .pull-left{
+    margin-top: 5px;
+}
+
+.knowledge-question-content .control .iconfont{
+    color: #999;
+    -webkit-text-stroke-width: 0;
+}
+
+.knowledge-question-content .control .share{
+    margin-right: 5px;
+}
+
+.knowledge-question-content .control .share .iconfont{
+    font-size: 1.5em;
+}
+
+.knowledge-question-content .control .pull-right{
+    font-size: .9em;
+    margin-top: 10px;
+}
+
+/*最佳答案*/
+.knowledge-best-answer{
+    background-color: #fff;
+}
+
+.knowledge-best-title{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: green;
+    font-weight: 700;
+}
+
+.knowledge-best-title .iconfont{
+    color: gold;
+}
+
+/*普通回答*/
+.knowledge-answer-content{
+    background-color: #fff;
+
+}
+
+.knowledge-other-title{
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-weight: 700;
+    color: #999;
+}
+
+.knowledge-answer-box{
+    padding: 10px 10px 10px 0;
+    display: -webkit-flex;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.knowledge-answer-box > .avatar{
+    flex-shrink: 0;
+    width: 70px;
+    text-align: center;
+}
+
+.knowledge-answer-box > .avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.knowledge-answer-box > .wrapper{
+    flex-grow: 1;
+    position: relative;
+}
+
+.knowledge-answer-box .username{
+    color: #0086cf;
+}
+
+.knowledge-answer-box .datetime{
+    font-size: .9em;
+    color: #999;
+    margin-top: 3px;
+}
+
+.knowledge-answer-box .content{
+    padding: 5px 0 10px 0;
+    word-break: break-all;
+    line-height: 22px;
+}
+
+.knowledge-answer-box .image img{
+    width: 50px;
+    height: 50px;
+}
+
+.knowledge-answer-box .info{
+    margin-top: 10px;
+    position: relative;
+}
+
+.knowledge-answer-box .info span{
+    margin-right: 5px;
+}
+
+.knowledge-answer-box .info .iconfont{
+    color: #999;
+}
+
+.knowledge-answer-box .info .share .iconfont{
+    font-size: 1.5em;
+}
+
+
+.knowledge-answer-box .control{
+    position: absolute;
+    right: -5px;
+    bottom: -2px;
+}
+
+.knowledge-answer-box .control .iconfont{
+    color: #0086cf;
+    font-size: 1.5em;
+    padding: 10px 10px;
+}
+
+.knowledge-answer-box .control .btn-groups{
+    position: absolute;
+    background-color: #0086cf;
+    color: #fff;
+    font-size: .9em;
+    right: 38px;
+    bottom: -5px;
+    border-radius: 5px;
+    /*display: flex;*/
+    display: none;
+}
+
+.knowledge-answer-box .control .btn-groups:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 6px solid #0086cf;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    right: -5px;
+    top: 10px;
+}
+
+.knowledge-answer-box .control .btn-groups > div{
+    padding: 8px 10px;
+    text-align: center;
+}  
+
+.knowledge-answer-box .control .btn-share{
+    border-right: 1px solid #fff;
+    width: 60px;
+} 
+
+.knowledge-answer-box .control .btn-comment{
+    width: 60px;
+} 
+
+.knowledge-answer-box .control .btn-setting{
+    width: 80px;
+    border-left: 1px solid #fff;
+}
+
+.knowledge-answer-box .comment{
+    background-color: #f3f3f3;
+    position: relative;
+    font-size: .9em;
+    margin-top: 15px;
+    padding: 15px 0 5px 0;
+}
+
+.knowledge-answer-box .comment:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-bottom: 10px solid #f3f3f3;
+    border-right: 8px solid transparent;
+    position: absolute;
+    left: 43px;
+    top: -10px;
+}
+
+.knowledge-answer-box .comment-box{
+    margin-bottom: 8px;
+    padding: 0 10px;
+    word-break: break-all;
+}
+
+.knowledge-answer-box .comment-box > span{
+    color: #0086cf;
+}
+
+.knowledge-answer-box .comment-more{
+    text-align: center;
+    color: #0086cf;
+    border-top: 1px solid #ddd;
+    padding: 10px 0 5px 0;
+}
+
+/**
+*   回复评论
+**/
+.comment-form{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    display: none;
+}
+
+.answer-panel-wrapper{
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    height: 0;
+    z-index: 2;
+    overflow: hidden;
+
+    transition: height .5s;
+    -webkit-transition: height .5s;
+}
+
+.answer-panel-wrapper.active{
+    overflow: auto;
+    height: 90px;
+}
+
+.answer-panel{
+    background-color: #0086cf;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.answer-panel:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-bottom: 10px solid #0086cf;
+    border-right: 8px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.answer-panel > div{
+    padding: 10px 15px;
+}
+
+.answer-panel > div:last-child{
+    border-top: 1px solid #fff;
+}
+
+/*更多评论*/
+.knowledge-comment-box{
+    padding: 10px 10px 5px 0;
+}
+
+.knowledge-comment-box > .wrapper{
+    padding-left: 10px;
+    padding-top: 2px;
+}

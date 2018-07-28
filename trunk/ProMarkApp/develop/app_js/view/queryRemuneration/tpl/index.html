@@ -1,0 +1,197 @@
+<div class="common-content bg-gray" id="query-remuneration" style="top: 0px;">
+    <div class="header" style="height: 185px;">
+        <div class="headerContent" style="top: 185px;font-size: 1.2em;text-align: center;height: 45px;line-height: 45px;">
+            <div class="left-button btn-back">
+                <i class="iconfont icon-guanbi"></i>
+            </div>
+            酬金查询
+            <div class="right-button">
+                <div class="morePage" style="margin-right: 5px;">
+                    <div class="ellipsePng">
+                        <img src="app_img/ellipse.png" alt="">
+                    </div>
+                    <div class="queryByType hide" style="background-color: rgb(44 ,154 ,244);">
+                        <div data-type="1">营业厅</div>
+                        <div data-type="2">月份</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tableContent">
+            <table class="header_table table">
+                <tr>
+                    <td colspan="2">
+                        <img src="app_img/noavatar.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        ----
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        -----------
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <div class="info">
+                            <div class="bold">所属营业厅
+                                <div class="angle"></div>
+                            </div>
+                            <div class="list unactive">
+                                -----
+                            </div>
+                        </div>
+                    </td>
+                    <td width="50%">
+                        <div class="info">
+                            <div class="bold">所属部门</div>
+                            <p>-----</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="content" style="top: 185px;">
+        <div class="content-header">
+        </div>
+
+        <div class="content-nav weui-row">
+        </div>
+
+        <div class="content-content">
+            <div class='list'></div>
+        </div>
+
+    </div>
+</div>
+
+<script id="userInfoTpl" type="text/template">
+    <table class="header_table table">
+        <tr>
+            <td colspan="2">
+                <% if(headImgUrl){ %>
+                    <img src="<%=headImgUrl%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=name%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%=mobile%>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属营业厅
+                        <div class="angle"></div>
+                    </div>
+                    <div class="list unactive channel-list">
+                        <% if(title){ %>
+                            <%
+                                var arr = title.split(',');
+                            %>
+
+                            <% _.each(arr, function(v){ %>
+                                <p><%=v%></p>
+                            <% }) %>
+                        <% }else{ %>
+                            -
+                        <% } %>
+                    </div>
+                    <!-- <div class="list unactive">
+                        <% if(title){ %>
+                            <%
+                                var arr = title.split(',');
+                            %>
+
+                            <% _.each(arr, function(v){ %>
+                                <p><%=v%></p>
+                            <% }) %>
+                        <% }else{ %>
+                            -
+                        <% } %>
+                    </div> -->
+                </div>
+            </td>
+            <td width="50%">
+                <div class="info">
+                    <div class="bold">所属部门</div>
+                    <p><%=company%></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</script>
+
+<script id="missionSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-mission-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-mission-search" placeholder="请输入关键字搜索">
+        </div>
+    </div>
+</script>
+
+
+<script id="fixtureSearchTpl" type="text/template">
+    <div class="app_search clearfix">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-fixture-search">查询</div>
+        </div>
+        <div class="overhidden">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="text" class="form-control input-fixture-search" placeholder="请输入电话号码搜索">
+        </div>
+    </div>
+</script>
+
+<script id="paySelectInitTpl" type="text/template">
+    <select class="form-select form-control">
+        <option value="">无</option>
+    </select>
+</script>
+
+<script id="paySelectTpl" type="text/template">
+    <select class="form-select form-control">
+        <% _.each(list, function(v,i){ %>
+            <% if(i == 0){ %>
+                <option value="<%=v.uuid%>" selected><%=v.title%></option>
+            <% }else{ %>
+                <option value="<%=v.uuid%>"><%=v.title%></option>
+            <% } %>
+        <% }) %>
+    </select>
+</script>
+
+<script id="remunerationList" type="text/template">
+
+        <% _.each(list, function(v,i){ 
+            var label ;
+            if("1"==type ){
+                label=v.dataMonth + '月份';
+            }else{
+                label = v.channelTitle
+            }
+        %>
+        <div class='listitem' data-uuid="<%=v.uuid%>">
+            <div class="infoContainer"  data-link='my-ustomer-detail/my-customer/work'>
+                <span  class='zhinfo'><%=label%>：</span>
+                <span class='telno'><%=v.emunerationSum%></span>
+            </div>
+        <div>
+        <% }) %>
+</script>

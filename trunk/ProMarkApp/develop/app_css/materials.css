@@ -1,0 +1,680 @@
+/*首页头部搜索*/
+.materials-header{
+    padding: 10px;
+    height: 55px;
+
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+
+    /**
+    *   含下拉刷新
+    **/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 2;
+}
+
+.materials-header .materials-control-btn{
+    width: 35px;
+    height: 35px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.materials-header .materials-control-btn .iconfont{
+    font-size: 2em;
+    line-height: 1;
+    display: inline-block;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transition: transform .3s;
+    -webkit-transition: -webkit-transform .3s;
+}
+
+.materials-header .materials-control-btn .iconfont.turn{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+ /*首页搜索框*/
+.materials-header .form-group{
+    margin: 0;
+    position: relative;
+    padding-left: 10px;
+
+    flex-grow: 1;
+}
+
+.materials-header .input-group-addon{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    border: none;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    padding-top: 6px;
+    background-color: transparent;
+}
+
+.materials-header .input-group-addon .iconfont{
+    font-size: 1.5em;
+    color: #ccc; 
+    -webkit-text-stroke-width: 0;
+    line-height: 1;
+}
+
+.materials-header .form-group .clear-form{
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    padding: 2px 8px;
+    font-size: 25px;
+    color: #aaa;
+    font-family: 'inherit';
+    z-index: 10;
+    display: none;
+}
+
+.materials-header .form-group .clear-form:focus{
+    outline: none;
+}
+
+.materials-header .form-control{
+    padding: 5px 45px 5px 20px;
+    height: 35px;
+    
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    
+    -webkit-user-select: text;
+}
+
+.materials-header .form-control:focus{
+    outline: 0;
+    box-shadow: none;
+}
+
+.materials-header .form-control::-webkit-input-placeholder{
+    color: #bbb;
+}
+
+/*筛选框*/
+.materials-controls-mask{
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    display: none;
+    opacity: 0;
+    transition: opacity .5s;
+    -webkit-transition: opacity .5s;
+}
+
+.materials-controls-mask.fadein{
+    opacity: 1;
+}
+
+.materials-controls{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #f3f3f3;
+    width: 100%;
+    padding: 0 5px 10px 5px;
+    z-index: 2;
+    border-bottom: 1px solid #CEC4C4;
+}
+
+.materials-controls .weui-col-33{
+    text-align: center;
+    margin-top: 10px;
+    width: calc(100% / 3);
+    overflow: hidden;
+}
+
+.materials-controls .label{
+    display: inline-block;
+    padding: 0 1px;
+    height: 28px;
+    line-height: 28px;
+    width: calc(100% - 5px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*首页列表*/
+.materials-box{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.materials-box .image{
+    height: 90px;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.materials-box .image img{
+    height: 100%;
+}
+
+.materials-box .info{
+    padding-left: 10px;
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.materials-box .info h3{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 3px 0;
+    color: #000;
+}
+
+.materials-box .info .info-desc{
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    font-size: .9em;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.materials-box .info .info-bottom{
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 1px;
+    font-size: .8em;
+}
+
+.materials-box .info .info-bottom .iconfont{
+    font-size: 1.5em;
+    position: relative;
+    top: 2px;
+}
+
+/**
+*   概述
+**/
+.materials-info-table tr > td{
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.materials-info-table tr > td:first-child{
+    color: #333;
+    width: 120px;
+}
+
+.materials-info-table tr > td:last-child{
+    font-size: .9em;
+    color: #666;
+    line-height: 22px;
+}
+
+.materials-info-btns{
+    padding: 10px 5px 20px 5px;
+}
+
+.materials-info-btns > div.weui-col-50{
+    width: 50%;
+    padding: 5px;
+}
+
+.materials-info-btns .btn{
+    padding: 8px 10px;
+}
+
+/**
+*   附件
+**/
+.materials-attachment-table tr > td{
+    vertical-align: middle;
+    word-break: break-all;
+    border-bottom: 1px solid #ddd;
+}
+
+.materials-attachment-table .iconfont{
+    font-size: 40px;
+}
+
+.materials-attachment-table h4{
+    font-weight: normal;
+    padding: 8px 0 5px 0;
+    color: #333;
+}
+
+.materials-attachment-table p{
+    color: #999;
+    font-size: .9em;
+}
+
+.materials-attachment-table tr>td{
+    padding: 10px 5px;
+}
+
+.materials-attachment-table tr>td:first-child{
+    text-align: center;
+}
+
+.materials-attachment-table tr>td:last-child{
+    text-align: center;
+}
+
+.materials-attachment-table .icon-fileword{
+    color: #24489f;
+}
+
+.materials-attachment-table .icon-iconfontexcel{
+    color: #34710f;
+}
+
+.materials-attachment-table .icon-iconfonticonfontexcel{
+    color: #ee2907;
+}
+
+.materials-attachment-table .icon-pdf{
+    color: #c30909;
+}
+
+.materials-attachment-table .icon-file{
+    color: #999;
+}
+
+.materials-attachment-table .icon-shipin{
+    color: #750066;
+}
+
+/**
+*   资料详情
+**/
+.materials-detail-content{
+    padding: 20px 15px;
+}
+
+.materials-detail-content .materials-detail-title{
+    line-height: 30px;
+    word-break: break-all;
+    color: #000;
+}
+
+.materials-detail-content .materials-detail-info{
+    padding: 10px 0;
+}
+
+.materials-detail-info .materials-detail-date{
+    color: #999;
+    font-size: .9em;
+}
+
+.materials-detail-content .materials-detail-text{
+    line-height: 25px;
+    word-break: break-all;
+}
+
+/*底部*/
+
+.materials-detail-control{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 49px;
+    height: 49px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.materials-detail-control .weui-col-50{
+   width: 50%;
+}
+
+.materials-detail-control > .show-comment{
+    border-right: 1px solid #ddd;
+}
+
+.materials-detail-control .add-like.active{
+    color: #0086cf;
+}
+
+.materials-detail-control.disabled:after{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*background-color: rgba(0,0,0,0.5);*/
+    z-index: 1;
+}
+
+.materials-detail-control .comment-count,
+.materials-detail-control .like-count{
+    font-size: .9em;
+}
+
+/*底部框*/
+.materials-detail-control .comment-reply-form{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    height: 40px;
+    padding: 10px 35px 0px 5px;
+    border: none;
+    border-bottom: 1px solid #0086cf;
+    font-size: 1.1em;
+    box-shadow: none;
+    -webkit-user-select: text;
+}
+
+.materials-detail-control .comment-reply-form:focus{
+    outline: 0;
+    box-shadow: none;
+}
+
+.materials-detail-control .btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #0086cf;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    box-shadow: none;
+}
+
+.materials-detail-control .btn .iconfont{
+    font-size: 25px;
+}
+
+/**
+*   公告评论
+**/
+.comment-content{
+    border-top: 1px solid #ddd;
+}
+
+.materials-detail-title{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.materials-blank{
+    height: 10px;
+    background-color: #eee;
+}
+
+.materials-comment-control{
+    text-align: right;
+}
+
+.materials-comment-control .btn{
+    padding: 3px 10px;
+}
+
+.materials-comment-control .iconfont{
+    font-size: 14px;
+}
+
+/*评论盒子*/
+.materials-comment-box{
+    margin-bottom: 10px;
+}
+
+.materials-comment-box:last-child{
+    border: none;
+}
+
+/*评论头部*/
+.materials-comment-box .comment-header{
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    color: #fff;
+    background-color: #0086cf;
+}
+
+.comment-header .comment-floor{
+    line-height: 30px;
+}
+
+.comment-header .comment-control > div{
+    margin-right: 15px;
+    line-height: 30px;
+}
+
+.comment-header .comment-control > div:first-child{
+    margin: 0;
+}
+
+.comment-header .comment-control .iconfont{
+    margin-right: 2px;
+}
+
+
+/*主评论*/
+.comment-main{
+    padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.comment-main .comment-main-avatar{
+    flex-shrink: 0;
+}
+
+.comment-main .comment-main-avatar img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.comment-main .comment-main-content{
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.comment-main .comment-main-other{
+    font-size: .9em;
+    line-height: 25px;
+    color: #aaa;
+}
+
+.comment-main .comment-main-other > .pull-left{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+}
+
+.comment-main-content .comment-main-text{
+    word-break: break-all;
+}
+
+/*主评论回复*/
+.comment-sub{
+    width: 94%;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px 2px #ddd;
+}
+
+.comment-sub-more{
+    line-height: 30px;
+    font-size: .9em;
+    text-align: center;
+    color: #0086cf;
+}
+
+.comment-sub-more a{
+    display: block
+}
+
+.comment-sub-box{
+    padding: 10px;
+    border-bottom: 1px dotted #ddd;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.comment-sub-box:last-child{
+    border: none;
+}
+
+.comment-sub-box .comment-sub-avatar{
+    flex-shrink: 0;
+}
+
+.comment-sub-box .comment-sub-avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-sub-box .comment-sub-content{
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.comment-sub-box .comment-sub-other{
+    font-size: .9em;
+    line-height: 25px;
+    color: #aaa;
+}
+
+.comment-sub-box .comment-sub-other > .pull-left{
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.comment-sub-box .comment-sub-text{
+    font-size: .9em;
+    word-break: break-all;
+}
+
+.comment-sub-box .comment-sub-control{
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.comment-sub-box .comment-sub-control>span{
+    margin-right: 15px;
+}
+
+.comment-sub-box .comment-sub-control>span:first-child{
+    margin: 0;
+}
+
+.comment-sub-box .comment-sub-control .iconfont{
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.comment-sub-box .comment-sub-control .icon-iconfontzan{
+    position: relative;
+    top: -1px;
+}
+
+/*更多评论*/
+.comment-more-main{
+    padding: 15px 10px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.comment-more-main .comment-main-avatar{
+    flex-shrink: 0;
+}
+
+.comment-more-main .comment-main-avatar img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.comment-more-main .comment-main-content{
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+/*总数*/
+.materials-more-view{
+    line-height: 30px;
+    padding: 0 10px; 
+    color: #0086cf;
+    text-align: right;
+    font-size: .9em;
+    border-bottom: 1px solid #0086cf;
+}
+
+.comment-more-main .comment-main-other{
+    font-size: .9em;
+    line-height: 25px;
+    color: #aaa;
+}
+
+/*其他*/
+.materials-more-box{
+    border-bottom: 1px dotted #ccc;
+}
+
+.materials-more-box .comment-main-avatar img{
+    width: 40px;
+    height: 40px;
+}
+
+.materials-more-box .comment-main-text{
+    font-size: .9em;
+}
+
+.myread-box{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.myread-box h3{
+    color: #0086cf;
+    margin: 3px 0 8px;
+    font-weight: normal;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.myread-box p{
+    color: #aaa;
+    font-size: .9em;
+}

@@ -1,0 +1,118 @@
+<div class="common-content paper-wrapper">
+    <div class="paper-content">
+
+    </div>
+
+    <div class="paper-control">
+        <div>
+            <div class="prev disable">
+                <i class="iconfont icon-zuojiantou"></i>
+            </div>
+        </div>
+        <div class="exam-index">
+            0/0
+        </div>
+        <div>
+            <div class="next disable">
+                <i class="iconfont icon-youjiantou"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="question-item-tpl" type="text/template">
+    <div class="paper-tag">
+        <% 
+            var type;
+            if(q.questionType == 1){
+                type = '单选题';
+            }else if(q.questionType == 2){
+                type = '多选题';
+            }else if(q.questionType == 3){
+                type = '判断题';
+            }
+        %>
+
+        <%=type%>
+    </div>
+    <div class="paper-question">
+        <%=q.question%>
+    </div>
+    <% if(q.questionImgUrl){ %>
+    <div class="paper-image">
+        <img src="<%=q.questionImgUrl%>">
+    </div>
+    <% } %>
+    <div class="paper-items">
+        <ul>
+            <%                 
+                var input_state = '';
+
+                if(q.view_answer){
+                    input_state = 'disabled';
+                }
+
+                var correct_answer = q.answer.split(',');
+                
+                var answer = [];
+                if(q.put_answer && q.put_answer.length > 0){
+                    answer = q.put_answer;
+                }
+
+                _.each(q.option,function(v,i){
+                    if(!v){
+                        return;
+                    }
+                    
+                    var checked = '';
+                    if(_.find(answer, function(v){ return v == i; })){
+                        checked = 'checked';
+                    }
+
+                    var state_class = '';
+                    if(q.view_answer){
+                        var flag = ifValueIn(i, answer, correct_answer);
+                        if(flag == -1){
+                            state_class = '';
+                        }else{
+                            if(flag){
+                                state_class = 'success';
+                            }else{
+                                state_class = 'error';
+                            }
+                        }
+                    }
+            %>
+                <li class="<%=state_class%>">
+                    <label for="paper-item<%=i%>">
+                        <% if(q.questionType == 2) { %>
+                            <div class="paper-item"><input <%=checked%> <%=input_state%> type="checkbox" class="blue-chk" id="paper-item<%=i%>" name="paper-item" value="<%=i%>"></div> 
+                        <% }else{ %>
+                            <div class="paper-item"><input <%=checked%> <%=input_state%> type="radio" class="blue-chk" id="paper-item<%=i%>" name="paper-item" value="<%=i%>"></div> 
+                        <% } %>
+                        <div class="overhidden"><%=i%>、<%=v%></div>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <%
+        var style1 = 'style="display:none"';
+        var style2 = 'style="display:none"';
+
+        if(q.view_answer){
+            style2 = '';
+        }else{
+            style1 = '';
+        }
+    %>
+    <div class="paper-items-control" <%=style1%>>
+        <button class="btn btn-primary">查看答案</button>
+    </div>
+    <div class="paper-items-answer" <%=style2%>>
+        <p>答案：&nbsp;<%=q.answer%></p>
+        <% if(typeof q.explains != undefined && q.explains){ %>
+            <p><%=q.explains%></p>
+        <% } %>
+    </div>
+</script>

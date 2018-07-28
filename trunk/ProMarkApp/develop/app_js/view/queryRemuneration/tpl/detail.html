@@ -1,0 +1,155 @@
+<div class="common-content" id="remunerationDetail">
+    
+</div>
+
+<script id="remDetailTemplate" type="text/template">
+    <div class="simpleInfo">
+        <div class="simpleInfo-title">概要</div>
+        <div class="simpleInfo-content">
+            <div class="infoItem">
+                <span class="_label">渠道名称 ：</span>
+                <span class="_val"><%=data.remuneration.channelTitle%></span>
+            </div>
+            <div class="infoItem">
+                <span class="_label">月份 ：</span>
+                <span class="_val"><%=data.remuneration.dataMonth%></span>
+            </div>
+            <div class="infoItem">
+                <span class="_label">总金额 ：</span>
+                <span class="_val"><%=data.remuneration.emunerationSum?data.remuneration.emunerationSum+'.00':''%></span>
+            </div>
+        </div>
+    </div>
+    <div class="detailInfo">
+        <div class="detailInfo-title">明细</div>
+        <div class="detailInfo-content">
+            <div class="detail-ruwang otherpading10">
+                <span class="_label forfirstBlock" style="font-weight: 700;">新入网套餐服务费 ：</span>
+                <span class="_val"><%=data.remuneration.newDiscFee?data.remuneration.newDiscFee+'.00':''%></span>
+            </div>
+            <div class="detail-block">
+                <div class="detail-block-title">
+                    <span class="_title">宽带服务</span>
+                    <span class="showOrHide"></span>
+                </div>
+                <div class="detail-block-content">
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">有线宽带 ：</span>
+                        <span class="_val"><%=data.remuneration.wiredBroadband?(data.remuneration.wiredBroadband+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">宽带预存送费 ：</span>
+                        <span class="_val"><%=data.remuneration.cableBroadband?(data.remuneration.cableBroadband+'.00'):''%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="otherpading10">
+                <span class="_label forfirstBlock" style="font-weight: 700;">非存量客户回归 ：</span>
+                <span class="_val"><%=data.remuneration.nonStockReturn?(data.remuneration.nonStockReturn+'.00'):''%></span>
+            </div>
+            <div class="detail-block">
+                <div class="detail-block-title">
+                    <span class="_title">话费服务</span>
+                    <span class="showOrHide"></span>
+                </div>
+                <div class="detail-block-content">
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">代收话费 ：</span>
+                        <span class="_val"><%=data.remuneration.collectCalls?(data.remuneration.collectCalls+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">银行代收 ：</span>
+                        <span class="_val"><%=data.remuneration.bankCollect?(data.remuneration.bankCollect+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">空中充值 ：</span>
+                        <span class="_val"><%=data.remuneration.airRecharge?(data.remuneration.airRecharge+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">空中预充 ：</span>
+                        <span class="_val"><%=data.remuneration.airPreRecharge?(data.remuneration.airPreRecharge+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">充值卡 ：</span>
+                        <span class="_val"><%=data.remuneration.rechargeCard?(data.remuneration.rechargeCard+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">自助终端 ：</span>
+                        <span class="_val"><%=data.remuneration.selfServiceTerm?(data.remuneration.selfServiceTerm+'.00'):''%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-block-title">
+                    <span class="_title">4G客户转化服务</span>
+                    <span class="showOrHide"></span>
+                </div>
+                <div class="detail-block-content">
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">4G客户转化佣金 ：</span>
+                        <span class="_val"><%=data.remuneration.g4CustServiceFee?(data.remuneration.g4CustServiceFee+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_labe forSecondBlock">主推终端服务 ：</span>
+                        <span class="_val"><%=data.remuneration.g4TermService?(data.remuneration.g4TermService+'.00'):''%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-block-title">
+                    <span class="_title">存量维稳服务费</span>
+                    <span class="showOrHide"></span>
+                </div>
+                <div class="detail-block-content">
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">开户捆绑 ：</span>
+                        <span class="_val"><%=data.remuneration.openBind?(data.remuneration.openBind+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">存量捆绑服务 ：</span>
+                        <span class="_val"><%=data.remuneration.stockService?(data.remuneration.stockService+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">高额话费预存服务 ：</span>
+                        <span class="_val"><%=data.remuneration.largeFeePreService?(data.remuneration.largeFeePreService+'.00'):''%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-block-title">
+                    <span class="_title">集团单位稳定</span>
+                    <span class="showOrHide"></span>
+                </div>
+                <div class="detail-block-content">
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">家庭网新拉 ：</span>
+                        <span class="_val"><%=data.remuneration.homeNetInvite?(data.remuneration.homeNetInvite+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">小微企业服务费 ：</span>
+                        <span class="_val"><%=data.remuneration.smallEnterpriseServiceFee?(data.remuneration.smallEnterpriseServiceFee+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">家园校园网 ：</span>
+                        <span class="_val"><%=data.remuneration.homeSchoolNet?(data.remuneration.homeSchoolNet+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">家庭网 ：</span>
+                        <span class="_val"><%=data.remuneration.homeNet?(data.remuneration.homeNet+'.00'):''%></span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="_label forSecondBlock">集团维稳服务 ：</span>
+                        <span class="_val"><%=data.remuneration.groupMaintenanceService?(data.remuneration.groupMaintenanceService+'.00'):''%></span>
+                    </div><div class="infoItem">
+                        <span class="_label forSecondBlock">集团服务费 ：</span>
+                        <span class="_val"><%=data.remuneration.groupServiceFee?(data.remuneration.groupServiceFee+'.00'):''%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="otherpading10">
+                <span class="_label forfirstBlock" style="font-weight: 700;">语音产品办理 ：</span>
+                <span class="_val"><%=data.remuneration.voiceProductManagement%></span>
+            </div>
+        </div>
+    </div>
+</script>

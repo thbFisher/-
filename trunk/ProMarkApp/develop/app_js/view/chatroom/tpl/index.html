@@ -1,0 +1,174 @@
+<div class="common-content">
+    <div class="chatroom-header clearfix">
+        <div class="client-status pull-left">
+            <!--当前用户状态-->
+            正在连接...
+        </div>
+        <div class="user-status pull-right">
+            当前<span>-</span>人
+        </div>
+    </div>
+
+    <div class="chat-room-warning">
+        正在发送...<a class="resend">重新发送</a>
+    </div>
+
+    <div class="chatroom-wrapper common-content">
+        <div class="chatroom-content-wrapper">
+            <div class="chatroom-content pd10 clearfix">
+            </div>
+        </div>
+
+        <div class="chatroom-footer keyboard-footer">
+            <div class="input-type">
+                <i class="iconfont icon-yuyin3 change-to-voice"></i>
+            </div>
+            <div class="input-send">
+                <!--<div class="text-input" contenteditable="true"></div>-->
+                <input class="weui_input text-input form-control" type="text">
+            </div>
+            <div class="input-btn">
+                <button class="btn btn-primary btn-sm btn-send">发送</button>
+            </div>
+        </div>
+
+        <div class="chatroom-footer voice-footer hidden">
+            <div class="input-type">
+                <i class="iconfont icon-jianpan change-to-keyboard"></i>
+            </div>
+            <div class="input-voice-btn">
+                <div class="btn-start-voice">点击说话</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<audio id="playvoice" src="#" class="hide">
+    您的浏览器不支持 audio 标签。
+</audio>
+
+<div class="voice-mask">
+    <div class="voice-wrapper">
+        <p class="voice-title">正在录音</p>
+        <div class="voice-spinner-wrapper">
+            <div class="voice-spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+
+        <div class="voice-progress">
+            <div class="voice-progress-bar"></div>
+            <div class="voice-progress-ball"></div>
+        </div>
+
+        <p class="voice-control">
+            <button class="btn btn-primary btn-sm btn-end-voice">结束说话</button>
+        </p>
+    </div>
+</div>
+
+<div id="userCard" class="weui-popup-container popup-bottom">
+    <div class="weui-popup-overlay"></div>
+    <div class="weui-popup-modal">
+        <div class="header clearfix">
+            名片
+            <div class="close">关闭</div>
+        </div>
+        <div class="avatar">
+            <img src="app_img/noavatar.png">
+        </div>
+        <div class="control">
+            <a href="javascript:;"><button class="btn btn-primary">
+                <i class="iconfont icon-dianhua"></i>
+            </button></a>
+        </div>
+        <div class="info">
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>姓名</p>
+                    </div>
+                    <div class="weui_cell_ft usercard-name">
+                        -
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>手机</p>
+                    </div>
+                    <div class="weui_cell_ft usercard-mobile">
+                        -
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>所属</p>
+                    </div>
+                    <div class="weui_cell_ft usercard-company">
+                        -
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>邮箱</p>
+                    </div>
+                    <div class="weui_cell_ft usercard-email">
+                        -
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="message-box-tpl" type="text/template">
+    <% 
+        var positionClass = 'pull-left';
+        if(data.user.uuid == window.user.uuid){
+            positionClass = 'pull-right';
+        }
+    %>
+
+    <% if(time){ %>
+        <div class="chatroom-time-box">
+            <div class="panel"><%=time%></div>
+        </div>
+    <% } %>
+
+    <div class="chatroom-message-box <%=positionClass%>">
+        <% if(data.user.uuid != window.user.uuid){ %> 
+            <div class="avatar-wrapper" data-uuid="<%=data.user.uuid%>">
+                <% if(data.user.avatar){ %>
+                    <img src="<%=data.user.avatar%>">
+                <% }else{ %>
+                    <img src="app_img/noavatar.png">
+                <% } %>
+            </div>
+        <% } %>
+
+        <div class="message-wrapper clearfix">
+            <div class="clientname"><%=data.user.name%></div>
+            <% if(data.type == 'text'){ %>
+                <div class="message">
+                    <%=data.message%>
+                </div>
+            <% }else if(data.type == 'voice'){ %>
+                <div class="message message-voice" data-url="<%=data.message%>">
+                    <span>点击播放语音</span> <i class="iconfont icon-yuyin"></i>
+                </div>
+            <% } %>
+        </div>
+
+        <% if(data.user.uuid == window.user.uuid){ %>
+            <div class="avatar-wrapper" data-uuid="<%=data.user.uuid%>">
+                <img src="<%=data.user.avatar%>">
+            </div>
+        <% } %>
+    </div>
+</script>

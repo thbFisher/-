@@ -1,0 +1,47 @@
+<div class="common-content">
+    <div class="materials-header marketing-form-header bg-gray">
+        <select class="form-select">
+        </select>
+    </div>
+    <div class="common-content mission-pay-content">
+        <div class="weui-pull-to-refresh-layer hide">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+        <div class="inner">
+            
+        </div>
+    </div>
+</div>
+
+
+<script id="channelTpl" type="text/template">
+    <% _.each(list, function(v,i){ %>
+        <% if(i == 0){ %>
+            <option value="<%=v.uuid%>" selected><%=v.title%></option>
+        <% }else{ %>
+            <option value="<%=v.uuid%>"><%=v.title%></option>
+        <% } %>
+    <% }) %>
+</script>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(list.length == 0){
+    %>
+        <div class="warning-panel">暂无酬金数据</div>
+    <%
+        }
+    %>
+
+    <% _.each(list, function(v){ %>
+        <div class="mobile-list-box" data-uuid="<%=v.uuid%>">
+            <span><%=v.dataMonth%></span>
+            <i class="iconfont icon-qianjin"></i>
+        </div>
+    <% }) %>
+</script>

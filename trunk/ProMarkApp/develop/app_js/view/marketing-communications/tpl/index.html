@@ -1,0 +1,116 @@
+<div class="marketing-communications" id="marketing-communications">
+    <div class="tabs">
+        <div class="tabs-item borderWhite backcolorblue" data-index="0">任务通报</div>
+        <div class="tabs-item borderWhite backcolorgrey" data-index="1">竞赛通报</div>
+        <div class="tabs-item backcolorgrey" data-index="2">个人通报</div>
+    </div>
+    <div class="tabs-content">
+        <!-- <div class="task-item">
+            <div class="task-item-time">2018.06.13</div>
+            <div class="task-item-middle">
+                <div class="red-line first-item"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name">任务名称1</div>
+        </div>
+        <div class="task-item">
+            <div class="task-item-time">2018.06.13</div>
+            <div class="task-item-middle">
+                <div class="red-line"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name">任务名称2</div>
+        </div>
+        <div class="task-item">
+            <div class="task-item-time">2018.06.13</div>
+            <div class="task-item-middle">
+                <div class="red-line"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name">任务名称3</div>
+        </div>
+        <div class="task-item">
+            <div class="task-item-time">2018.06.13</div>
+            <div class="task-item-middle">
+                <div class="red-line last-item"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name">任务名称4</div>
+        </div> -->
+    </div>
+</div>
+<script id="personTabItem" type="text/template">
+    <% _.each(list, function(v,i){ 
+        var classStr = "" ;
+        if(0 == i){
+            classStr = "first-item"
+        }else if((list.length-1) == i){
+            classStr = "last-item"
+        }
+        var date ;
+        date = v.reportDate?new Date(v.reportDate):new Date();
+        var year = date.getFullYear() ;
+        var month = date.getMonth()>9?date.getMonth():'0'+date.getMonth() ;
+        var day = date.getDate()>9?date.getDate():'0'+date.getDate() ;
+        var dateStr  = year + "." + month + "." + day ;
+    %>
+        <div class="task-item" data-type="2" data-id="<%=v.uuid%>">
+            <div class="task-item-time"><%=dateStr%></div>
+            <div class="task-item-middle">
+                <div class="red-line <%=classStr%>"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name"><%=v.title%></div>
+        </div>
+    <% }) %>
+</script>
+<script id="gameTabItem" type="text/template">
+    <% _.each(list, function(v,i){ 
+        var classStr = "" ;
+        if(0 == i){
+            classStr = "first-item"
+        }else if((list.length-1) == i){
+            classStr = "last-item"
+        }
+        var date ;
+        date = v.reportDate?new Date(v.reportDate):new Date();
+        var year = date.getFullYear() ;
+        var month = date.getMonth()>9?date.getMonth():'0'+date.getMonth() ;
+        var day = date.getDate()>9?date.getDate():'0'+date.getDate() ;
+        var dateStr  = year + "." + month + "." + day ;
+    %>
+        <div class="task-item" data-type="1" data-id="<%=v.uuid%>">
+            <div class="task-item-time"><%=dateStr%></div>
+            <div class="task-item-middle">
+                <div class="red-line <%=classStr%>"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name"><%=v.title%></div>
+        </div>
+    <% }) %>
+</script>
+<script id="taskTabItem" type="text/template">
+    <% _.each(list, function(v,i){ 
+        var classStr = "" ;
+        if(0 == i){
+            classStr = "first-item"
+        }else if((list.length-1) == i){
+            classStr = "last-item"
+        }
+        var date ;
+        date = v.reportDate?new Date(v.reportDate):new Date();
+        var year = date.getFullYear() ;
+        var month = date.getMonth()>9?date.getMonth():'0'+date.getMonth() ;
+        var day = date.getDate()>9?date.getDate():'0'+date.getDate() ;
+        var dateStr  = year + "." + month + "." + day ;
+    %>
+        <div class="task-item" data-type="0" data-id="<%=v.uuid%>">
+            <div class="task-item-time"><%=dateStr%></div>
+            <div class="task-item-middle">
+                <div class="red-line <%=classStr%>"></div>
+                <div class="red-spot"></div>
+            </div>
+            <div class="task-item-name"><%=v.title%></div>
+        </div>
+    <% }) %>
+</script>

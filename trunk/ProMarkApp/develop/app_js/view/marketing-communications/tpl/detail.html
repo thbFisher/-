@@ -1,0 +1,407 @@
+<div class="marketing-communications-detail  bg-gray" id="marketingCommunicationsDetail">
+
+</div>
+<script id="marketingCommunicationsDetailPerson" type="text/template">
+    <div class="personcontent">
+            <div class="_item bgblue">
+                <div class="_item-left">月份</div>
+                <div class="_item-right"><%=data.month%>月</div>
+            </div>
+            <div class="_item marginTop0">
+                <div class="_item-left">
+                    <div class="name">渠道名称</div>
+                    <div class="val"><%=data.channelTitle%></div>
+                </div>
+                <div class="_item-right">
+                    <div class="name">所属分公司</div>
+                    <div class="val"><%=data.channelArea%></div>
+                </div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">融合新增</div>
+                <div class="_item-right"><%=data.numberAllocation%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">融合新增新和家庭</div>
+                <div class="_item-right"><%=data.netInFamily%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">融合新增大王卡</div>
+                <div class="_item-right"><%=data.netInKing%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">宽带新装量</div>
+                <div class="_item-right"><%=data.newBroad%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">宽带续费量</div>
+                <div class="_item-right"><%=data.renewBroad%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">流量年包</div>
+                <div class="_item-right"><%=data.flowHalfYear%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">新和家庭迁转量</div>
+                <div class="_item-right"><%=data.convertFamily%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">大王卡迁转量</div>
+                <div class="_item-right"><%data.convertFamily%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">新飞迁转量</div>
+                <div class="_item-right"><%=data.convertFly%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">存送电子劵</div>
+                <div class="_item-right"><%=data.eleCoupon%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">4G终端销量</div>
+                <div class="_item-right"><%=data.terminal4g%></div>
+            </div>
+            <div class="_item">
+                <div class="_item-left">4G+终端销量</div>
+                <div class="_item-right"><%=data.terminal4gPlus%></div>
+            </div>
+        </div>
+</script>
+<script id="marketingCommunicationsDetailTask" type="text/template">
+    <div class="taskcontent">
+            <div class="taskNameInfo bgblue">
+                <div class="table-cell">任务名称：</div>
+                <div class="table-cell"><%=data.markReportTitle%></div>
+            </div>
+            <div class="taskOtherInfo">
+                <div class="table-cell">
+                    <div style="font-weight: bolder;">渠道工位</div>
+                    <div style="color: rgb(161 ,161 ,161);font-size: 0.9em;"><%=data.channelStation%></div>
+                </div>
+                <div class="table-cell" style="vertical-align: middle;">
+                    <%=data.rank%>
+                </div>
+            </div>
+            <div class="rate-content">
+                    <div>
+                            <div>
+                                <span>目标客户数</span><span class="colorBlue" style="float: right;"><%=data.targetNumber%></span>
+                             </div>
+                            <div class="fullRate">
+                                <div class="completeRate" style="width:100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>到达率</span><span class="colorBlue" style="float: right;"><%=data.reachRate%></span>
+                             </div>
+                            <div class="fullRate">
+                                 <div class="completeRate" style="width:<%=data.reachRate%>"></div>
+                            </div>
+                        </div>
+                        <div>
+                             <div>
+                                <span>成功率</span><span class="colorBlue" style="float: right;"><%=data.successRate%></span>
+                             </div>
+                             <div class="fullRate">
+                                 <div class="completeRate" style="width:<%=data.successRate%>"></div>
+                             </div>
+                        </div>
+            </div>
+         </div>
+</script>
+<script id="marketingCommunicationsDetailGame" type="text/template">
+    <div class="game-content">
+            <div class="game-name bgblue"><%=data.markReportTitle%></div>
+            <div class="game-info-overview">
+                <div class="table-cell" style=" width: 46%;">
+                    <div style="font-weight: bolder;"><%=data.channelTitle%></div>
+                    <div style="font-size: 0.85em;">
+                        <span>所属分公司：</span>
+                        <span class="colorBlue"><%=data.channelArea%></span>
+                    </div>
+                </div>
+                <div class="table-cell">
+                    <div style="font-weight: bolder;">渠道工位</div>
+                    <div style="font-size: 0.85em;">
+                        <span>是否连锁渠道：</span>
+                        <span class="colorBlue"><%=data.chainChannel%></span>
+                    </div>
+                </div>
+                <!-- <div class="table-cell" style="vertical-align: middle;font-weight: bolder;">名次</div> -->
+            </div>
+            <div class="detailInfo">
+                <div class="fisrt-block">
+                    <div class="title">
+                        存量运营
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title">
+                                <span style="display: inline-block;width: 83%;">基础任务: </span><%=data.stockBase%></div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">存费送电子劵:  </span><%=data.stockEleCoupon%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.stockEcHighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.stockEcValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">省内流量包：</span><%=data.stockInProFlow%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.stockIpfHighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.stockIpfValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">全网统一套餐提档：</span><%=data.stockComboUp%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.stockCuHighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.stockCuValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">保底送流量：</span><%=data.stockMininumFlow%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.stockMfHighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.stockMfValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">2G/3G转化：</span><%=data.stock23Convert%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.stock23HighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.stock23ValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">完成率：</span><%=data.stockFinished%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        融合新增
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">基础任务：</span><%=data.mixBase%></div>
+                        </div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">38以下套餐：</span><%=data.mix38Down%></div>
+                        <div class="content">
+                            <div class="moreinfo">
+                                <div class="_label">其中回归客户</div>
+                                <div class="_val"><%=data.mix38DReturn%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">38(含)-58套餐：</span><%=data.mix38Up%></div>
+                        <div class="content">
+                            <div class="moreinfo">
+                                <div class="_label">其中回归客户</div>
+                                <div class="_val"><%=data.mix38UReturn%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">59(含)-98套餐：</span><%=data.mix59Up%></div>
+                        <div class="content">
+                            <div class="moreinfo">
+                                <div class="_label">其中回归客户</div>
+                                <div class="_val"><%=data.mix59UReturn%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">99以上套餐：</span><%=data.mix99Up%></div>
+                        <div class="content">
+                            <div class="moreinfo">
+                                <div class="_label">其中回归客户</div>
+                                <div class="_val"><%=data.mix99UReturn%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">完成率：</span><%=data.mixFinished%></div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        4G发展
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">基础任务：</span><%=data.g4Base%></div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">4G+终端：</span><%=data.g4Terminal%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.g4HighRisk%></div>
+                                </div>
+                                <div class="moreinfo">
+                                    <div class="_label">其中综合价值提升客户</div>
+                                    <div class="_val"><%=data.g4ValuePromote%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">完成率：</span><%=data.g4Finished%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        宽带发展
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">基础任务：</span><%=data.broadBase%></div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">100M：</span><%=data.broad100M%></div>
+                            <div class="content">
+                                <div class="moreinfo">
+                                    <div class="_label">其中高风险及回归客户</div>
+                                    <div class="_val"><%=data.broadHighRisk%></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">完成率：</span><%=data.broadFinished%></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</script>
+<script id="marketingCommunicationsDetailGamePoint" type="text/template">
+    <div class="game-content">
+            <div class="game-name bgblue"><%=data.markReportTitle%></div>
+            <div class="game-info-overview">
+                <div class="table-cell">
+                    <div style="font-weight: bolder;"><%=data.channelTitle%></div>
+                    <div style="font-size: 0.85em;">
+                        <span>所属分公司：</span>
+                        <span class="colorBlue"><%=data.channelArea%></span>
+                    </div>
+                </div>
+                <div class="table-cell">
+                    <div style="font-weight: bolder;">渠道工位</div>
+                    <div style="font-size: 0.85em;">
+                        <span>是否连锁渠道：</span>
+                        <span class="colorBlue"><%=data.chainChannel%></span>
+                    </div>
+                </div>
+                <!-- <div class="table-cell" style="vertical-align: middle;font-weight: bolder;">名次</div> -->
+            </div>
+            <div class="detailInfo">
+                <div class="fisrt-block">
+                    <div class="title">
+                        存量运营
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">存费送电子劵:  </span><%=data.stockEleCoupon%></div>
+                            <div class="title"><span style="display: inline-block;width: 83%;">省内流量包:  </span><%=data.stockInProFlow%></div>
+                            <div class="title"><span style="display: inline-block;width: 83%;">全网统一套餐升档:  </span><%=data.stockComboUp%></div>
+                            <div class="title"><span style="display: inline-block;width: 83%;">保底送流量:  </span><%=data.stockMininumFlow%></div>
+                            <div class="title"><span style="display: inline-block;width: 83%;">2G/3G转化:  </span><%=data.stock23Convert%></div>
+                            <div class="title"><span style="display: inline-block;width: 83%;">积分 总额:  </span><%=data.stockPoint%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        融合新增
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">38以下套餐：</span><%=data.mix38Down%></div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">38(含)-58套餐：</span><%=data.mix38Up%></div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">59(含)-98套餐：</span><%=data.mix59Up%></div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">99以上套餐：</span><%=data.mix99Up%></div>
+                    </div>
+                    <div class="second-block">
+                        <div class="title"><span style="display: inline-block;width: 83%;">积分总额：</span><%=data.mixPoint%></div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        4G发展
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">4G终端积分总额：</span><%=data.g4TerminalPoint%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                    <div class="title">
+                        宽带发展
+                    </div>
+                    <div class="content">
+                        <div class="second-block">
+                            <div class="title"><span style="display: inline-block;width: 83%;">100M积分总额：</span><%=data.broad100MPoint%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fisrt-block">
+                        <div class="title">
+                            其他
+                        </div>
+                        <div class="content">
+                            <div class="second-block">
+                                <div class="title"><span style="display: inline-block;width: 83%;">各项业务积分总计：</span><%=data.sumPoint%></div>
+                            </div>
+                            <div class="second-block">
+                                    <div class="title"><span style="display: inline-block;width: 83%;">符合条件渠道积分总计：</span><%=data.conditionSumPoint%></div>
+                                </div>
+                                <div class="second-block">
+                                        <div class="title"><span style="display: inline-block;width: 83%;">存量稳定营销特别贡献积分：</span><%=data.spacialPoint%></div>
+                                    </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+</script>

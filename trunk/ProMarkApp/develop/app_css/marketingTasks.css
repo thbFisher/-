@@ -1,0 +1,864 @@
+#my-customer{
+}
+
+#my-customer .header{
+    /* background-color: #0086cf; */
+    color: #fff;
+    padding: 4px 10px 10px;
+    height: 140px;
+    background: url("../app_img/banner.png") no-repeat ;
+    background-size: 100% 100% ; 
+}
+
+#my-customer .content{
+    position: absolute;
+    top: 140px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#my-customer .content-content .infoContainer{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid lightgray;
+    padding-left: 10px;
+    background: url("../app_img/icon-link.png") no-repeat ;
+    background-size: 2% ;
+    background-position: 97% center;
+}
+
+#my-customer .header_table{
+    font-size: .8em;
+    text-align: center;
+}
+
+#my-customer .header_table > tbody > tr > td{
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+#my-customer .header_table .info{
+    position: relative;
+}
+
+#my-customer .header_table .info > .list{
+    
+}
+
+#my-customer .header_table .info > .list.unactive{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#my-customer .header_table .info > .list.unactive p{
+    display: none;
+}
+
+#my-customer .header_table .info > .list.unactive p:first-child{
+    display: inline;
+}
+
+#my-customer .header_table .info > .list.active{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #0086cf;
+    padding: 5px 10px 5px;
+    text-align: left;
+    border: 1px solid #fff;
+}
+
+#my-customer .header_table .info > .list.active:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 45%;
+    margin-left: 0;
+    top: -8px;
+
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+#my-customer .header_table .info > .list.active p{
+    border-bottom: 1px solid #fff;
+    display: block;
+    padding: 5px 0;
+    line-height: 20px;
+}
+
+#my-customer .header_table .info > .list.active p:last-child{
+    border: 0;
+}
+
+#my-customer .header_table img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px ;
+}
+
+#my-customer .header_table .angle{
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    display: inline-block;
+    margin-left: 2px;
+}
+
+/**
+*
+**/
+#my-customer .content-header{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    height: 56px;
+}
+
+/**
+*
+**/
+#my-customer .content-nav{
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-customer .content-nav .weui-col-33{
+    padding: 5px 0;
+    text-align: center;
+    position: relative;
+    width: 33.333333333333336%;
+}
+
+#my-customer .content-nav .weui-col-33 > div{
+    border-right: 1px solid #ddd;
+    padding: 5px 0;
+}
+
+#my-customer .content-nav .weui-col-33:last-child > div{
+    border: 0;
+}
+
+#my-customer .content-nav .weui-col-33.active{
+    color: #0086cf;
+}
+
+#my-customer .content-nav .weui-col-33.active:after{
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #0086cf;
+}
+
+/**
+*
+**/
+#my-customer .content-content{
+    position: absolute;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+#my-customer .content-content > .warning-panel{
+    padding-top: 100px;
+}
+
+.nav-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+#my-customer .mission_box{
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-right: 85px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+#my-customer .mission_box h3{
+    font-weight: normal;
+    color: #000;
+    padding: 5px 0 3px 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#my-customer .mission_box .text{
+    position: absolute;
+    right: 20px;
+    top: -webkit-calc(50% - 10px);
+    top: calc(50% - 10px);
+    color: #000;
+}
+
+#my-customer .mission_box .btn{
+    position: absolute;
+    right: 10px;
+    top: -webkit-calc(50% - 13px);
+    top: calc(50% - 13px);
+    border-radius: 12px;
+    font-size: 0.9em;
+    padding: 1px 5px;
+    line-height: 22px;
+}
+
+#my-customer .mission_box p{
+    font-size: .9em;
+    color: #999;
+    margin-top: 8px;
+}
+
+/**
+*
+**/
+#my-customer .simple_box{
+    background-color: #fff;
+    padding-left: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-customer .simple_box > li{
+    padding: 15px 10px 15px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-customer .simple_box > li > .iconfont{    
+    color: #aaa;
+    margin-top: 3px;
+}
+
+#my-customer .simple_box > li:last-child{
+    border: 0;
+}
+
+/**
+*
+**/
+#my-customer .content-header .form-select{
+    width: 100%;
+    padding: 0 10px;
+    height: 35px;
+}
+
+#my-customer .content-header .form-select:focus{
+    outline: none;
+}
+
+/**
+*   任务详情
+**/
+.mission_detail_ctrl{
+    background-color: #0086cf;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    
+    display: none;
+}
+
+/**
+*   营销服务列表
+**/
+#missionServiceContent{
+    
+}
+
+#missionServiceContent .header{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#missionServiceContent .wrapper{
+    overflow: hidden;
+
+    position: absolute;
+    top: 55px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#missionServiceContent .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+#missionServiceContent .misson_service_box{
+    background-color: #fff;
+    padding: 10px 10px 8px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+#missionServiceContent .misson_service_box:last-child{
+    border: 0;
+}
+
+#missionServiceContent .misson_service_box h3{
+    font-weight: normal;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+#missionServiceContent .misson_service_box p{
+    font-size: .9em;
+    color: #999;
+    line-height: 22px;
+}
+
+#missionServiceContent .misson_service_box .iconfont{
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    font-size: 2em;
+    color: #ccc;
+}
+
+/**
+*   任务反馈
+**/
+
+#missionReplyContent{
+    padding-bottom: 10px;
+}
+
+#missionReplyContent .mission_reply_content{
+    font-size: .9em;
+}
+
+#missionReplyContent .mission_reply_form_title{
+    margin-top: 10px;
+}
+
+#missionReplyContent .mission_reply_form label{
+    font-size: .9em;
+    margin-right: 10px;
+}
+
+#missionReplyContent .mission_reply_form .input-text{
+    margin: 1px 0 0 5px;
+}
+
+#missionReplyContent .mission_reply_form textarea{
+    font-size: .9em;
+    -webkit-user-select: text;
+}
+
+/*酬金详情*/
+#payDetailContent{
+    padding-bottom: 10px;
+}
+
+#payDetailContent .pay_detail_table{
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+#payDetailContent .pay_detail_table > tbody > tr > td{
+    border: 1px solid #ddd;
+    padding: 7px 0 5px;
+    font-size: .9em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#payDetailContent .pay_detail_table > tbody > tr > td:nth-child(1){
+    width: 30%;
+}
+
+#payDetailContent .pay_detail_table > tbody > tr > td:nth-child(2){
+    width: 30%;
+}
+
+#payDetailContent .pay_detail_table > tbody > tr > td:last-child{
+    color: #888;
+}
+
+/**
+*
+**/
+.btn-accept,
+.btn-accept:hover,
+.btn-accept:focus,
+.btn-accept.focus,
+.btn-accept:active{
+  color: #fff;
+  background-color: #fe7450;
+  border-color: #fe7450;
+}
+
+.app_detail_content{
+    padding-left: 10px;
+}
+
+.app_detail_content .weui_cell{
+    padding-left: 0;
+}
+
+.app_detail_content .weui_cell_ft{
+    width: 65%;
+    line-height: 22px;
+}
+
+.app_detail_title{
+    background-color: #eee;
+    color: #000;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+.app_detail_ctrl{
+    padding: 20px 10px 10px;
+}
+
+.app_detail_ctrl .btn{
+    border-radius: 25px;
+}
+
+.list-item {
+    margin: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    font-size: 14px;
+    position: relative ;
+}
+.list-item .task-info-overview .task-name{
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+.list-item .task-info-overview .other-info{
+    color :rgb(161 ,161 ,161);
+}
+.list-item .task-info-overview .other-info{
+    color :rgb(161 ,161 ,161);
+}
+.list-item .task-info-overview img{
+    width: 45px;
+    position: absolute;
+    top: -1px;
+    right: 10px;
+}
+.list-item .fullRate{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(161 ,161 ,161);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.list-item .fullRate .completeRate{
+    position: absolute ;
+    left: 0px ;
+    height: 100% ;
+    border-radius: 5px ;
+    background-color: #10bbf3 ;
+    /* width: 45% ; */
+}
+.list-item .acceptedBtn img{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 80px;
+}
+
+
+.marketing-tasks{
+    position: absolute ;
+    top: 45px ;
+    width: 100% ;
+    height: calc(100% - 45px) ;
+    overflow-y: auto;
+}
+.marketing-tasks .search-content{
+    margin: 10px;
+}
+.marketing-tasks .search-content input{
+    background-color: #fff;
+}
+.marketing-tasks .list-content .list-item{
+    background: url(../app_img/icon-link.png) no-repeat;
+    background-color: #fff;
+    background-size: 3%;
+    background-position: 95%;
+    position: relative ;
+}
+.marketing-tasks .list-content .list-item .goon{
+    color: #27e5da ;
+    position: absolute ;
+    right: 35px ;
+}
+.colorRed{
+    color: #dd798d ;
+}
+.colorGrey{
+    color: rgb(161 ,161 ,161);
+}
+
+.maketing-task-tetail{
+    position: absolute  ;
+    top: 45px ;
+    height: calc(100% - 45px);
+    width: 100% ;
+    z-index: 99px ;
+    overflow-y: auto;
+}
+
+.maketing-task-tetail .task-recommended{
+    padding: 10px;
+    font-size: 16px ;
+}
+.maketing-task-tetail .task-recommended .simple-info{
+    background-color: #fff;
+    padding: 10px;
+    position: relative ;
+}
+.maketing-task-tetail .task-recommended .simple-info img.callphone{
+    position: absolute ;
+    width: 30px ;
+    top: 10px;
+    right: 10px;
+}
+.maketing-task-tetail .task-recommended .simple-info img.sendMsg{
+    position: absolute ;
+    width: 30px ;
+    top: 10px;
+    right: 60px;
+}
+#maketingTaskDetail .title .showOrHide{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 15px;
+    background: url(../app_img/triangle-down-white.png) no-repeat;
+    background-size: 45%;
+    cursor: pointer;
+    background-position: center center;
+}
+#maketingTaskDetail .businessTitle{
+    color: #000 ;
+}
+#maketingTaskDetail .business-contianer{
+    display: table ;
+    width: 100% ;
+}
+#maketingTaskDetail .business-desc{
+    display: table-cell ;
+    width: 112px ;
+}
+#maketingTaskDetail .business-info{
+    display: table-cell ;
+}
+.paddingTop10{
+    padding-top: 10px ;
+}
+.paddingBottom10{
+    padding-bottom: 10px ;
+}
+.maketing-task-tetail .task-recommended .detail-info {
+    padding-top: 15px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .title{
+    padding: 10px 15px;
+    position: relative ;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .info-item{
+    display: table ;
+    margin: 10px 15px;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    padding: 10px 0px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .info-item>div{
+    display: table-cell;
+    
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .info-item>div:first-child{
+    width: 65% ;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block>div{
+    padding: 5px 0px ;
+    
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block>div.submitBtnTask{
+    padding: 10px 60px 35px 60px;
+}
+
+.maketing-task-tetail .task-recommended .detail-block .task-operation-btn{
+    width: 200px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.maketing-task-tetail .task-recommended .detail-info .detail-block span.myradio{
+    background: url("../app_img/radio.png") no-repeat ;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .radioselect>div{
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block span.myradiock{
+    background: url("../app_img/radio-ck.png") no-repeat ;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .showText{
+    margin-left: 25px ;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block select{
+    width: 100%;
+    height: 40px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    border: none;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .submitBtn{
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+}
+.maketing-task-tetail .task-recommended .detail-info .detail-block .submitBtn>span{
+    padding: 20px 70px;
+    background-color: rgb(245 ,74 ,106);
+    border-radius: 10px;
+}
+#maketingTaskDetail .zezhao{
+    position: fixed;
+    width: 100%;
+    height: 500%;
+    background: rgb(170 ,170 ,170);
+    top: 0px;
+    opacity: .5;
+}
+#maketingTaskDetail  .choose-body{
+    background-color: #fff;
+    max-width: 300px;
+    color: black;
+    position: fixed;
+    top: 20%;
+    display: table;
+    width: 300px;
+    left: calc(50% - 150px);
+}
+#maketingTaskDetail .choose-body .one-record{
+    padding: 10px 20px;
+    display: table;
+    width: 100%;
+}
+#maketingTaskDetail .choose-body .one-record .myradiock{
+    background: url("../app_img/radio.png") no-repeat ;
+    padding: 10px;
+    display: inline-block;
+    display: table-cell;
+    background-position: 50%;
+}
+#maketingTaskDetail .choose-body .smsContentOne {
+    padding-left: 50px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+#maketingTaskDetail .choose-body .one-record .myradiock-cked{
+    background: url("../app_img/radio-ck.png") no-repeat ;
+    padding: 10px;
+    display: inline-block;
+    display: table-cell;
+    background-position: 50%;
+}
+#maketingTaskDetail .choose-body .one-record .decri{
+    display: table-cell;
+    padding-left: 10px;
+    width: 240px;
+}
+#maketingTaskDetail .choose-body  .operation-btn{
+    height: 40px;
+    display: table;
+    width: 100%;
+    margin-top: 10px;
+}
+#maketingTaskDetail .choose-body  .operation-btn>span{
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle ;
+    text-align: center ;
+}
+#maketingTaskDetail .fail-reseason{
+    position: fixed;
+    top: 20%;
+    width: 300px;
+    left: calc(50% - 150px);
+    height: 290px;
+    background-color: rgb(224 ,226 ,225);
+    padding: 15px;
+    border-radius: 5px;
+}
+#maketingTaskDetail .fail-reseason textarea{
+    width: 100%;
+    height: 160px;
+    margin: 0;
+    padding: 0;
+    resize: none;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+#maketingTaskDetail .fail-reseason .fail-operation-btn{
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 0px;
+    width: 100%;
+}
+#maketingTaskDetail .fail-reseason .fail-operation-btn::after{
+    content: " " ;
+    display: block ;
+    clear: both ;
+}
+#maketingTaskDetail .fail-reseason .fail-operation-btn .cancle-send{
+    padding: 5px 0px;
+    width: 45%;
+    border-radius: 5px;
+    background-color: #858585;
+    color: #fff;
+    margin-right: 5%;
+    float: left;
+}
+#maketingTaskDetail .fail-reseason .tips{
+    color: #fff;
+    text-align: center;
+}
+#maketingTaskDetail .fail-reseason .fail-reseason-title{
+    height: 30px;
+    line-height: 29px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#maketingTaskDetail .fail-reseason .fail-operation-btn .sendReseaon{
+    padding: 5px 0px;
+    width: 45%;
+    border-radius: 5px;
+    background-color: #3676ec;
+    float: right ;
+    text-align: center;
+    color: #fff;
+}
+.right-button .taskDetail{
+    height: 100%;
+    line-height: 45px;
+}
+
+#maketingTaskDetail2 .task-recommended{
+    margin: 45px 15px 0px 15px;
+    background-color: #FFF;
+    padding-top: 1px;
+    font-size: 1.1em;
+}
+#maketingTaskDetail2 .task-recommended .showItem{
+    margin: 10px;
+    display: table;
+    width: 100%;
+}
+#maketingTaskDetail2 .task-recommended .showItem span:first-child{
+    width: 40% ;
+    color: #999999;
+    display: table-cell;
+}
+#maketingTaskDetail2 .task-recommended .showItem span:last-child{
+    display: table-cell;
+}
+#maketingTaskDetail2 .export{
+    text-align: center;
+    height: 100px;
+    position: relative;
+    line-height: 100px;
+}
+#maketingTaskDetail2 .export>span{
+    text-align: center;
+    padding: 20px 40px;
+    background-color: rgb(240 ,74 ,106);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.marketing-tasksProccess{
+    line-height: 45px;
+    font-weight: 700;
+}
+
+.lightgreen{
+    background-color: #27e5da ;
+    color: #FFF;
+}
+.lightred{
+    background-color: #f03f10 ;
+    color: #FFF;
+}

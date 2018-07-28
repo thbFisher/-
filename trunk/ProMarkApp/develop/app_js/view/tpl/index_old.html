@@ -1,0 +1,54 @@
+<div class="common-content">
+    <div class="index-header">
+        <div class="index-avatar">
+            <% if(headImgUrl){ %>
+                <img src="<%=headImgUrl%>">
+            <% }else{ %>
+                <img src="app_img/noavatar.png">
+            <% } %>
+        </div>
+        <p>欢迎回来，<%=name%></p>
+    </div>
+    <div class="index-menu weui-row">
+        <div class="weui-col-33 no-left top">
+            <div class="index-box index-box-read" data-href="read-index">
+                <div class="index-icon"><i class="iconfont icon-yuedu"></i></div>
+                <p>在线阅读</p>
+            </div>
+        </div>
+        <div class="weui-col-33 top">
+            <div class="index-box index-box-exam" data-href="exam-index">
+                <div class="index-icon"><i class="iconfont icon-icon"></i></div>
+                <p>评测考试</p>
+            </div>
+        </div>
+        <div class="weui-col-33 top">
+            <div class="index-box index-box-knowledge" data-href="knowledge-index">
+                <div class="index-icon"><i class="iconfont icon-zhishiku1"></i></div>
+                <p>掌上知识库</p>
+            </div>
+        </div>
+        <div class="weui-col-33 no-left">
+            <div class="index-box index-box-mission" data-href="marketing-index">
+                 <div class="index-icon"><i class="iconfont icon-renwu"></i></div>
+                <p>在线营销</p>
+            </div>
+        </div>
+        <div class="weui-col-33">
+            <div class="index-box index-box-chatroom" data-href="chatroom">
+                 <div class="index-icon"><i class="iconfont icon-liaotianshi"></i></div>
+                <p>在线沟通</p>
+            </div>
+        </div>
+        <div class="weui-col-33">
+            <div class="index-box index-box-center" data-href="center-index">
+                 <div class="index-icon"><i class="iconfont icon-gerenzhongxin"></i></div>
+                <p>个人中心</p>
+            </div>
+        </div>
+    </div>
+
+     <div class="weui-row index-company-panel"  >
+         <span>湖南毕士特 · 技术支持</span> 
+     </div>
+</div>

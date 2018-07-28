@@ -1,0 +1,107 @@
+<div id="dataStatisticActivity" class="data-statistic-activity common-content bg-gray">
+	<div class="content">
+		<div class="queryTools">
+			<div class="content height40">
+				<div class="oneItem">
+					<div class="queryResult rightWhite selectCity">分公司</div>
+					<div class="moreQuery none cityList">
+						<!-- <div class="city" data-uuid="1" data-text="长沙市">长沙市</div>
+						<div class="city" data-uuid="2" data-text="湘潭市">湘潭市</div>
+						<div class="city" data-uuid="3" data-text="株洲市">株洲市</div>
+						<div class="city" data-uuid="4" data-text="常德市">常德市</div> -->
+					</div>
+				</div>
+				<div class="oneItem">
+					<div class="queryResult rightWhite selectChannel">渠道</div>
+					<div class="moreQuery none channelList">
+						<!-- <div class="channel" data-uuid="1" data-text="渠道1">渠道1</div>
+						<div class="channel" data-uuid="2" data-text="渠道2">渠道2</div>
+						<div class="channel" data-uuid="3" data-text="渠道3">渠道3</div>
+						<div class="channel" data-uuid="4" data-text="渠道4">渠道4</div> -->
+					</div>
+				</div>
+				<div class="oneItem">
+					<div class="queryResult selectedPart">部门</div>
+					<div class="moreQuery none partList">
+						<!-- <div class="part" data-uuid="1" data-text="部门1">部门1</div>
+						<div class="part" data-uuid="2" data-text="部门5">部门5</div>
+						<div class="part" data-uuid="3" data-text="部门32">部门32</div>
+						<div class="part" data-uuid="4" data-text="部门4">部门4</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="resultBody">
+			<div class="content">
+				<div class="queryTime">
+					<div>
+						<span class="query-label" style="display: inline-block;height: 100%; vertical-align: middle;">统计时间 :</span>
+						<apan class="query-time" style="display: inline-block;width: 70%;white-space: nowrap;;height: 100% ;    vertical-align: -6px;">
+							<input type="date" class="timeSelect timeStart">  -  <input type="date" class="timeSelect timeEnd">
+						</apan>
+					</div>
+				</div>
+				<div class="result">
+					<div class="queryResult">
+						<span class="result-label">APP注册人数 ：</span>
+						<span class="result-value"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">APP登录人数 ：</span>
+						<span class="result-value"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">营销任务处理人数 ：</span>
+						<span class="result-value"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">在线学习人数 ：</span>
+						<span class="result-value colorBlue"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">用户活跃率 ：</span>
+						<span class="result-value colorBlue"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">营销活跃率 ：</span>
+						<span class="result-value colorBlue"></span>
+					</div>
+					<div class="queryResult">
+						<span class="result-label">学习活跃率 ：</span>
+						<span class="result-value colorBlue"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script id="dataStatisticActivityResult" type="text/template">
+	<div class="queryResult">
+		<span class="result-label">APP注册人数 ：</span>
+		<span class="result-value"><%=obj.userRegCnt%></span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">APP登录人数 ：</span>
+		<span class="result-value"><%=obj.userLoginCnt%></span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">营销任务处理人数 ：</span>
+		<span class="result-value"><%=obj.markTaskCnt%></span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">在线学习人数 ：</span>
+		<span class="result-value colorBlue"><%=obj.learnCnt%></span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">用户活跃率 ：</span>
+		<span class="result-value colorBlue"><%=(obj.userRate*100).toFixed(2)%>%</span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">营销活跃率 ：</span>
+		<span class="result-value colorBlue"><%=(obj.markRate*100).toFixed(2)%>%</span>
+	</div>
+	<div class="queryResult">
+		<span class="result-label">学习活跃率 ：</span>
+		<span class="result-value colorBlue"><%=(obj.learnRate*100).toFixed(2)%>%</span>
+	</div>
+</script>

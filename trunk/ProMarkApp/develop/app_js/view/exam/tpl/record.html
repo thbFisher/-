@@ -1,0 +1,96 @@
+<div class="common-content overhidden bg-gray">
+    <div class="refresh_inner">
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+            <div class="done">刷新完成</div>
+        </div>
+        <div class="list-info-content">
+        </div>
+    </div>
+</div>
+
+<script id="listTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无考试记录</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v){
+            var scoreClass = '';
+            if( v.examResult < 60 ){
+                scoreClass = 'failed';
+            }
+
+            var str = '';
+            switch(v.states){
+                case 0:
+                    str = '<span class="label label-danger">未参与考试</span>';
+                break;
+                case 1:
+                    str = '<span class="label label-danger">未提交试卷</span>';
+                break;
+                case 2:
+                    str = '<span class="label label-danger">已用完考试机会</span>';
+                break;
+                case 3:
+                    str = '<span class="label label-success">已完成</span>';
+                break;
+            }
+    %>
+        <div class="exam-record-box clearfix">
+            <div class="score <%=scoreClass%>">
+                <div class="icon-score">
+                    <div class="icon-title">score</div>
+                    <%=v.examResult%>
+                </div>
+            </div>
+            <div class="info">
+                <h3><%=v.examTitle%></h3>
+                <!--p class="time"><%=v.examStartTime%> 至 <%=v.examEndtime%></p-->
+                
+                <p class="time">开始时间：<%=v.examStartTime%></p>
+                <p class="time">结束时间：<%=v.examEndtime%></p>
+
+                <% if(v.userStartExamTime){ %>
+                    <p class="time">参与考试时间：<%=v.userStartExamTime%></p>
+                <% } %>
+                
+                <p class="rank">本次考试排名：<span><%=v.ranking%></span></p>
+                <p><%=str%></p>
+            </div>
+        </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

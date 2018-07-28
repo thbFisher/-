@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-xiaomi-push"
+  version="1.0.0">
+  <name>xiaomi-push</name>
+
+  <js-module src="www/XiaoMIPushPlugin.js" name="XiaoMIPushPlugin">
+    <clobbers target="XiaoMIPushPlugin" />
+  </js-module>
+
+
+
+<!-- AppID： 2882303761517464431
+
+AppKey： 5921746452431 -->
+  <preference name="XIAOMI_PUSH_APPID" />
+  <preference name="XIAOMI_PUSH_APPKEY" />
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="XiaoMIPushPlugin">
+        <param name="android-package" value="com.zosftware.xiaomi.XiaoMIPushPlugin" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.GET_TASKS" />
+
+        <permission
+          android:name="$PACKAGE_NAME.permission.MIPUSH_RECEIVE"
+          android:protectionLevel="signature" />
+    
+        <uses-permission android:name="$PACKAGE_NAME.permission.MIPUSH_RECEIVE" />
+        <uses-permission android:name="android.permission.VIBRATE" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        
+        <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:process=":pushservice" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:enabled="true"
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService" />
+
+        <receiver
+            android:name="com.zosftware.xiaomi.XiaoMIMessageReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+             <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+            android:exported="false"
+            android:process=":pushservice" >
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="XIAOMI_PUSH_APPID"
+                   android:value="_KEY_$XIAOMI_PUSH_APPID">
+        </meta-data>
+        <meta-data android:name="XIAOMI_PUSH_APPKEY"
+                   android:value="_KEY_$XIAOMI_PUSH_APPKEY">
+        </meta-data>
+    </config-file>
+
+    <source-file src="src/android/XiaoMIMessageReceiver.java" target-dir="src/com/zosftware/xiaomi" />
+    <source-file src="src/android/XiaoMIPushPlugin.java" target-dir="src/com/zosftware/xiaomi" />
+    <source-file src="libs/android/MiPush_SDK_Client_2_2_21.jar" target-dir="libs" />
+  </platform>
+
+ 
+</plugin>

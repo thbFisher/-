@@ -1,0 +1,186 @@
+<div class="common-content bg-gray" id="payDetailContent">
+</div>
+
+<script id="detailTpl" type="text/template">
+    <div class="weui_cells app_detail_content">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>渠道</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=channel.title%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>月份</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=remuneration.dataMonth%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>酬金总额</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=remuneration.emunerationSum%>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>完成任务数</p>
+            </div>
+            <div class="weui_cell_ft">
+                <%=remuneration.josbs%>
+            </div>
+        </div>
+    </div>
+
+    <table class="table pay_detail_table">
+        <tr>
+            <td rowspan="4">新入网酬金</td>
+            <td>新签约卡套餐</td>
+            <td><%=remuneration.newCardDisc%></td>
+        </tr>
+        <tr>
+            <td>非存量<br>客户回归</td>
+            <td><%=remuneration.nonStockReturn%></td>
+        </tr>
+        <tr>
+            <td>老带新</td>
+            <td><%=remuneration.oldWithNew%></td>
+        </tr>
+        <tr>
+            <td>加存服务</td>
+            <td><%=remuneration.depositService%></td>
+        </tr>
+        <tr>
+            <td>4G客户转化<br>服务酬金</td>
+            <td>-</td>
+            <td><%=remuneration.g4CustServiceFee%></td>
+        </tr>
+        <tr>
+            <td>4G终端销售<br>酬金</td>
+            <td>-</td>
+            <td><%=remuneration.g4TermSaleRemuneration%></td>
+        </tr>
+        <tr>
+            <td>主推机型酬金</td>
+            <td>-</td>
+            <td><%=remuneration.mainPushModels%></td>
+        </tr>
+        <tr>
+            <td>VOLTE酬金</td>
+            <td>-</td>
+            <td><%=remuneration.volteRemuneration%></td>
+        </tr>
+        <tr>
+            <td>4G套餐酬金</td>
+            <td>-</td>
+            <td><%=remuneration.new4GDisc%></td>
+        </tr>
+        <tr>
+            <td>4G换卡酬金</td>
+            <td>-</td>
+            <td><%=remuneration.g4RepCardFee%></td>
+        </tr>
+        <tr>
+            <td rowspan="6">宽带酬金</td>
+            <td>有线宽带拓展</td>
+            <td><%=remuneration.wiredBroadband%></td>
+        </tr>
+        <tr>
+            <td>有线宽带续费</td>
+            <td><%=remuneration.cableBroadband%></td>
+        </tr>
+        <tr>
+            <td>融合产品推广</td>
+            <td><%=remuneration.fusionProduct%></td>
+        </tr>
+        <tr>
+            <td>融合宽带</td>
+            <td><%=remuneration.fusionBroadband%></td>
+        </tr>
+        <tr>
+            <td>政企宽带服务</td>
+            <td><%=remuneration.governmentEntBroadband%></td>
+        </tr>
+        <tr>
+            <td>保底消费<br>宽带服务</td>
+            <td><%=remuneration.endOfConsumerBroadband%></td>
+        </tr>
+        <tr>
+            <td>家庭网酬金</td>
+            <td>-</td>
+            <td><%=remuneration.homeNetFee%></td>
+        </tr>
+        <tr>
+            <td>家园网酬金</td>
+            <td>-</td>
+            <td><%=remuneration.homeNetReturn%></td>
+        </tr>
+        <tr>
+            <td>亲情包酬金</td>
+            <td>-</td>
+            <td><%=remuneration.familyPackageFee%></td>
+        </tr>
+        <tr>
+            <td rowspan="4">代收话费酬金</td>
+            <td>代收话费</td>
+            <td><%=remuneration.collectCalls%></td>
+        </tr>
+        <tr>
+            <td>有价卡</td>
+            <td><%=remuneration.priceCard%></td>
+        </tr>
+        <tr>
+            <td>空中充值</td>
+            <td><%=remuneration.airRecharge%></td>
+        </tr>
+        <tr>
+            <td>新一站通</td>
+            <td><%=remuneration.newStationPass%></td>
+        </tr>
+        <tr>
+            <td rowspan="2">应用推广酬金</td>
+            <td>手机营业厅</td>
+            <td><%=remuneration.mobileBuss%></td>
+        </tr>
+        <tr>
+            <td>扫码</td>
+            <td><%=remuneration.scanCode%></td>
+        </tr>
+        <tr>
+            <td>实名补登酬金</td>
+            <td>-</td>
+            <td><%=remuneration.realNameCompensation%></td>
+        </tr>
+        <tr>
+            <td>存量维稳酬金</td>
+            <td>-</td>
+            <td><%=remuneration.stockFee%></td>
+        </tr>
+        <tr>
+            <td rowspan="5">数据业务酬金</td>
+            <td>数据业务服务</td>
+            <td><%=remuneration.dataService%></td>
+        </tr>
+        <tr>
+            <td>数据业务平台</td>
+            <td><%=remuneration.dataPlatform%></td>
+        </tr>
+        <tr>
+            <td>数据业务优惠</td>
+            <td><%=remuneration.dataServiceDisc%></td>
+        </tr>
+        <tr>
+            <td>多终端共享</td>
+            <td><%=remuneration.multiTermShare%></td>
+        </tr>
+        <tr>
+            <td>流量</td>
+            <td><%=remuneration.flowFee%></td>
+        </tr>
+    </table>
+</script>

@@ -1,0 +1,61 @@
+<div class="common-content knowledge-comment-content">
+    
+</div>
+
+<script id="commentTpl" type="text/template">
+    <%
+        if(data.rows.length == 0){
+    %>
+        <div class="warning-panel">暂无内容</div>
+    <%   
+        }
+    %>
+
+    <%
+        _.each(data.rows,function(v,i){
+    %>
+    <div class="knowledge-comment-box knowledge-answer-box">
+        <div class="avatar">
+            <% if(v.commentHeadImg){ %>
+                <img src="<%=v.commentHeadImg%>">
+            <% }else{ %>
+                <img src="app_img/noavatar.png">
+            <% } %>
+        </div>
+        <div class="wrapper">
+            <div class="clearfix">
+                <div class="username pull-left"><%=v.commentName%></div>
+                <div class="datetime pull-right"><%=v.createTimeStr.substr(0,16)%></div>
+            </div>
+            <div class="content">
+                <%=v.commentContent%>
+            </div>
+        </div>
+    </div>
+    <%
+        });
+    %>
+
+    <% if(data.hasNextPage || data.hasPreviousPage){ %>
+        <div class="list-control weui-row">
+            <%
+                var prevAttr = '',nextAttr = ''; 
+                
+                if(!data.hasPreviousPage){
+                    prevAttr = 'disabled';
+                } 
+                
+                if(!data.hasNextPage){
+                    nextAttr = 'disabled';
+                } 
+            %> 
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-prev" data-page="<%=data.prePage%>" <%=prevAttr%>>上一页</button>
+            </div>
+            <div class="weui-col-20"><%=data.pageNum%>/<%=data.pages%></div>
+            <div class="weui-col-40">
+                <button class="btn btn-default btn-next" data-page="<%=data.nextPage%>" <%=nextAttr%>>下一页</button>
+            </div>
+        </div>
+    <% } %>
+</script>

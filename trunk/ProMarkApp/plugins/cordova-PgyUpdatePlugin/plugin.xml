@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-PgyUpdatePlugin"
+    version="0.0.1">
+
+    <name>PgyUpdatePlugin</name>
+    <description>
+        PgyUpdatePlugin
+    </description>
+    <license>MIT</license>
+
+    <!-- <repo>https://github.com/gengen1988/xgpush-cordova.git</repo>
+    <issue>https://github.com/gengen1988/xgpush-cordova/issues</issue> -->
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <preference name="PGYER_APPID"/>
+   
+    <js-module src="scripts/PgyUpdatePlugin.js" name="PgyUpdatePlugin">
+        <clobbers target="PgyUpdatePlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <!-- source file   -->
+        <source-file src="src/android/com/zsoftware/update/PgyUpdatePlugin.java" target-dir="src/com/zsoftware/update/" />
+
+        <!-- lib SDK -->
+        <source-file src="src/android/lib/pgyer_sdk_2.4.2.jar" target-dir="libs" />
+
+        <!-- permission config -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data
+                android:name="PGYER_APPID"
+                android:value="$PGYER_APPID" >
+            </meta-data>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PgyUpdatePlugin">
+                <param name="android-package" value="com.zsoftware.update.PgyUpdatePlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+    </platform>
+
+   
+</plugin>
